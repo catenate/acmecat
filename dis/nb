@@ -1,0 +1,22 @@
+#!/dis/sh
+nbindexes = /nb/nbindexes
+re = $*
+
+if {~ $1 '-x'} {
+	(opt re) = $*
+} 
+
+grep $re `{cat $nbindexes} /dev/null | sed 's,nbindex: ,,'
+# do not remove current directory so soon, so we can grep on file paths
+# | sed 's,'^`{pwd}^'/,,'
+
+if {! ~ $opt '-x'} {
+	files=`{ls -d -F * | sed 's,\*$,,' | grep -v '.exe$' | grep -v '/$' | grep -v nbindex}
+	grep -n '^#?nb ' $files /dev/null | grep -v '^nbindex' | sed 's,nb ,,' > nbindex
+
+	echo `{pwd}^'/nbindex' >> $nbindexes
+	sort $nbindexes | uniq > /tmp/nbindexes
+	mv /tmp/nbindexes $nbindexes
+}
+
+exit 0

@@ -1,0 +1,17 @@
+s,([A-ZÆŒa-zſæﬃﬄﬁﬂﬅœﬆﬀ])s([a-zſæﬃﬄﬁﬂﬅœﬆﬀ]),\1ſ\2,g
+s,AE,Æ,g
+s,Ae,Æ,g
+s,OE,Œ,g
+s,Oe,Œ,g
+s,\.\.\.,…,g
+s,ae,æ,g
+s,ffi,ﬃ,g
+s,ffl,ﬄ,g
+s,fi,ﬁ,g
+s,fl,ﬂ,g
+s,ft,ﬅ,g
+s,oe,œ,g
+s,st,ﬆ,g
+s,ſs,ſſ,g
+
+s,ff,ﬀ,g

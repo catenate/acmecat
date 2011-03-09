@@ -1,0 +1,6 @@
+cp /media/69C4-9275/acme-0.13/nb/pub/test/*.do /media/69C4-9275/acme-0.13/nb/pub/limbos/hw.b /media/69C4-9275/acme-0.13/nb/pub/limbos/guide .
+date; ls -ltr
+dis-install.do hw.dis
+mkdo b dis hw.dis
+redo
+|sort|uniq

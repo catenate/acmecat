@@ -1,0 +1,8 @@
+perltidy had errors!! at line 1, column 1. See page 33 of PBP
+RCS keywords $Id$ not found at line 1, column 1. See page 441 of PBP
+RCS keywords $Revision$, $HeadURL$, $Date$ not found at line 1, column 1. See page 441 of PBP
+RCS keywords $Revision$, $Source$, $Date$ not found at line 1, column 1. See page 441 of PBP
+No "VERSION" variable found at line 1, column 1. See page 404 of PBP
+Code before strictures are enabled at line 2, column 1. See page 429 of PBP
+Code before warnings are enabled at line 2, column 1. See page 431 of PBP
+List declaration without trailing comma at line 5, column 14. See page 17 of PBP

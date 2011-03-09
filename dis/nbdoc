@@ -1,0 +1,10 @@
+#!/dis/sh
+# nbdoc `{nb ec_agent | grep password | sed 's,: .*,,'}
+load string
+
+apply {
+	ref = $1
+	(file line) = `{echo ${splitr $ref ':'}}
+	file = `{echo $file | sed 's,:$,,'}
+	sed -n $line^',/^nb/p' $file | sed '$d'
+} $*

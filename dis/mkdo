@@ -1,0 +1,42 @@
+#!/dis/sh
+#flag x +
+
+if {no $*} {
+	cd /lib/do; ls *.do | sed 's,^,mkdo ,;s,-, ,;s,\.do,,'
+	exit
+}
+
+if {~ $#* 1} {
+	echo 'usage: mkdo $lang $output [$targets]'
+	echo 'example: mkdo ecpl exec hi.pl'
+	exit
+}
+
+(lang output targets) = $*
+
+dofile = /lib/do/$lang^-^$output.do
+if {ftest -x $dofile} {
+	if {no $targets} {
+		cp $dofile .
+	} {
+		apply {
+			cp $dofile $1.do
+		} $targets
+	}
+} {
+	cd /lib/do; ls *.do | sed 's,^,mkdo ,;s,-, ,;s,\.do,,'
+	exit
+}
+
+
+depfile = /lib/do/$lang^-^$output.dep
+if {ftest -x $depfile} {
+	apply {
+		target = $1
+		targ = `{echo $target | sed 's,\.[^.]*$,,'}
+		root = `{echo $target | sed 's,\..*,,'}
+		cat $depfile | sed 's,\$target,'^$target^',;s,\$targ,'^$targ^',;s,\$root,'^$root^',' > $1.dep
+	} $targets
+}
+
+exit

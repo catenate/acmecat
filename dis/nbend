@@ -1,0 +1,11 @@
+#!/dis/sh
+f=$1
+if {ftest -d $f} {exit}
+
+l=`{tail 1 ./$f}
+m='nb doc'
+if {~ $"l $"m} {exit}
+
+echo >> $f
+echo >> $f
+echo nb doc >> $f

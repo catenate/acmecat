@@ -1,0 +1,4 @@
+#!/dis/sh
+f=`{stardate | sed 's,\..*,,'}
+if {! ftest -r $f} {echo 'nb doc' > $f}
+echo New $f

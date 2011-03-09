@@ -1,0 +1,10 @@
+#!/dis/sh
+if {~ $#* [01]} {
+	exit
+}
+
+(f xs)=$*
+
+for x in $xs {
+	$f $x
+}

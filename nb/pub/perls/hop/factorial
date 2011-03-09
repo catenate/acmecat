@@ -1,0 +1,12 @@
+#!/usr/bin/perl
+print "0! → ", factorial(0), "\n";
+print "1! → ", factorial(1), "\n";
+print "2! → ", factorial(2), "\n";
+print "3! → ", factorial(3), "\n";
+print "4! → ", factorial(4), "\n";
+
+sub factorial {
+	my ($n) = @_;
+	return 1 if $n == 0;
+	return factorial($n-1) * $n;
+}

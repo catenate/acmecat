@@ -1,0 +1,3 @@
+echo 'pdftotext -layout -enc UTF-8 -nopgbrk $*' > mk
+chmod +x mk
+./mk cmdref.pdf

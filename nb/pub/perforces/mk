@@ -1,0 +1,1 @@
+pdftotext -layout -enc UTF-8 -nopgbrk $*

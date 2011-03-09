@@ -1,0 +1,18 @@
+#!/dis/sh
+if {~ $#* [01]} {exit}
+(f xs) = $*
+script = /tmp/map.sh.^${pid}
+#echo 'allpids = ''''' > $script
+apply {
+	echo $f^' '^$1^' &'  >> $script
+	echo 'allpids = ($allpids $apid)' >> $script
+} $xs
+echo '
+while {! ~ $#allpids 0} {
+	sleep 1
+	allpids = `{apply {if {ftest -d /prog/$1} {echo $1}} $allpids}
+	#echo running $#allpids: $allpids
+} ' >> $script
+#cat $script
+sh $script
+rm -f $script

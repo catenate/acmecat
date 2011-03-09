@@ -1,0 +1,11 @@
+nb rob rpike golang concurrent type system manage memory collect garbage interview video
+Schuster, W.  20110225.  Rob Pike on Google Go: Concurrency, type system,
+memory management and garbage collection.  InfoQ: Interview.
+http://www.infoq.com/interviews/pike-google-go
+
+Rob Pike discusses Google Go: OOP programming without classes,
+Go interfaces, Concurrency with Goroutines and Channels, and the
+Go features that help keep GC pauses short.
+
+
+nb doc

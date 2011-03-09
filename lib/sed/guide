@@ -1,0 +1,46 @@
+echo 'Aessesses' | ligature
+echo 'abcdef' | greek
+echo 'fishes' | ligature
+|accent |keyboard |ligature
+|cyrillic |greek |hebrew
+|indent |unindent
+|mistype
+|sort|uniq
+
+
+nb convert keyboard shortcut sed script
+|sed 's/^[0-9A-F]+ +\*/s,/g'
+|sed 's/^[0-9A-F]+ +@+/s,/g'
+|sed 's/^[0-9A-F]+ +#/s,/g'
+|sed 's/          /,/g'
+|sed 's,greek.*$,,g'
+|sed 's,cyrillic.*$,,g'
+|sed 's/	$/,g/g'
+
+
+nb greek alphabet
+ABGDEZYHIKLMNCOPRSTUFXQW
+abgdezyhiklmncoprstufxqw
+
+"I"U
+ΪΫ
+
+ΑΒΓΔΕΖΗΘΙΚΛΜΝΞΟΠΡΣΤΥΦΧΨΩ
+αβγδεζηθικλμνξοπρστυφχψω
+
+"i"u$h$f$k
+ϊϋϑϕϰ
+
+
+nb cyrillic alphabet
+ABVGDEZIJKLMNOPRSTUFXY
+АБВГДЕЗИЙКЛМНОПРСТУФХЫ
+
+YOYoYEYeZHZhKHKhTSTsCHChSHShSCScEHEhYUYuYAYa
+ЁЁЕЕЖЖХХЦЦЧЧШШЩЩЭЭЮЮЯЯ
+
+abvgdezijklmnoprstufx"y'
+абвгдезийклмнопрстуфхъыь
+
+yezhkhtschshscehyuyayo
+ежхцчшщэюяё

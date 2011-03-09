@@ -1,0 +1,54 @@
+#!/dis/sh
+/lib/sed/guide
+:, |nocr
+:, |sed 's,,,'
+:, |sed 's,$,,'
+:, |sed 's,([^])$,\1,;s,^$,,'
+:, |sed 's,,,g'
+:, |sed 's,^nb ,nb acme ,'
+:, |sort -r
+Goog eucalyptus koala
+chmod +x mkdo
+cd /nb; du -a | grep '\.do$' | sed 's,.* +,,'
+cp -x indent unindent
+cp accent cyrillic ecvar findguide frotz g gorn greek grepdiff guide indent kanban keyboard ligature lsdo map mapmk mapsh mas mistype mkdo monnum monthnamenum nb nbdoc nbend nbnew nocr paths pos redo redoer repare resum so stardate todate twit twitter unindent /nb/pub/acmesacs/dis
+echo; map 'ls -ltr' map mas a b
+findguide '(lang|tool)'
+findguide acmesac
+findguide me
+findguide perl
+if {pos pwd} {echo ok} {echo not ok}
+if {pos ls ths} {echo ok} {echo not ok}
+kanban bcprw ec/
+kanban rally
+kanban ready
+kanban rim | grep plugin | grep -v plugins
+kanban todate
+kanban working
+ls -ltr
+mkdo
+nb -i calendar
+nb acmesac
+nb guide
+nb keyboard
+nb people
+nb perl
+nb toread
+pos df -h .
+pos which which
+redo
+stardate | sed 's,\..*,,'
+todate
+twitter catenate
+|fmt
+|sed 's,,,'
+|sed 's,^,	,'
+|sed 's,^[ 	]+,,'
+|sort|uniq
+|tr '[A-Z]' '[a-z]'
+|tr 'anihdyujgcvpmlsrxo;kf.,bt/' 'abcdefghijklmnopqrstuvwxyz'
+
+rm -rf scan
+cp -r -x scan me
+
+diff /nb/pub/acmesacs/dis/redoer redoer 

@@ -1,0 +1,19 @@
+nb bookmark
+HigherOrderPerl-trimmed.txt:/^1.2 Factorial/
+
+
+nb code library binary convert decimal number
+HigherOrderPerl-trimmed.txt:/^binary$/
+
+
+nb introduce tutorial perl
+Sheppard, D.  20001016.  Beginner's introduction to Perl.  Perl.com.
+http://www.perl.com/pub/2000/10/begperl1.html
+
+
+nb perl variable scope global my private
+All Perl variables are global unless they are declared with my.¹
+ ¹ HigherOrderPerl-trimmed.txt:/^1.2.1/
+
+
+nb funoi function pointer hanoi tower

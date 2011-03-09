@@ -1,0 +1,6 @@
+#!/dis/sh
+(dow month dom time zone year) = `{date}
+m = `{monnum $month}
+d = `{echo $dom | sed 's,^(.)$,0\1,'}
+t = `{echo $time | sed -e 's,:,,g'}
+echo $year^$m^$d^'.'^$t

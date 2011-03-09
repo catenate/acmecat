@@ -1,0 +1,4 @@
+#!/dis/sh
+echo start 8
+sleep 2
+echo 8 done

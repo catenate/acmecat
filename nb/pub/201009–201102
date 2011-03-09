@@ -1,0 +1,2514 @@
+nb 3d cgi texture effect interact shatter smoke silestone
+http://vimeo.com/15630517
+
+
+nb acmesac file command acme diction google load wikipedia diff grep ftest manual sh unicode whatis
+/appl/cmd/test.b
+/dis/guide
+/dis/kanban
+Clean
+Dict diction
+Dump plugin.dump
+Edit ,s,\n\n,\n,g
+Edit .,$d
+Goog (search|images|groups|news|scholar|codesearch) query
+Goog black eyed peas meet me halfway
+Goog diction
+Load ecbr.dump
+Load plugin.dump
+Pedia playbook
+acme(1)
+adiff file1 file2
+agrep pattern file…
+cp /usr/jcatena/lib/profile lib/
+cp lib/* /usr/jcatena/lib/
+ftest(1)
+lookman keyboard
+nbindex
+sh(1)
+sh-std(1)
+unicode 0-7f
+unicode 0-ff
+unicode −
+whatis map
+|sort|uniq
+
+
+nb acmesac 7zip example method type
+http://dotnetperls.com/7-zip-examples
+
+
+nb acmesac acme application calendar command clean dictionary dump edit google search load wikipedia
+/acme/dis/
+
+
+nb acmesac acme charon browser service shortcut
+guide:/^[A-Z]/
+
+
+nb acmesac acme discuss usage
+http://cookp.com/thread/1229576/[9fans]%20Using%20the%20Acme%20Editor
+http://9fans.net/archive/?q=Using+the+Acme+Editor&go=Grep
+
+
+nb acmesac acme color scheme
+http://ipn.caerwyn.com/2009/05/lab-96-acme-color-schemes.html
+
+
+nb acmesac acme freetype font dejavu sans ttf acme charon 
+http://ipn.caerwyn.com/2008/12/lab-91-using-freetype.html
+
+
+nb acmesac acme source code combine control key
+/appl/acme/text.b:/^Text.typex/
+
+
+nb acmesac acme translate language
+Nichols, E. and Matsumoto, Y. -2007.  Acme as an interactive
+translation environment: Acme for poets.  Nara institute of science
+and technology: Computational linguistics laboratory.
+http://doc.cat-v.org/plan_9/IWP9/2007/20.acme-trans.pdf
+
+The Acme text editor and programming environment makes it worth
+reconsidering plain text as an interface.  In Acme the mouse is used
+to provide a consistent semantics for treating text as commands.
+This echoes the lack of distinction between a program and data that is
+common in functional programming languages like Lisp and Scheme.
+In terms of user interfaces, this frees the users from having to
+remember obscure shortcuts or navigate complicated menus to access
+their tools; all they need to do is type the name of the command.
+This reduces the burden on the user’s memory and makes it much simpler
+to carry out the desired action: simply click on the text of a command
+to execute it.  Acme takes care of interpreting the text as a command
+by sending a request to the shell where the requested command is
+executed and the output is displayed in a new buffer.  An example of
+Acme in action is given in Figure 1.
+
+This design has some interesting implications.  Because any text can
+be executed as a command, the user is not limited in terms of what
+tools he or she can access, keeping the workflow dynamic and allowing
+it to easily adapt to the needs of a given task.  At the same time,
+the clear division in roles—the keyboard for text production, and the
+mouse for text interpretation–as well as the clean semantics of the
+mouse buttons for select/execute/get provides consistency to the UI.
+By providing an easy way for text to be interpreted as commands,
+Acme combines the command and its interface, removing the disconnect
+between what the user wants to do and how it is done.  This makes the
+UI easier to figure out and remember, and produces an interface that
+is more suitable for text-based tasks.
+
+Acme makes applying tools to data as easy as clicking on text with a mouse.
+Furthermore, the small tools design philosophy that inspired Acme
+makes it easy to apply existing NLP tools in Acme.  This means that
+tasks like using reference materials or editing text are easy.
+Users who frequently deal with language, such as linguists,
+translators, language learners, or poets need to be able to
+efficiently explore and manipulate language.  Acme can provide a
+powerful working environment for users who spend a lot of time
+interacting with text.
+
+Acme is clearly attractive for text-heavy tasks like translation,
+however, some work needs to be done to produce a usable environment.
+Tools and intuitive interfaces need to be constructed for common text
+manipulation tasks such as splitting a sentence into words or phrases,
+looking up words in dictionaries, or translating phrases using
+translation memories or machine translation systems.  Support for
+multi-lingual input needs to be improved: we need redistributable
+fonts with good Unicode coverage and good input method editors for
+handling input and display of text in languages that do not use
+Latin-based scripts.  Finally, we need a way of getting Acme to the
+end user in a simple, easy to install package that works out-of-box.
+
+
+nb acmesac acme install dejuvu font border color
+http://groups.google.com/group/acme-sac/browse_thread/thread/d21fa2d6434428c7
+
+
+nb acmesac fs mount bind windows file system drive letter
+/man/fs(3)
+bind \#Ue: /n/E
+
+
+nb acmesac keyboard search manual
+lookman keyboard
+
+
+nb acmesac keyboard search shortcut file
+grep ff /lib/keyboard
+/sys/emu/port/latin1.h
+
+
+nb acmesac keyboard search unicode
+Goog unicode horizontal bar
+
+
+nb acmesac keyboard shortcut soft hyphen
+00AD  --          ­	soft hyphen
+
+
+nb acmesac keyboard shortcut spacing macron
+00AF  __          ¯	spacing macron
+
+
+nb acmesac keyboard shortcut long s
+017F  fs          ſ	latin small letter long s
+
+
+nb acmesac keyboard shortcut horizontal bar
+2015  __          ― horizontal bar
+
+
+nb acmesac keyboard shortcut horizontal ellipse
+2026  3.          … horizontal ellipsis
+
+
+nb acmesac keyboard shortcut minus
+2212  --          −	minus
+
+
+nb acmesac convert mk ant
+mk2ant converts a mkfile to an ant build xml file.
+
+flag x +
+in='mkdir ${export}'
+out='<mkdir dir="${export}"/>'
+test=`{echo 'mkdir ${export}' | sed '/mkdir/s,(mkdir)[ 	]+([^ 	\n]+),<\1 dir="\2"/>,'}
+#echo $"test
+~ $out $"test
+
+
+nb acmesac scipt dis sh shebang
+#!/dis/sh
+
+
+nb acmesac sh echo script command
+flag x +
+
+
+nb acmesac echo text
+echo …
+
+
+nb acmesac sh if match parameter list length
+if {~ $#* 0} {
+	…
+}
+
+
+nb acmesac sh name script argument
+(f xs)=$*
+
+
+nb agile rough prototype summary implicit requirement
+Blain, T. -20101025.  A prototype is worth a thousand lines of code.
+Tyner Blain.
+http://tynerblain.com/blog/2010/10/25/a-prototype-is-worth-a-kloc
+
+Use the right prototype to emphasize the right ideas, and elicit the
+right feedback.
+
+
+nb agile loyal business partner customer perspective requirement story release schedule industry pace product feature support
+Morgan, L.  20101015.  Customer confidence hinges on agile schedules.
+Software development times.
+http://www.sdtimes.com/content/SDTimesPDFEdition.aspx?File=sdtimes256.pdf
+
+… One of the things that struck me as the principal analyst was how
+obvious agile development practices are becoming to the average
+business consumer.  Most of these non-technical observers talk about
+agile development in terms of its effect.  They’re noticing that some
+platform providers are rolling out releases every two weeks while
+others are rolling out releases maybe once or twice per year.  The
+paid search platform providers who have adopted agile development
+practices are seen as more in tune with customer requirements and also
+more in tune with Google’s constant modifications to its algorithms.
+The difference in release schedules is affecting software provider
+preferences and, ultimately, sales.  Agile development is also
+affecting customer loyalty.  No one wants to be aligned with a
+dinosaur, particularly when the part of the industry you’re working in
+is moving at light speed.  Customer loyalty also plays out in terms of
+customer requirements.  Since the dawn of software, users have always
+had something to say about how it could be improved.  The difference
+is, more agile tools and platforms are allowing companies to more
+easily adopt and prioritize customer requests if not transform them
+into stories.  Some of the marketers interviewed for the report were
+flattered and impressed that their platform vendors were actively
+listening to them, and even more impressed when the vendor had morphed
+one or more of their requests into product features.  For the less
+egotistical, the new features were the sign of a good and dedicated
+business partner.  … Finally, agile development practices are being
+viewed as a form of customer support, particularly as it relates to
+product features.  … The human element above all things shapes the
+lifetime value of customer relationships, at least among the people
+interviewed for the report.  Features are nice, price is nice, but in
+the end, if you don’t have a partner you can rely on, the rest doesn’t
+matter all that much.
+
+
+nb alice frabjous
+Oh frabjous day!
+
+
+nb alice famous fabulous famulous familiar family
+
+
+nb android mirror android git repository local server @meisteg
+Meiste, G.  20090208.  Mirror Android repositories on a local server.
+Greg Meiste.
+http://gregmeiste.com/2009/02/mirror-android-repositories-on-a-local-server/
+
+
+nb android woz android google apple
+http://tech.slashdot.org/story/10/11/18/1433244/Woz-Says-Android-Will-Be-Dominate
+
+
+nb apple manage product history stevejobs johnsculley
+20101020.  Being Steve Jobs' boss: Confessions of the last man to
+manage the singular inventor.  Bloomberg businessweek.
+http://www.businessweek.com/print/magazine/content/10_44/b4201096309840.htm
+
+What makes Steve's methodology different from everyone else's is that he
+always believed the most important decisions you make are not the things
+you do, but the things you decide not to do.  He's a minimalist.
+I remember going into Steve's house, and he had almost no furniture in it.
+He just had a picture of Einstein, whom he admired greatly, and he had a
+Tiffany lamp and a chair and a bed.  He just didn't believe in having lots
+of things around, but he was incredibly careful in what he selected.
+
+
+nb artifice train computer speak poetry
+http://cacm.acm.org/news/101889-what-if-we-used-poetry-to-teach-computers-to-speak-better/fulltext
+
+
+nb attitude bitter inform @rands
+Engineers aren't bitter—they're informed.
+
+
+nb bash shell osx command line intro tutorial prompt ls file directory pwd cd path home tab complete help man
+Long, J.W.  20101112.  The designer’s guide to the OSX command prompt:
+A tutorial for the modern web designer.  Wiseheart design.
+http://www.wiseheartdesign.com/articles/2010/11/12/the-designers-guide-to-the-osx-command-prompt
+
+
+nb best recommend mcsweeneys
+http://www.mcsweeneys.net/links/recommends/
+
+
+nb build scm blog
+http://soberbuildengineer.com/blog/2010/11/the-incompetent-build-master/
+
+
+nb build make syntax @emelski
+http://blog.melski.net/2010/11/23/make-syntax-is-the-worst-except-for-all-the-alternatives/
+
+
+nb build cmake build system usage
+@njvack: OK guys.  I'm sure cmake is better than autotools.  But guess what:
+I don't want to download another build system to use your code.
+
+
+nb build cmake build system cross platform autotools
+@jamesepicwynn: Quite irritated by #cmake right now.  Is there a
+better cross platform build system for linux/osx/windows?
+
+@catenate: @jamesepicwynn autotools? ;)
+
+
+nb build buildout python build system
+http://www.buildout.org/
+
+Buildout is a Python-based build system for creating, assembling and
+deploying applications from multiple parts, some of which may not be
+Python-based.  It lets you create a buildout configuration and
+reproduce the same software later.
+
+
+nb build scons forget
+rcarmo: I hate scons.  Seriously, who would pick a build system that
+forgets what it's doing halfway through?
+
+
+nb build openshake build system @batterseapower @ndm_haskell
+Bolingbroke, M.  An open source reimplementation of Neil Mitchell's
+Shake build system.  Github: Social coding.
+https://github.com/batterseapower/openshake
+
+
+nb build recursive build system
+@crhopkins: Preparing a presentation to my department on why my
+non-recursive build system is better than the previous recursive
+build system.
+
+
+nb build ninja martine github manual
+https://github.com/martine/ninja
+http://martine.github.com/ninja/manual.html
+
+Build systems get slow when they need to make decisions.  When you are
+in a edit-compile cycle you want it to be as fast as possible—you want
+the build system to do the minimum work necessary to figure out what
+needs to be built immediately.
+
+Ninja contains the barest functionality necessary to describe
+arbitrary dependency graphs.  Its lack of syntax makes it impossible
+to express complex decisions.  Instead, Ninja is intended to be used
+with a separate program generating its input files.  The generator
+program (like the ./configure found in autotools projects) can analyze
+system dependencies and make as many decisions as possible up front so
+that incremental builds stay fast.  Going beyond autotools, even
+build-time decisions like "which compiler flags should I use?" or
+"should a build a debug or release-mode binary?" belong in the
+ninjafile generator.
+
+The -t flag on the Ninja command line runs some tools that I have
+found useful during Ninja’s development.  The current tools are:
+	query: dump the inputs and outputs of a given target.
+	browse: browse the dependency graph in a web browser.
+Clicking a file focuses the view on that file, showing inputs
+and outputs.  This feature requires a Python installation.
+	graph: output a file in the syntax used by graphviz,
+an automatic graph layout tool.  Use it like ¹.  In the Ninja source tree,
+“ninja graph” generates an image for Ninja itself.
+ ¹ ninja -t graph target | dot -Tpng -ograph.png /dev/stdin 
+
+
+nb build ninja example manual
+cflags = -Wall -Werror
+rule cc
+  command = gcc $cflags -c $in -o $out
+
+# If left unspecified, builds get the outer $cflags.
+build foo.o: cc foo.c
+
+# But you can can shadow variables like cflags for a particular build.
+build special.o: cc special.c
+  cflags = -Wall
+
+# The variable was only shadowed for the scope of special.o;
+# Subsequent build lines get the outer (original) cflags.
+build bar.o: cc bar.c
+
+
+nb build travis distributed heroku network job github ruby build system
+https://github.com/svenfuchs/travis
+
+
+nb build mk plan9 paper
+Hume, A.G. and Flandrena, B.  Maintaining files on Plan 9 with mk.
+Plan 9: 4th edition.
+http://doc.cat-v.org/plan_9/4th_edition/papers/mk
+
+Mk is a tool for describing and maintaining dependencies between files.
+It is similar to the UNIX program make, but provides several extensions.
+Mk’s flexible rule specifications, implied dependency derivation, and
+parallel execution of maintenance actions are well-suited to the Plan 9
+environment.  Almost all Plan 9 maintenance procedures are automated
+using mk.
+
+:/12. Parallel processing/
+
+
+nb canada eh interrogative confirm yeah yes ja no non
+I solicit your opinion: Do you agree with this statement?
+
+
+nb car discover unrestored 1964 cobra 289 barn
+Squatriglia, C.  20101208.  Shelby cobra 289.  Wired: Autopia.
+http://www.wired.com/autopia/2010/12/open-this-time-capsule-of-classic-cars?pid=416
+/nb/pub/cars/1964-Shelby-Cobra.jpg
+
+
+nb car midengine duck fiberglass body race 1964 porsche carrera gts 904
+Squatriglia, C.  20101208.  Porsche 904.  Wired: Autopia.
+http://www.wired.com/autopia/2010/12/open-this-time-capsule-of-classic-cars?pid=418
+/nb/pub/cars/1964-porsche-904.jpg
+
+
+nb car 1958 ac ace bristol
+Squatriglia, C.  20101208.  AC ace Bristol.  Wired: Autopia.
+http://www.wired.com/autopia/2010/12/open-this-time-capsule-of-classic-cars?pid=420
+/nb/pub/cars/1958-ac-ace-bristol.jpg 
+
+
+nb career self career interest @rands
+No one cares about your career more than you.
+
+
+
+roBurky: "Any sufficiently advanced hobby is indistinguishable from a job.”
+I like that.
+
+
+nb closure java jsr hash project lambda
+Goetz, B.  Lambda expressions, SAM conversion, method references,
+virtual extension methods.  Java community process.
+http://www.jcp.org/en/jsr/proposalDetails?id=335
+
+We propose extending the Java Language to support compact lambda
+expressions (otherwise known as closures or anonymous methods.)
+Additionally, we will extend the language to support a conversion
+known as "SAM conversion" to allow lambda expressions to be used where
+a single-abstract-method interface or class is expected,
+enabling forward compatibility of existing libraries.
+	We propose extending the semantics of interfaces in the Java
+Language to support virtual extension methods, whereby an interface
+can nominate a static default method to stand in for the implementation
+of an interface method, in the event that an implementation class does not
+provide an implementation of the extension method.  This enables
+interfaces to be augmented with new methods "after the fact" without
+breaking existing implementation classes.
+	Time permitting, we will use these features to augment the
+core Java SE libraries to support a more lambda-friendly style of
+programming, such as ¹ or ².  This will likely be accompanied by a set
+of standardized "SAM" types such as Predicate, Filter, Mapper,
+Reducer, etc.
+	¹ Collection collection = ...  ;
+collection.sortBy(#{ Foo f -> f.getLastName() });
+	² collection.remove(#{ Foo f -> f.isBlue() });
+
+
+nb cloud develop test private cloud efficient computer infrastructure @emelski
+Melski, E. 20101014.  Cloud computing for traditional dev/test.
+Blog.melski.net: Eric Melski's thoughts on the craft of software
+development.
+http://blog.melski.net/2010/10/14/cloud-computing-for-traditional-devtest/
+
+We replaced our cornucopia of cheap computers with a couple dozen
+beefy servers—thanks to advances in hardware, we were able to get
+inexpensive 2u systems with 8 cores (dual-quads), a boatload of memory
+and large, fast disks.  Then we put VMWare’s ESX Server on them, and
+started using virtual machines instead of physical for the bulk of our
+development and testing needs.  We didn’t realize it at the time, but
+we had created a private development cloud.
+
+
+nb cloud virtual machine hardware analyze perform accelerator build time
+Kushner, A.  20101008.  Are virtual build farms in your future?
+Electric Cloud customer summit 2010.
+http://wiki.electric-cloud.com/download/attachments/19628416/customer_summit_vmware_performance_um.pptx
+
+
+nb clutter digital media advertisement overload desensitize
+Godin, S. The inevitable decline due to clutter.  Seth Godin's blog.
+http://sethgodin.typepad.com/seths_blog/2010/12/the-inevitable-decline-from-clutter.html
+
+Digital media expands.  It's not like paper, it can get bigger.
+As digital marketers seek to increase profits, they almost always make
+the same mistake.  They continue to add more clutter, messaging and offers,
+because, hey, it's free.  One more link, one more banner, one more
+side deal on the Groupon page.  Economics tells us that the right
+thing to do is run the factory until the last item produced is being
+sold at marginal cost.  In other words, keep adding until it doesn't
+work any more.  In fact, human behavior tells us that this is a more
+permanent effect than we realize.  Once you overload the user,
+you train them not to pay attention.  More clutter isn't free.
+In fact, more clutter is a permanent shift, a desensitization to /all/
+the information, not just the last bit.  And it's hard to go backward.
+More is not always better.  In fact, more is almost never better.
+
+
+nb cmd shell command list
+2010.  An A-Z Index of the Windows XP command line.  SS64.com.
+http://ss64.com/nt/
+
+
+nb cmd shell if property tail redirect stdout findstr
+if [$[user]]==[] (
+	tail -$[tailLines] C:\ec_admin\logs\briar.log
+) else (
+	tail -$[tailLines] C:\ec_admin\logs\briar.log > C:\ec_admin\logs\$[user].log
+	findstr $[user] C:\ec_admin\logs\$[user].log
+)
+
+
+nb coderepo public internet source code repository
+
+
+nb coderepo sourceforge
+
+
+nb coderepo git github
+# https://github.com/login
+/nb/me/github/guide
+http://github.com
+
+
+nb coderepo google code mercurial
+
+
+nb coderepo bitbucket atlassian mercurial
+http://bitbucket.org
+
+
+nb coint continuous integration
+/nb/pub/principle:/nb minimize unverified assumptions/
+
+
+nb coint feedback align change usman
+Morgan, L.  20101015.  Continuous integration: Not just for agile anymore.
+Software development times.
+http://www.sdtimes.com/content/SDTimesPDFEdition.aspx?File=sdtimes256.pdf
+
+nb coint practice
+Set team expectations.  Because nightly builds require constant
+consumption of and contribution to code, developers need to get used
+to smaller, faster, more iterative cycles.  Early on, you will likely
+notice code-quality improvements.  Later, you will likely discover
+that product quality and processes are becoming more predictable and
+that you can use metrics to further optimize them.
+
+Get into a rhythm.  “Continuous” can mean literally continuous,
+nightly builds, weekly builds, other periodic builds, or a combination
+of builds.  Regular, disciplined practices help ensure product and
+process consistency.  Without discipline, expect continuous breakage.
+Also, make sure your test cases are prioritized so the build can run
+within the confines of its cycle frequency.
+
+Run builds as frequently as possible.  That way, developers can get
+access to the most recent version of code and reduce the amount of
+rework.  You can help speed things up by automating the build process.
+Have an infrastructure in place.  Continuous integration is best
+achieved using automated tools, build servers (vs.  developers’
+desktops), and other infrastructural elements that can help facilitate
+its success.
+
+Try preflight builds.  One common gripe about continuous integration
+is that it is post facto.  Some tools allow you to test the effect of
+changes prior before you officially commit.  (This is particularly
+useful for branched code.)
+
+nb coint rework break change
+“The longer you hold onto code, the more rework you’re going to have to do.
+You want to know that your code is okay and won’t break someone else’s.”
+―Mike Rozlog
+
+nb coint justify early team commit
+According to [Tom] Grant, team dynamics tend to improve as a result of
+continuous integration, especially in organizations with waterfall
+practices, because the entire team is committed to changing what
+happens early in the software development life cycle.
+
+nb coint rework align change
+Without continuous integration, developers sense they’re making
+progress but often fear the rework that will be required days, weeks,
+or months later when they finally discover how misaligned their
+changes are, said [Usman] Muzaffar.
+
+nb coint justify continuous visible self service fail
+Central to the notion of “continuous” is automation because it saves
+time, speeds processes and lowers costs.  Maciej Zawadzki … said that
+although it is possible to automate using a Perl script, to truly
+realize the benefits of automation, software teams need two additional
+things: visibility, so they can identify problems and fix them; and a
+self-service aspect, so they can run scripts themselves even if they
+are unable to see someone else’s code.  “It’s not a question of
+failure because failures are going to happen,” he said.  “The more
+transparent failure is, the easier it is to diagnose what failed.”
+
+nb coint justify frequent build
+One Urbancode customer moved from nightly builds to four builds per day so
+teams in different regions could see the results.  Other organizations have
+taken advantage of nightly cycles to run automated tests, do static
+analysis, and execute security scans in addition to builds.
+
+
+nb coint manifesto merge branch fail fast candidate clean rebuild automate process checklist
+@stevepov: If you were writing a #continuousintegration manifesto what
+would it say?#agile
+
+@catenate: @stevepov Constant merge over long branches; fail fast over
+no broken builds; frequent candidates over rebuilding; automate over
+checklists.
+
+The longer you separate code on different branches, the harder the
+code is to reconcile, so merge as much as possible of the branched
+code every day.
+
+@catenate: @stevepov (1) Longer code on different branches, harder to
+reconcile, so merge as much as possible of branched code every day.
+
+It's better to know right away that a code problem broke the build,
+and build again after a change, than to spend time trying to polish up
+the build so it doesn't break in the first place, or rebuilding the
+same patched-up build over and over.  Giving more attention to one
+build breaks the flow of the regular heartbeat builds.
+
+@catenate: @stevepov (2) Better know right away that problem broke
+build, and build again after change, than spend time polishing code to
+not break.
+
+@catenate: @stevepov (3) Rebuilding a patched-up build breaks the flow
+of regular heartbeat builds, and its unclean process exceptions invite
+error.
+
+Don't assign people to build and rebuild manually with a defined
+process.  If you can regulate the process that much, automate it
+instead, so the people can do something more interesting.
+
+@catenate: @stevepov (4) If manual process defined enough to control
+people's actions, automate instead, so people can do something more
+interesting.
+
+
+nb coint buildbot critic preed
+Reed, P.  20101204.  Incompetent build master is [still] incompetent.
+The sober build engineer.
+http://soberbuildengineer.com/blog/2010/12/incompetent-build-master-is-still-incompetent/
+
+
+nb company innovate chief architect title lead responsible product decision maker respect influence @berkun
+Berkun, S.  20101018.  Ray Ozzie, Microsoft and change.  Scott Berkun: Blog.
+http://www.scottberkun.com/blog/2010/ozzie-microsoft-and-change/
+
+In the past I’ve criticized on idea of job titles like VP of Innovation or
+Chief Innovation officer.  Chief Software Architect … means little to those
+with real power inside a company.  Makers of things, like developers, give
+the most respect to people who ship things.  … Slide decks and vision plans
+don’t compile.  You can prototype and speculate all you want, but that’s at
+best indirect influence on what the rest of a company is doing.  You can’t
+be a leader from the sideline.  … But if a real risk needs to be taken you
+are not the person with the power to take it.
+
+
+nb company trust implicit thank @rands 
+I know that you trust me when you stop saying thank you.
+
+
+nb company describe job @rands
+Write a job description like you want the job.
+
+
+nb company connect company emerge organize city social business ecosystem efficient growth identity culture listen control cost small space owner combine observe
+Gray, D.  20110208.  The connected company.  Communication nation.
+http://communicationnation.blogspot.com/2011/02/connected-company.html
+
+A recent analysis in the CYBEA Journal looked at profit-per-employee
+at 475 of the S&P 500, and the results were astounding: As you triple
+the number of employees, their productivity drops by half.
+
+Companies are not so much machines as complex, dynamic, growing
+systems.  A study by the Federal Reserve Bank of Philadelphia found
+that as the working population in a given area doubles, productivity
+(measured in this case by the rate of invention) goes up by 20%.
+
+Ecosystems: Long-lived companies were decentralized.  They tolerated
+“eccentric activities at the margins.” They were very active in
+partnerships and joint ventures.  The boundaries of the company were
+less clearly delineated, and local groups had more autonomy over their
+decisions, than you would expect in the typical global corporation.
+
+Strong identity: Although the organization was loosely controlled,
+long-lived companies were connected by a strong, shared culture.
+Everyone in the company understood the company’s values.
+These companies tended to promote from within in order to keep that
+culture strong.  Cities also share this common identity: think of the
+difference between a New Yorker and a Los Angelino, or a Parisian, for
+example.
+
+Active listening: Long-lived companies had their eyes and ears focused
+on the world around them and were constantly seeking opportunities.
+Because of their decentralized nature and strong shared culture,
+it was easier for them to spot opportunities in the changing world and
+act, proactively and decisively, to capitalize on them.
+
+The problem comes with scale.  As the number of employees grows, the
+profit per employee shrinks.  It’s a game of diminishing returns.
+Efficiencies of scale are balanced out by the burdens of bureaucracy.
+Divisions become silos, disconnected from each other.  Overhead costs
+increase with size.  The resulting need for control, and the inability
+to achieve it at a reasonable cost, is what eventually kills a business.
+
+Understand the culture: A company is like a city in many ways.
+First and foremost, a city is about the people who live and work
+there; it’s an expression of their collective culture.  Before you can
+start your path to the connected company, you need to understand the
+culture (or cultures) that are already there, so you can look for ways
+to enhance and strengthen that shared identity.
+
+Start small.  Urban designers might look at maps or aerial views as
+they make their plans, but the life of a city happens at street level.
+As you initiate social programs, think of them as if you are designing
+a city street.  A successful street is filled with people.  The last
+thing you want is a whole bunch of large, urban areas with no people
+in them.  In a city, big, open, empty spaces feel unsafe and unloved.
+So start small.  The smaller the space is initially, the faster it
+will fill up with people.  A good way to start is with an [small-scope]
+organization-wide project or initiative that requires participation
+from a number of people across the company.  This gives you a cross-
+section of ideas and perspectives to look at as you plan the next stage.
+
+Spaces need owners.  Again, think of the city street: every business
+or building has an owner.  The sidewalks have owners—typically every
+business at street level “ polices” their stretch of sidewalk.
+And even the street has owners—the street sweeper, the cop on the beat.
+In the same way, make sure that every online space you create has
+someone positioned to take care of it, to keep it safe and clean.
+
+Every person needs a place.  In the same way that public spaces need
+caretakers, every person needs a place to live; somewhere they can put
+their stuff.  As you build your social business, make sure that every
+single person has a place where they can put, and see, their stuff:
+their projects, the links they want to get back to, the documents they
+create, their role, qualifications, expertise and so on.
+
+Jumping-off points.  A good city street offers opportunities that are
+unanticipated but serendipitous.  The promising side-street.  The
+sound of music coming through an open door.  As you design for
+connection, think about how you might create those unexpected,
+but delightful, surprises.  [Like a combination of keywords encourages
+tangential thought.]  Every time someone visits an online space,
+there’s a chance to offer them something new.
+
+Watch, listen, adjust and adapt.  Design by connection is not a
+top-down activity so much as bottom-up.  Complex systems just don’t
+work that way.  In a complex system, you need to pay attention to
+small things and make little adjustments along the way.  Think about
+how city streets evolve: one small step at a time.  One retailer moves
+to a larger space; another goes out of business.  One old building is
+torn down and replaced; another is rehabbed and turned into lofts.
+Pay attention to the culture, and watch how people react to the tools
+you provide.  Are they using something in a different way than you
+expected?  Find out why and see if you can enhance that.  And what are
+they ignoring?  If they’re not using something you expected them to use,
+go talk to them and see if you can figure out the reason.
+
+
+nb compile warning error option @danimal
+I was tempted to turn -Werror on in the build system for everything a
+few months ago and just tell people to fix stuff.
+
+
+nb compile javascript crankshaft optimize runtime profile google kmillikin fschneider
+Millikin, K. and Schneider, F. 20101207.  A new crankshaft for V8.
+The chromium blog.
+http://blog.chromium.org/2010/12/new-crankshaft-for-v8.html
+
+Crankshaft has four main components: (1) A base compiler which is used
+for all code initially.  The base compiler generates code quickly
+without heavy optimizations.  Compilation with the base compiler is
+twice as fast as with the V8 compiler in Chrome 9 and generates 30%
+less code.  (2) A runtime profiler which monitors the running system
+and identifies hot code, i.e., code that we spend a significant amount
+of the time running.  (3) An optimizing compiler which recompiles and
+optimizes hot code identified by the runtime profiler.  It uses static
+single assignment form to perform optimizations such as loop-invariant
+code motion, linear-scan register allocation and inlining.
+The optimization decisions are based on type information collected
+while running the code produced by the base compiler.
+(4) Deoptimization support which allows the optimizing compiler to be
+optimistic in the assumptions it makes when generating code.
+With deoptimization support, it is possible to bail out to the code
+generated by the base compiler if the assumptions in the optimized
+code turn out to be too optimistic.
+
+
+nb computer count switch brain
+http://news.cnet.com/8301-27083_3-20023112-247.html?part=rss&subj=news&tag=2547-1_3-0-20
+
+
+nb computer brain compare jvneumann
+Von Neumann, J.  The computer and the brain.
+
+
+nb constitution usa 112 congress bill cite constitution
+Baldwin, B.  20110216.  Top five constitutional citations of the
+112th Congress.  Heritage foundation: The foundry.
+http://blog.heritage.org/2011/02/16/top-five-constitutional-citations-of-the-112th-congress/
+
+Heritage has done the grunt work by actually tracking which parts of
+the Constitution¹ Congress (Article 1, Section 8) has cited for the
+first 450 bills introduced in the House.  The Rules and Regulation
+Clause: Sliding into fifth place is Clause 14² with 34 citations.
+The Naturalization Clause, Clause 4,³ scrapes ahead of fifth place
+with 35 citations.  The Necessary and Proper Clause: Clause 18⁴ flies
+into third, boasting more citations then the previous two combined (82).
+The Commerce Clause: Clause 3⁵ sweeps into second with 104 citations.
+The Spending Clause: Not surprisingly, Clause 1⁶ tops the charts at 134
+citations.
+ ¹ usaconstitution
+ ² To make Rules for the Government and Regulation of the land and
+naval Forces;
+ ³ To establish an uniform Rule of Naturalization, and uniform Laws on
+the subject of Bankruptcies throughout the United States;
+ ⁴ To make all Laws which shall be necessary and proper for carrying
+into Execution the foregoing Powers, and all other Powers vested by
+this Constitution in the Government of the United States, or in any
+Department or Officer thereof.
+ ⁵ To regulate Commerce with foreign Nations, and among the several
+States, and with the Indian Tribes;
+ ⁶The Congress shall have Power To lay and collect Taxes, Duties,
+Imposts and Excises, to pay the Debts and provide for the common
+Defence and general Welfare of the United States; but all Duties,
+Imposts and Excises shall be uniform throughout the United States;
+
+
+nb construct bacteria material engineer concrete
+http://science.slashdot.org/story/10/11/17/182244/Bacteria-Used-To-Fix-Cracked-Concrete
+
+
+nb copyleft copyright censor intellectual property
+http://c4sif.org/2010/11/copywrong-copyright-as-censorship/
+http://c4sif.org/2010/11/ideas-are-free-the-case-against-intellectual-property-or-how-libertarians-went-wrong/
+
+
+nb cygwin guide
+cp /n/C/cygwin/home/jcatena/bin/* bin/
+cp bin/* /n/C/cygwin/home/jcatena/bin/
+nb guide
+os C:\cygwin\bin\which.exe perl
+|sort|uniq
+
+/cygdrive/e/acme-0.13/nb/tool/perforce
+/n/C/cygwin/bin/
+/n/C/cygwin/home/jcatena/
+/n/C/cygwin/home/mradford/
+
+
+nb decide bias list
+http://en.wikipedia.org/wiki/List_of_cognitive_biases
+
+
+nb design test data local maxima increment improve breakthrough innovate fit change disrupt
+Norman, D.  20101007.  Design without designers.  Core77.
+http://www.core77.com/blog/columns/design_without_designers_17587.asp
+
+Both types of design are necessary, depending on the novelty of the
+environment designed for.  For example, designing ads for Twitter
+requires breakthrough designs from an oufit more used to designing ads
+for newspapers.  An outfit which cannot adapt eventually becomes a
+poor fit for the environment.
+
+
+nb design minimal cell phone johndoe dbok
+20101116.  The anti-iPhone: World's simplest mobile that only lets you
+make calls.  Daily mail.
+http://www.dailymail.co.uk/sciencetech/article-1330125/Johns-Phone-Worlds-simplest-mobile-phone-lets-make-calls.html
+
+
+nb diaspora backlog install cygwin git
+
+
+nb diaspora install diaspora
+
+
+nb economist picture caption contest mad max early days
+Mad Max in early days
+http://www.economist.com/blogs/newsbook/2010/11/caption_competition#comment-740247
+
+
+nb economist topic article index article reference
+http://www.economist.com/topics/
+
+
+nb faitheist csagan interview crose
+Rose, C.  20101109.  Carl Sagan’s last interview.  The good atheist.
+http://www.thegoodatheist.net/2010/11/carl-sagans-last-interview/
+
+
+nb faitheist america humanist association advert campaign quote women tolerate slave war peace intel gay fear hate compassion punish genocide violent bible jesus god islam quran aeinstein brussell gclooney jfoster khepburn kvonnegut matwood mtwain rdawkins ringersoll
+Consider humanism: A public information campaign of the American
+humanist association.
+http://www.considerhumanism.org/quotes.php
+
+
+nb faitheist link
+http://www.atheismresource.com/2010/useful-websites-for-atheists-all-in-one-place
+
+
+nb faitheist chitchens tblair debate
+http://fullcomment.nationalpost.com/2010/12/02/father-raymond-j-desouza-blair-made-it-an-easy-win-for-hitchens/
+
+Cardinal Joseph Ratzinger once claimed that the Church had only two
+convincing arguments for the truth of the Gospel: the lives of the
+saints in her midst and the art which she has inspired.  The good and
+the beautiful testify to the truth.  [Good and beautiful are
+subjective relational judgements made in comparison with other
+experiences in an overall societal framework currently dominated,
+in the West, by a religious culture.]
+
+
+nb faitheist chitchens tblair debate transcript
+http://www.newstatesman.com/blogs/the-staggers/2010/11/christopher-hitchens-tony-blair
+
+chitchens: Absolutely, I say good luck to it.  The way I phrase it in
+my book, available at fine bookstores everywhere, is that I propose a
+pact with the faithful, I'll take it again, quoting from the great
+Thomas Jefferson, “I don't mind if my neighbour believes in 15 gods or
+in none, he neither by that breaks my leg or picks my pocket.”
+I would echo that, and say that as long as you don't want your
+religion taught to my children in school, given a government subsidy,
+imposed on me by violence, any of these things, you are fine by me.
+I would prefer not even to know what it is that you do in that church
+of yours, in fact, if you force it on my attention, I will consider it
+a breach of that pact.  Have your own bloody Christmas, and so on.
+Do your slaughtering, if possible, in an abattoir.  And don't mutilate
+the genitals of your children!  Because then I'm afraid it gets within
+the ambit of law.  All right, don't you think that's reasonably
+pluralistic and communitarian of me?  I think it is.  Why is it a vain
+hope on my part?  Has this pact ever been honoured by the other side?
+Of course not.  It's a mystery to me, and I'll share it with you.
+If I believed that there was a saviour who had been appointed or sent,
+or a prophet, appointed or sent by a God who bore me in mind,
+and loved me, and wanted the best for me, if I believed that, and that
+I possessed the means of grace and the hope of glory, to phrase it
+like that, I think, I don't know, I think I might be happy.
+They say it's the way to happiness.  Why doesn't it make them happy?
+Don't you think it's a perfectly decent question?  Because they won't
+be happy until you believe it too, because that's what their holy
+books tell them.  Now I'm sorry, it's enough with saying in the name
+of religion; do these texts say that until every knee bows in the name
+of Jesus, there will be no happiness?  Of course it is what they say.
+It isn't just a private belief.  It is rather, and I think always has
+been, and that's why I'm here, actually a threat to the idea of a
+peaceable community, and very often, as now, and frequently, a very
+palpable one.  So I think that's the underlying energy that powers the
+friendly disagreement between Tony and myself.
+
+…
+
+tblair: I think that the most convincing argument is—and the argument
+that people of faith have got to deal with—is actually the argument
+Christopher has just made, which is that the bad that is done in the
+name of religion is intrinsically grounded in the scripture of religion.
+That is the single most difficult argument.
+
+…
+
+chitchens: There is no need to make this a religious thing, the Greeks
+had the concept of hubris as something to be avoided and criticised,
+but what the Greeks would also have called the apotropaic, the view
+that not all the glory can be claimed by primates like ourselves is a
+healthy reminder too.  [For example, the power of court of honor was
+an emergent effect, and could never have come from committee.]
+
+…
+
+chitchens: I couldn't live without the Parthenon, I don't believe
+every civilised person could, if it… much worse than the first temple
+had occurred, it seems to me.  And we would have lost an enormous
+amount besides by way of our knowledge of symmetry, grace and harmony.
+I don't care about the cult of palace Athena, it's gone, and as far as I know…
+the sacrifices, some of them human, that were made to those gods, are
+regrettable but have been blotted out and forgotten, and Athenian
+imperialism is also a thing of the past.  What remains is the
+fantastic beauty… the question is how to keep what is of value of this
+sort in art in our own emotions… I will go as far as the ecstatic, and
+to distinguish it precisely from superstition and the supernatural
+which are designed to make us fearful and afraid and servile.
+
+
+nb film backlog american gclooney assassin trust spy drama
+
+
+nb film backlog inception cnolan ldicaprio dream scifi drama
+
+
+nb film backlog shutter island mscorsese ldicaprio sane hospital drama
+
+
+nb film backlog primer invent time travel paradox plot scifi drama
+
+
+nb film backlog pontypool
+
+
+nb film backlog phoebe wonderland alice play tourette drama family efanning
+
+
+nb film backlog scanner darkly 2006 kreeves rdowney wryder gclooney
+http://www.imdb.com/title/tt0405296/
+http://en.wikipedia.org/wiki/A_Scanner_Darkly_(film)
+http://www.rottentomatoes.com/m/scanner_darkly/ 62–70
+
+
+nb film backlog skyline
+
+
+nb firefox external text editor firefox plugin
+It's all text!
+
+
+nb gnu gnu libtool
+@armyofbruce: Reasons for not liking libtool are too numerous to even
+consider listing them in tweet form.
+
+@pervognsen: @armyofbruce Everything in the GNU build system is
+poorly conceived and poorly executed.
+
+
+nb gnumake automatic variable target prereq stem
+Free software foundation.  20100719.  Automatic variables.  GNU make manual.
+http://www.gnu.org/software/make/manual/make.html#Automatic-Variables
+
+$@: The file name of the target of the rule.  … In a pattern rule that
+has multiple targets (see Introduction to Pattern Rules), ‘$@’ is the
+name of whichever target caused the rule's recipe to be run.
+
+$<: The name of the first prerequisite.  If the target got its recipe
+from an implicit rule, this will be the first prerequisite added by
+the implicit rule (see Implicit Rules).
+
+$^: The names of all the prerequisites, with spaces between them.  …
+A target has only one prerequisite on each other file it depends on,
+no matter how many times each file is listed as a prerequisite.
+So if you list a prerequisite more than once for a target, the value
+of $^ contains just one copy of the name (c.f.  $+).  This list does
+not contain any of the order-only prerequisites; for those see the
+‘$|’ variable, below.
+
+$*: The stem with which an implicit rule matches (see How Patterns
+Match).  If the target is dir/a.foo.b and the target pattern is a.%.b
+then the stem is dir/foo.  The stem is useful for constructing names of
+related files.  In a static pattern rule, the stem is part of the file
+name that matched the ‘%’ in the target pattern.
+
+
+nb gnumake gmake usage continue line recipe shell variable expand assign once function emelski
+Melski, E. 20101115.  Shell commands in GNU make.  Blog.melski.net:
+Software builds.
+http://blog.melski.net/2010/11/15/shell-commands-in-gnu-make/
+
+If possible, gmake will invoke commands directly rather using the shell.
+gmake expands command-lines before executing them.
+gmake executes each line in a recipe separately.
+If you’re not capturing the result of $(shell) to a variable, you’re probably misusing $(shell).
+If you’re using $(shell) in a recipe, you’re probably misusing $(shell).
+Always use := assignment with $(shell).
+
+
+nb gnumake makes gnumake openoffice memory usage dependency
+Michælsen, B.  20101116.  OpenOffice.org will migrate to GNU make.
+Old Nabble: Gnu make help.
+http://old.nabble.com/OpenOffice.org-will-migrate-to-GNU-make-td30233919.html
+
+Michælsen, B.  20101116.  gbuild: To boldly go where no build system
+has gone before….  Gullfoss: Openoffice.org engineering at Oracle.
+http://blogs.sun.com/GullFOSS/entry/gbuild_to_boldy_go_where
+
+
+nb golang language develop history feature change
+Gerrand, A.  20101110.  Go: One year ago today.
+The Go programming language blog
+http://blog.golang.org/2010/11/go-one-year-ago-today.html
+
+
+nb greet christmas
+Our family's best wishes to you and yours last past this season of charity.
+
+
+nb haiku thousand stranger vary embody method text commission art
+Forster, C.  1000 haiku, 1000 strangers.  Kickstarter.
+
+Every donor who gives $15 or more dollars can receive a personal haiku.
+Seriously, only 15 dollars gets you the unique firing of synapses to
+create a haiku that will then be mailed to you or the person of choice.
+Woah.  A mindblowingly perfect gift for a loved one—or a stranger.
+
+
+nb haskell convert char int ord chr ascii 
+http://stackoverflow.com/questions/4336418/how-to-obtain-a-chars-ascii-value-in-haskell-and-how-to-turn-an-ascii-value-65
+
+Import Data.Char   
+ord 'a'
+chr 98
+
+
+nb htchero remove battery cover
+Quale, M.  20100221.  How to remove the battery cover on the HTC Hero.
+<michælquale.com />
+http://michaelquale.com/911134/how-to-remove-the-battery-cover-on-the-htc-hero/
+
+Place phone in face down in the palm of your left hand with the USB
+jack pointing towards you.  Place your right palm on the back side of
+the phone just above the USB jack.  Press your hands together and try
+to push the back away from the USB jack.
+
+
+nb htchero replace battery cover design coveroo
+http://coveroo.com
+
+
+nb http server console htty
+http://htty.github.com/
+
+htty is a console application for interacting with HTTP servers.
+It’s something of a cross between curl and the Lynx browser.
+
+Features.  Intuitive commands and command aliases.  Support for
+familiar HTTP methods GET, POST, PUT, and DELETE, as well as HEAD,
+OPTIONS and TRACE.  Support for HTTP Secure connections and HTTP Basic
+Authentication.  Automatic URL-encoding of userinfo, paths, query-
+string parameters, and page fragments.  Transcripts, both verbose and
+summary.  Scripting via stdin.  Dead-simple cookie handling and
+redirect following.  Built-in help.
+
+The things you can do with htty.  Build a request: you can tweak the
+address, headers, cookies, and body at will.  Send the request to the
+server: after the request is sent, it remains unchanged in your
+session history.  Inspect the server’s response: you can look at the
+status, headers, cookies, and body in various ways.  Review history:
+a normal and a verbose transcript of your session are available at all
+times (destroyed when you quit htty).  Reuse previous requests:
+you can refer to prior requests and copy them.
+
+
+nb hudson name trademark software freedom conservancy jenkins oracle hudson
+http://www.h-online.com/open/news/item/No-agreement-with-Oracle-Hudson-will-probably-become-Jenkins-1168238.html
+
+
+nb intlit interactive fiction literature text adventure
+
+
+nb intlit douglasadams hitchhiker guide galaxy infocom
+Hitchhiker's guide to the galaxy Infocom adventure.
+http://www.douglasadams.com/creations/infocomjava.html
+
+
+nb intlit overview
+http://en.wikipedia.org/wiki/Interactive_fiction
+
+
+nb intlit zmachine interpreter
+http://en.wikipedia.org/wiki/Z-machine
+http://inform7.com/if/interpreters/
+
+
+nb intlit zmachine interpreter download frotz
+http://www.davidkinder.co.uk/frotz.html
+
+
+nb intlit zmachine interpreter nitfol
+
+
+nb intlit aisle sambarlow one turn
+http://ifdb.tads.org/viewgame?id=j49crlvd62mhwuzu
+
+R. Serena Wakefield: Aisle isn't a game per se, but rather a different
+means of approaching the idea of fiction.  Rather than present a plot,
+it presents an ambiguous situation and gives you a chance to type a
+single command.  The command you type determines not only what the
+protagonist does, but also who he is.  This is definitely "concept IF,"
+but the author has done an excellent job and it's very easy to feel
+for the different possible protagonists.  While the level of
+interaction is obviously limited in a one-move game, the scenery is
+very "deep"; the game seems to have a response for almost everything.
+
+
+nb intlit guide command frotz
+frotz Aisle.z5
+
+
+nb intlit download inform
+http://inform7.com/download/
+
+
+nb intlit inform7 faq emilyshort
+http://emshort.wordpress.com/how-to-play/writing-if/inform-7/inform-7-faq/
+
+
+nb intlit zork cli console dir who mail call duty black ops easter egg text adventure history
+Scott, J.  20101109.  The inherent problem.  Taking inventory:
+Get lamp and interactive fiction.
+http://inventory.getlamp.com/2010/11/09/the-inherent-problem/
+
+First of all, it’s definitely a real Zork—specifically Revision 88/
+Serial Number 840726, the “canonical” Zork I, which was compiled on
+July 26, 1984 and the final version Infocom released commercially.
+(Infocom sometimes quietly upgraded the software to reflect bugs found
+or writing errors or any other discovered issues.)
+
+
+nb intlit backlog hadean land alchemy space ship tex adventure kickstarter funded @zarfeblong
+http://www.kickstarter.com/projects/zarf/hadean-lands-interactive-fiction-for-the-iphone
+
+
+nb intlit review database
+http://ifdb.tads.org/
+
+
+nb intlit recommend horror
+http://ifdb.tads.org/poll?id=caxlufcp20qhvmy
+
+
+nb intlit html adventure classic contest
+http://www.ifiction.org/
+
+Adventure international, awards and competitions, historical classics,
+Infocom, interpreter abuse.
+
+
+nb intlit metamorphoses female zoo forge clockwork fantasy @emshort
+Short, E.  2000.  Metamorphoses.  Baf's guide to the interactive
+fiction archive.
+http://www.wurb.com/if/game/910
+
+
+nb intlit anchorhead female lovecraft horror msgentry
+Gentry, M.S.  1998.  Anchorhead.  Baf's guide to the IF archive.
+http://www.wurb.com/if/game/17
+
+
+nb intlit little blue men office satire horror scifi msgentry
+Gentry, M.S.  1998.  Little blue men.  Baf's guide to the IF archive.
+http://www.wurb.com/if/game/471
+
+
+nb intlit slouch bedlam asylum mad victoria steampunk dravipinto sfoster
+Ravipinto D. and Foster, S.  2003.  Slouching towards Bedlam.
+Baf's guide to the IF archive.
+http://www.wurb.com/if/game/2186
+
+
+nb intlit lost pig fantasy
+Jota, A.  2007.  Lost Pig.  Baf's guide to the IF archive.
+http://www.wurb.com/if/game/3035
+
+
+nb intlit vespers monastery religion
+Devlin, J.  2005.  Vespers.  Baf's guide to the IF archive.
+http://www.wurb.com/if/game/2860
+
+
+nb intlit intfic compete award rank
+http://www.wurb.com/if/award/1
+
+
+nb intlit xyzzy award rank
+http://www.wurb.com/if/award/3
+http://xyzzyawards.org/winners.php
+
+
+nb intlit award compete
+http://www.wurb.com/if/award
+
+
+nb intlit lovecraft compete commonplace book pnepstad
+Nepstad, P.  20071026.  An interactive exhibition of unspeakable things.
+The illuminated lantern.
+http://www.illuminatedlantern.com/?p=152
+
+Both the online and the physical exhibit feature interactive fictions
+imagined by Jon Ingold (Dead Cities), Peter Nepstad (Ecdysis),
+David Whyld (The Cellar), Eric Forgeot, Hugo Labrande, JB,
+Samuel Verschelde and Jean-Luc Pontico (Lieux Communs),
+and Ruben Nieto, Juan Saldalgo, Santiago Eximeno, Javier Carrascosa
+and Pablo Martinez Merino (El Museo de las Consciencias).
+In addition, graphical works are also featured in the online exhibit,
+by Roger Tober and Nige Copeland (Handyman Wanted), and Thomas Busse
+(Beyond the Threshold).
+
+
+nb intlit interactive literature write text reward dunsany pnepstad
+Nepstad, P.  20070528.  The journey of the king—Text as treasure.
+The illuminated lantern.
+http://www.illuminatedlantern.com/?p=152
+
+Lord Dunsany’s words, in the form of the prophet’s speeches,
+are treasures in the context of the game, and your job, as King,
+is to collect them.  To underscore the concept of text as treasure,
+I awarded points for each prophecy collected, and modified
+the SCORE command to summarize each prophecy found.
+
+
+nb intlit dunsany pnepstad
+Nepstad, P.  20061216.  The ebb and flow of the tide.
+The illuminated lantern.
+http://www.illuminatedlantern.com/?page_id=21
+http://ifdb.tads.org/viewgame?id=yqyg7ktxrt53wrfa
+
+
+nb intlit lurking horror source feelie infocom
+The lurking horror.  Game downloads.
+http://free-game-downloads.mosw.com/abandonware/pc/adventure/games_k_l/lurking_horror_the.html
+
+
+nb intlit history 1893 chicago columbus world fair
+1893: A world’s fair mystery.  The illuminated lantern.
+http://www.illuminatedlantern.com/?page_id=106
+http://www.illuminatedlantern.com/?page_id=120
+
+
+nb intlit gargoyle player
+Gargoyle: Interactive fiction and typography.
+http://ccxvii.net/gargoyle/
+http://code.google.com/p/garglk/
+
+
+nb intlit king shred patch lovecraft horror
+http://maher.filfre.net/King/download.html
+http://www.ifwiki.org/index.php/The_King_of_Shreds_and_Patches
+
+
+nb keyboard 9keyboard plan9 utf8 symbol input shortcut
+
+
+nb keyboard dvorak layout map
+~ ! @ # $ % ^ & * ( ) { } |
+` 1 2 3 4 5 6 7 8 9 0 [ ] \
+
+   " < > P Y F G C R L ? +
+   ' , . p y f g c r l / =
+
+    A O E U I D H T N S _
+    a o e u i d h t n s -
+
+     : Q J K X B M W V Z
+     ; q j k x b m w v z
+
+
+nb keyboard qwerty dvorak mistype dvorty
+Iahdlid
+
+
+nb keyboard colemak layout overview
+http://colemak.com/
+
+
+nb lang diversity evolve universal grammar ubykh pirahã mura
+Spinney, L. -20101116.  Language erosion: You don't hear that often….
+The Independent: Environment.
+http://www.independent.co.uk/environment/language-erosion-you-dont-hear-that-often-2134915.html
+
+K David Harrison: “[Koro] contains very sophisticated knowledge that
+these people possess about this valley, the ecosystems, the animals,
+the plants, how they survived here, how they adapted, so if they
+switch over to another language a lot of that knowledge will simply be lost.”
+
+As Mark Pagel, an evolutionary theorist at the University of Reading,
+sees it, languages evolve just like organisms, and the ones that
+survive are the ones that are best adapted to the human brain and,
+hence, easiest to learn.  All humans have the same brain, which is why
+successful languages tend to resemble one another, giving the illusion
+of a universal grammar.  But, Pagel says, they may have arrived at
+that similarity via different routes, and solved the problem of being
+easy to learn in different ways.  … If Pagel's prediction is borne
+out, then the differences between languages become much more
+interesting, because they illuminate the range of strategies the brain
+can adopt for learning and making sense of the world.
+
+The researchers taught German and Namibian hunter-gatherer children a
+sequence of hand movements relative to the body that followed the
+order right, left, right, right.  When they asked them to rotate their
+bodies 180 degrees and do it again, the German children reproduced the
+same sequence, while the Namibians now produced the sequence left,
+right, left, left, indicating their reliance on an allocentric or
+absolute frame of reference.
+
+Paul Lewis edits the world's most comprehensive language catalogue, Ethnologue.
+
+AZKent: "One now dead language, Ubykh, had eighty-odd consonants and
+one vowel." In contrast Pirahã, a language isolate of the Mura
+language family, has one of the smallest phoneme inventories of any
+known language.  The pronunciation of several phonemes depends on the
+speaker's sex.  Female speakers use seven consonants and three vowels,
+while male speakers have one more consonant at their disposal.
+Pirahã can be whistled, hummed, or encoded in music.  Consonants and
+vowels may be omitted altogether and the meaning conveyed solely
+through variations in pitch, stress, and rhythm.  Mothers teach their
+children the language through constantly singing the same musical patterns.
+There are so many unique features in this language that it probably
+counts are the worlds weirdest language.
+
+
+nb lang british english dialect
+
+
+nb lang american english dialect
+
+
+nb lang quebeçois française french dialect
+
+
+nb lang académie française french dialect
+
+
+nb latex online editor scribtex pdf git
+http://scribtex.com/
+
+
+nb law expire renew reconcile
+catenate: All laws should expire in time.  Busy legislators with
+renewal and reconciliation.  Seldom add to a vast, obsolete, and
+contradictory ruleset.
+
+
+nb law reconcile ruleset @docondev
+http://www.docondev.com/2010/12/three-rs-of-clean-code.html
+
+We restricted ourselves to a single sheet of 8.5"x11" paper and
+documented the standards we felt were most important.  Once the page
+was filled, we reduced it by eliminating duplicates and highly similar items.
+We then sorted it in priority order and cut it to half of a page.
+We then studied the list and came up with groupings.  We moved items
+into the groups and discussed how it all “felt”.  It took only a
+couple of iterations to finalize the list.  The team now has four
+signs that hang in their work space.  The three Rs and [a general principle].
+Each of the R signs has a short list that further describes what the
+team means by the "rule".
+
+
+nb learn humble white belt apprentice @joelhelbling
+Helbling, J.  20100604.  Apprenticeship patterns: The white belt.
+JoelHelbling.com.
+http://www.joelhelbling.com/articles/2010/06/04/apprenticeship-patterns-the-white-belt/
+
+Humility is an essential requirement for wearing the white belt.
+When you wear the white belt, you set aside your expertise.  You cannot
+simultaneously ask a mentor for help while reminding her that in some
+areas you have more experience than she does.  It just doesn’t work.
+You have to be willing to be the dumb one.  Sometimes, in the midst of
+hearing a few things you need to know, you’ll also get an earful of
+stuff you already know.  Repeatedly butting in with “I know that” only
+ends the lesson too quickly.  Rather than explaining how much you
+already know, try rephrasing what your “sensai” is saying, or better
+yet, apply it to a particular context.  In this way you can demonstrate
+that you’re apprehending what your hearing.
+
+
+nb limbo overview data type sample timer channel program vitanuova
+Vita Nuova.  Limbo.  Inferno 4th edition.
+http://www.vitanuova.com/inferno/limbo.html
+
+
+nb limbo overview define variable hello world book link wikipedia
+http://en.wikipedia.org/wiki/Limbo_(programming_language)
+/nb/pub/test/hw.b
+
+
+nb lit complete scanner darkly pkdick 1977 california drug culture
+http://en.wikipedia.org/wiki/Scanner_darkly
+
+
+nb lit complete android dream electric sheep blade runner empathy fallout colony pkdick
+
+
+nb manage develop software @rands
+Lopp, M.  20070622.  Managing humans: Biting and humorous tales of
+a software engineering manager.  Apress.
+http://www.amazon.com/gp/product/159059844X/ref=cm_sw_r_tw_dp_s1X.mb0JCFCCH
+
+
+nb math music tune temper interval stackexchange
+http://math.stackexchange.com/questions/11669/mathematical-difference-between-white-and-black-notes-in-a-piano
+
+
+nb meme collection
+http://knowyourmeme.com/memes
+
+
+nb mks integrity server rim
+/nb/rim/network:/nb mks integrity server/
+
+
+nb monitor ubuntu 10.10 dual monitor xorg config file virtual resolution @mfeathers
+ub10.10 dual monitor steps: mv /etc/X11/xorg.conf away.
+system>preferences>monitors: uncheck "same image in all monitors"
+hit default+accept.  this will set one of the monitors as default
+head, regen xorg.conf with the appropriate virtual res.  eg.  3840
+1080 and it just works.
+
+
+nb montypython average air speed unladen europe swallow holy grail
+http://www.style.org/unladenswallow/
+
+Although a definitive answer would of course require further measure-
+ments, published species-wide averages of wing length and body mass,
+initial Strouhal estimates based on those averages and cross-species
+comparisons, the Lund wind tunnel study of birds flying at a range of
+speeds, and revised Strouhal numbers based on that study all lead me
+to estimate that the average cruising airspeed velocity of an unladen
+European Swallow is roughly 11 meters per second, or 24 miles an hour.
+
+
+nb mouse hp optical three button usb
+DY651A $15
+ET424AA $39
+
+
+nb ngaiman library graveyard walk
+http://librariantrainee.blogspot.com/2010/11/graveyard-walk.html
+
+
+nb partition mount linux layout
+http://www.howtogeek.com/howto/35676/how-to-choose-a-partition-scheme-for-your-linux-pc/
+
+
+nb people honest gesture @rands
+Not sure why, but I trust you more if you talk with your hands.
+
+
+nb perforce doc overview
+http://en.wikipedia.org/wiki/Perforce
+
+
+nb perforce doc oreilly book laurawingerd
+Wingerd, L.  2005.  Practical perforce.  O'Reilly.
+http://oreilly.com/catalog/9780596101855
+
+
+nb perforce doc public internet depot
+Perforce public depot.  Perforce software.
+http://public.perforce.com/wiki/Welcome_to_the_Public_Depot
+
+
+nb perforce doc technical documentation
+Perforce technical documentation.  Perforce software.
+http://www.perforce.com/perforce/technical.html
+
+
+nb perforce p4 command line tool reference manual
+201006.  Perforce 2010.1 command reference.  Perforce software.
+
+
+nb perforce p4 files
+perforces/cmdref.txt:/^p4 files$/
+perforces/cmdref.txt:/^Global Options/
+
+
+nb perl array push unshift pop shift 
+Array variables: Adding and removing elements.
+http://www.tizag.com/perlT/perlarrays.php
+
+push() adds an element to the end of an array.  unshift() adds an
+element to the beginning of an array.  pop() removes the last element
+of an array.  shift() removes the first element of an array.
+When adding elements using push() or shift() you must specify two
+arguments, first the array name and second the name of the element to add.
+Removing an element with pop() or shift() only requires that you send
+the array as an argument.
+
+
+nb perl call graph sub function table chart script
+Tool creates a call graph, table, or chart from subfunction calls in a
+perl script.
+
+
+nb perl control foreach loop my variable array
+foreach my $configProperty (@configProperties) {
+	…
+}
+
+
+nb perl control map example
+jeffa.  20000629.  Map: The basics.  PerlMonks.
+http://www.perlmonks.org/?node_id=20505
+http://www.softpanorama.org/Scripting/Perlorama/Functions/grep_and_map.shtml
+
+
+nb perl control my map example config properties hash count entry word length
+test/configProperties:/map/
+
+
+nb perl control map example println
+map { println($_) } @longNames;
+
+sub println() {
+    print "$_\n";
+}
+
+
+nb perl control fold example
+The reduce() function provided by List::Util is easier to call than
+the preceding one.  It places the total-so-far in $a and the current
+list element into $b before invoking the callback, so we can write:
+
+	reduce(sub { $a + $b }, @VALUES)
+	reduce(sub { $a > $b ? $a : $b }, @VALUES)
+
+
+nb perl control my reduce fold example config properties hash total word length
+test/configProperties:/reduce/
+
+
+nb perl control filter length closure sub
+my @longNames = filter( sub { length( $_[0] ) > 10 }, @cpNames );
+my @longNames = filter( sub { long( $_[0] ) }, @cpNames );
+my @longNames = ifilter( sub { long( $_[0] ) }, @cpNames );
+
+sub filter() {
+    my ( $cond, @coll ) = @_;
+    my @out;
+    map { push( @out, $_ ) if $cond->($_) } @coll;
+    return @out;
+}
+
+sub ifilter() {
+    my ( $cond, @coll ) = @_;
+    my @out;
+    foreach my $c (@coll) {
+        push( @out, $c ) if $cond->($c);
+    }
+    return @out;
+}
+
+sub long() {
+    length( $_[0] ) > 10;
+}
+
+
+nb perl exception reference
+nb perl contact grant mclean email grantm@cpan.org
+McLean, G.  200610.  Exception handling in Perl.
+
+
+nb perl throw exception
+http://wellington.pm.org/archive/200610/exceptions/slide18.html
+
+	sub throw { 
+	  my($message) = @_; 
+	  my($package, $file, $line) = caller(0); 
+	  die { file => $file, line => $line, message => $message }; 
+	} 
+	 
+	eval { 
+	  throw('invalid argument'); 
+	}; 
+	if($@) { 
+	  die "$@->{message} at $@->{file} line $@->{line}.\n"; 
+	}
+
+outputs:
+
+	invalid argument at ./report.pl line 104.
+
+
+nb perl exception library
+
+	eval { 
+	  my $p = XML::SAX::ParserFactory->parser(Handler => $handler); 
+	  $p->parse_uri($document_path); 
+	}; 
+	if($@) { 
+	  if($@->isa('XML::SAX::Exception::Parse')) { 
+	    log("$@"); 
+	    # reject the document, but carry on 
+	  } 
+	  else { 
+	    # give up, there's a more serious error 
+	  } 
+	}
+
+
+nb perl open file read foreach
+use strict;
+use warning;
+
+open FIL, "<C:\DIR\FILE1" or die "$!";
+my $rec;
+while ($rec=<FIL>) {
+	…
+}
+
+
+nb perl file special variable $| dollar sign pipe automatic flush output
+http://www.futureone.com/~sponge/tutorial/perl/SpecialVariables.html
+
+Filehandle Special Variables
+
+There are pre-existing special variables that can be associated with
+filehandles.  The one most used is $| (dollar sign and pipe symbol) or
+$OUTPUT_AUTOFLUSH.  This variable is used to control forcing a flush
+on a filehandle, be it STDOUT, a disk file, pipe or socket.  For
+example, to perform non-buffered I/O to the screen, we would do the
+following:
+
+	$old_handle = select (STDOUT); # "select" STDOUT and save previously selected handle
+	$| = 1;	# perform flush after each write to STDOUT
+	select ($old_handle);	# restore previously selected handle
+
+Global Special Variables
+
+There are some other special (scalar) global variables that come into
+existence as soon as your script does.  To use the more descriptive
+names, place this in your script:
+
+	use English;
+
+A few examples of some of the variables I use the most are listed below:
+ 
+$OUTPUT_AUTOFLUSH
+$|
+If set to nonzero, forces a flush after every write or print on the
+currently selected output channel.  Default is 0.  Note that STDOUT
+will typically be line buffered if output is to the terminal and block
+buffered otherwise.  Setting this variable is useful primarily when
+you are outputting to a pipe, such as when you are running a Perl
+script under rsh and want to see the output as it's happening.
+(Mnemonic: when you want your pipes to be piping hot.)
+
+
+nb perl print newline
+print "\n";
+
+
+nb perl print single quote text double newline escape
+print 'Hello, world.' . "\n";
+
+
+nb perl print string variable
+my $string = 'Hello, world.';
+print $string . "\n";
+
+
+nb perl print print split string grep
+my @lines = split "\n", $string;
+print grep {/9/} @lines;
+
+
+nb perl grep filter tutorial regex
+Brown, K.  20060411.  How to use the array grep() function.  About.com: Perl blog.
+http://perl.about.com/od/perltutorials/qt/perlgrep.htm
+http://www.softpanorama.org/Scripting/Perlorama/Functions/grep_and_map.shtml
+
+Perl's grep() function runs a regular expression on each element of an
+array, and returns only the elements that evaluate to true.  Using
+regular expressions can be extremely powerful and complex.  You can
+find out more about them in the regular expressions topic.
+
+	@myNames = ('Jacob', 'Michael', 'Joshua', 'Matthew', 'Alexander', 'Andrew'); 
+	@grepNames = grep(/^A/, @myNames); 
+
+
+nb perl grep function reference
+Allen, J.  Language reference > Functions > grep.
+Perl 5 version 12.2 documentation.
+http://perldoc.perl.org/functions/grep.html
+
+
+nb perl perl5 primer tutorial intro
+HTML page map for the Perl 5 primer class.
+http://www.futureone.com/~sponge/tutorial/perl/Map.html
+
+
+nb perl match string regex case
+String matching.
+http://www.comp.leeds.ac.uk/Perl/matching.html
+
+$sentence = "The quick brown fox"; 
+$sentence =~ /the/	# false
+$sentence !~ /the/	# true
+
+
+nb perl undef match empty regex
+pos perl test/undef.pl
+undef matches empty regular expression
+
+
+nb perl extract substring match pattern
+Start with multi-line xml.  Each line has …<componentName>blah
+</componentName>…, we want blah.
+
+	    @componentNames = map { extractComponentName( $_ ) } split( '\n', ${$r->{'components'}} );
+	    $components = reduce( sub { $a . " " . $b }, @componentNames );
+
+	sub extractComponentName {
+	    my $componentLine = shift;
+	    $componentLine =~ m/componentName>(.*)<\/componentName/;
+	    return $1;
+	}
+
+
+nb perl scope sub set global variable eval code data
+test/configProperties:/eval/
+
+
+nb perl scope lexical variable require module file
+Allen, J.  Language reference > Functions > require.
+Perl 5 version 12.2 documentation.
+http://perldoc.perl.org/functions/require.html
+test/require.pl
+test/require_global.pm
+test/require_test.pm
+
+Lexical variables in the invoking script will be invisible to the
+included code [and vice-versa].
+
+
+nb perl use english regex performance
+http://perldoc.perl.org/English.html
+
+use English;
+use English qw(-no_match_vars);  # Avoids regex performance penalty
+
+English, motherfucker, do you speak it? 
+
+
+nb perl use list utility reduce fold
+http://perldoc.perl.org/List/Util.html
+
+use List::Util qw(reduce);
+
+
+nb perl webservice program errata
+Ray, R.J.  and Kulchenko, P. -200212.  Programming web services with Perl.
+O'Reilly Media.
+http://www.blackperl.com/pwswp/
+
+
+nb perl webservice tutorial search
+Goog web services in perl tutorial
+
+
+nb perl xml xpath search
+Goog XML::XPath
+
+
+nb perl xml xpath intro
+http://www.w3schools.com/xpath/xpath_intro.asp
+
+
+nb perl xml xpath api
+nb perl contact matt sergeant email matt@sergeant.org
+Sergeant, M.   > XML-XPath-1.13₁₂ > XML::XPath
+http://search.cpan.org/~msergeant/XML-XPath-1.13/XPath.pm
+
+
+nb perl null string mismatch split newline comma map last function output array example line noise
+    if ( $text !~ /^$/ ) {
+        map {
+            split( ',', $_ );
+            insertBrhistory( @_[0], @_[1], @_[2] );
+        } split( '\n', $text );
+    }
+
+
+nb perl define set get key value hash example
+    my %oldComponents;
+    foreach my $oldComponent (@oldComponents) {
+        my $componentName = $oldComponent->{'componentName'};
+        $oldComponents{$componentName} = 1;
+    }
+
+
+nb perl perl number count for loop generation latest offset
+#    for ( $gen = $latestGen; $gen > 0; $gen = $gen - 2 ) {
+    for ( $gen = 2; $gen <= $latestGen; $gen = $gen + 2 ) {
+        printLog( $logLevel,
+            "Push BRO $broId gen $gen to ABRL record $abrlBR" );
+        return $name
+            if ( pushDiff( $broId, ( $gen - $latestGen ) / 2, $dbh, $abrlBR )
+            !~ /^$/ );
+    }
+
+
+nb perl use strict
+use strict;
+
+
+nb physic knot entropy murphy
+If something can knot it tends to knot.  Is more knotted less ordered,
+then, since disorder must increase?
+
+
+nb podcast freakonomics economy money motive radio
+http://freakonomicsradio.com/
+
+
+nb pomodoro distract write daily work long goal cdoctorow
+Doctorow, C.  20090107.  Cory Doctorow: Writing in the age of distraction.
+Locus magazine.
+http://www.locusmag.com/Features/2009/01/cory-doctorow-writing-in-age-of.html
+
+
+nb ppetroskey video 1990
+FUN ON WEDNESDAY - the Weird Paul Petroskey Paul Petroskey music
+video, made in 1990 - from the 1987 album "In...
+http://fb.me/uz7Zm3Sy
+
+FUN ON WEDNESDAY - the Weird Paul Petroskey music video, made in 1990—
+from the 1987 album "In Case of Fire Throw This In"
+http://fb.me/M584D775
+
+
+nb press discuss wikileaks @cshirky
+Shirky, C.  20101206.  Wikileaks and the long haul.  Clay Shirky.
+http://www.shirky.com/weblog/2010/12/wikileaks-and-the-long-haul/
+
+
+nb press leak secret just efficient communicate jassange
+@redsquirrel: Reading Assange: "Those who are repeatedly passive in
+the face of injustice soon find their character corroded into servility."
+
+@catenate: @redsquirrel I don't mind State keeping an informer's name
+secret if the informer is from an oppressive regime.  Hope we don't qualify.
+
+@redsquirrel: Reading Assange: "In a world where leaking is easy,
+secretive or unjust systems are nonlinearly hit relative to open,
+just systems."
+
+@catenate: @redsquirrel He possibly conflates the two (secretive and unjust)
+more than he should, which inspires much criticism of him.
+
+@redsquirrel: @catenate re: possible conflation.  Do you know if
+[whether] he has been asked to clarify?
+
+@catenate: I've read he wants parts of the government to communicate less,
+to throw sand in the gears to make its tyranny less efficient.
+
+
+nb press essence diplomacy rgates
+Let me just offer some perspective as somebody who’s been at this
+a long time.  Every other government in the world knows the United
+States government leaks like a sieve, and it has for a long time.
+And I dragged this up the other day when I was looking at some of
+these prospective releases.  And this is a quote from John Adams:
+“How can a government go on, publishing all of their negotiations with
+foreign nations, I know not.  To me, it appears as dangerous and
+pernicious as it is novel." …
+
+Now, I’ve heard the impact of these releases on our foreign policy
+described as a meltdown, as a game-changer, and so on.  I think—
+I think those descriptions are fairly significantly overwrought.
+The fact is, governments deal with the United States because it’s in
+their interest, not because they like us, not because they trust us,
+and not because they believe we can keep secrets.
+
+Many governments—some governments deal with us because they fear us,
+some because they respect us, most because they need us.  We are still
+essentially, as has been said before, the indispensable nation.
+So other nations will continue to deal with us.  They will continue to
+work with us.  We will continue to share sensitive information with
+one another.  Is this embarrassing?  Yes.  Is it awkward?  Yes.
+Consequences for U.S.  foreign policy?  I think fairly modest.
+
+
+nb principle minimize unverified assumptions verify assume
+/nb/pub/coint:/nb continuous integration/
+
+Real engineering is as much about techniques for validating design
+decisions as it is about implementing them, while just about the only
+thing we know for sure about software development is that we fail when
+we try to make too many decisions before implementing the next step.¹
+ ¹ O’Brien, L.  20101015.  Engineering success.  Software development times.
+
+
+nb principle presume local human affair interest code cache fetch
+Presumption of locality in human affairs¹ and code.²
+ ¹ You are like me, you live where I live, we share interests.
+ ² Faster to get something local, both in terms of fetch time, and
+decoding time to discern context
+
+
+nb principle develop schedule application function prevent mistake
+Spend 80% time writing the 20% of application that supports 80% of
+what people must do.  Spend 20% time writing the 80% of application
+that prevents 20% of worst mistakes people will make.
+
+
+nb principle pareto optimize profile data
+Pareto optimization opportunities from measured profiling data.
+Unnecessary optimization (as with most polishing) hinders flexibility.
+
+
+nb principle software architecture abstract external interface @kellan
+Always wrap calls to external services in abstractions you control.
+
+
+nb principle responsible own account @rands
+If you want them to own it, you make them accountable.
+
+
+nb principle hoard information @rands
+The more you hoard information, the less you're informed.
+
+
+nb principle you are eat think do ejolmos
+You are what you eat, you are what you think, you are what you do.
+
+
+nb private govern transit
+http://www.downsizinggovernment.org/the-case-privatizing-transit
+
+
+nb proglang functional programming object oriented design pattern
+Juliet.  Does functional programming replace GoF design patterns?
+Stack overflow.
+http://stackoverflow.com/questions/327955/does-functional-programming-replace-gof-design-patterns
+
+When you work in a FP language, you no longer need the OOP-specific
+design patterns.  But you still need some general design patterns,
+like MVC or other non-OOP specific stuff, and you need a couple of new
+FP-specific "design patterns" instead.  All languages have their
+shortcomings, and design patterns are usually how we work around them.
+
+
+nb proglang replace current popular job private skill train poach
+Pope, M.  20101206.  How to choose programming languages for team projects.
+Captain recruiter.
+http://blog.captainrecruiter.com/2010/12/how-to-choose-programming-languages-for.html
+
+
+nb read read software archæology seradio
+
+
+nb read justify source collection contribute purpose
+Read software for recreation, study, education, style, appreciation,
+practice.  Review explorations and collections of efficient, useful,
+and beautiful code in various languages.¹ Contribute to public and
+semi-private code repositories.² Read code as means to sample,
+overview, port, test, excerpt, fix bugs, compile, execute.
+ ¹ Beautiful Code, usethesource, rosettacode, stackoverflow.
+The site like rosettacode.com that invites people to contribute
+solutions in various languages to common programming problems.
+ ² For example, github.com, code.google.com, and sourceforge.com.
+
+
+nb read prepare read code
+To prepare code to read, confirm version and complete bundle:
+tests, documents, configure, build.  Put source in own version control
+or branch to annotate with comments and debugging code, write tests or
+integrate with a test environment, and refactor.
+
+
+nb read static analyze
+Use grep and ack to search code for details and concepts.
+View source-file and function structure with a small font.
+
+
+nb read naur program build theory
+[Transcribe text of interview from “use the term [archæology]
+incorrectly” to “understanding culture and situation, feel for team’s
+rules and constraints, into the head of the person who coded it, and
+understanding what they would do.”
+
+
+nb read reference code line describe source file
+Take notes on lines indexed in note, to directly jump to line while
+reading note.  Avoid line numbers since they change arbitrarily.
+
+	nb complete rally ta18214 print debug log level test global property
+	ecbr.pl:/^sub printLog/
+	
+	Only log message if current debug log level is greater than or equal
+	to the level of the message to be sent.  -1 disables all logging.
+	printLog returns early if parameter debug level is higher (more
+	permissive) than global debug level property.
+
+
+nb read test function unit 
+Write unit tests to understand how code units function in isolation,
+and improve its sustainablility.
+
+
+nb read refactor
+ ¹ For example, ecbr.pl (a build-request API layer in the Briar
+project at RIM) was 6443 lines in 67 functions.  I divided it into 16
+files to group similar functions with their support functions.
+
+
+nb reason self discover convince bpascal
+Blaise Pascal: We are usually convinced more easily by reasons we have
+found ourselves than by those which have occurred to others.
+
+
+nb redo implement acmesac
+/dis/lsdo
+/dis/redo
+/dis/redoer
+/dis/repare
+/dis/resum
+
+
+nb redo shell store dependency make
+http://apenwarr.ca/log/?m=201012#14
+http://oilq.org/fr/node/13366
+https://github.com/apenwarr/redo
+
+
+nb redo readme apenwarr 
+Pennarun, A. Redo: A top-down software build system.
+Github: Apenwarr's redo.
+https://github.com/apenwarr/redo/raw/master/README.md
+
+
+nb refactor rewrite fail
+Spolsky, J.  20000406.  Things you should never do, part I.
+Joel on software.
+http://www.joelonsoftware.com/articles/fog0000000069.html
+
+
+nb repute work speak @rands
+Your work speaks for you.
+
+
+nb secure blackberry dual persona authorize personal third party application enterprise data server
+[Alan] Brenner insisted that opening the BlackBerry platform to third-
+party applications would not compromise the security of this
+enterprise platform.  To do this, he said the company has created a
+dual-persona model for data storage on devices, “with support in the
+BlackBerry Enterprise Server.  This allows enterprises to protect
+enterprise data without having to inhibit the personal use of the
+device.  With dual persona, enterprise data is protected.  We limit
+the ability of the user to move data across the enterprise realm to
+the personal domain.” Dual persona will keep enterprise data on the
+server, where third-party applications cannot access it without
+authorization, said Brenner.
+
+
+nb secure airport backscatter xray cancer risk
+Sedat, J. et al.  20100406.  Letter to Dr. John P. Holdren, Assistant
+to the President for Science and Technology.  U. Ca. San Francisco.
+http://www.npr.org/assets/news/2010/05/17/concern.pdf
+
+
+nb secure layer isræl airport profile behavior screen bomb blast glass box
+Kelly, C.  20091230.  The 'Israelification' of airports: High security,
+little bother.  Thestar.com.
+http://www.thestar.com/news/world/article/744199---israelification-high-security-little-bother
+
+
+nb secure neurotoxin dimethylmercury
+http://en.wikipedia.org/wiki/Dimethylmercury
+
+
+nb secure theater airport travel
+http://www.prisonplanet.com/tsa-groping-out-of-control.html
+
+Me: I have so far travelled through security and customs at Chicago
+O'Hare and Toronto Pearson twice a week most weeks since 13 Sep.
+I have not seen anything like what is described in this article.
+I don't doubt that the large contingent of actors in our airport
+security theatre harbors a very few prima donnas and scary freaks,
+but I haven't met any.  Everyone I dealt with was professional,
+and usually a bit bored.  I went through a backscatter machine once
+(in future I will ask for a pat-down instead, less risk of grope than
+of skin/testicular cancer), when I didn't take off my glasses, but
+have been through only the metal-detectors since, and had no
+pat-downs.  It probably helps that I'm male, white, middle-aged,
+clean-cut, calm, and dress professionally (slacks and buttoned,
+collared shirt).  Even customs has been easy on me, probably again
+because I travel for business and carry no physical trade goods.
+(I do "post-sales software support", which requires no visa under
+NAFTA.)
+
+
+nb secure tsa thanksgiving disable backscatter
+catenate: TSA caved today: turned off machines, groped less.
+If we always opt out of irradiation, will TSA use more gloves,
+or stop molesting us?
+
+
+nb secure ps3 master key sony marketer twitter post @TheKevinButler @exiva
+http://games.slashdot.org/story/11/02/09/1412253/Sony-Marketing-Man-Tweets-PS3-Master-Key
+
+"Sony Marketing Man, Kevin Butler's official Twitter feed retweets a
+post by @exiva that posts the PS3 Master key.  Kevin Butler who has
+over 69,000 followers tweet read (The tweet now deleted):
+'@TheKevinButler Lemme guess...  you sank my Battleship?
+RT @exiva: 46 DC EA D3 17 FE 45 D8 09 23 EB 97 E4 95 64 10 D4 CD B2 C2
+Come at me, @TheKevinButler'"
+
+
+nb sh echo variable control execute print example pos perlster diff cp
+echo=echo
+f=test_pushDiffstoABRL.pm
+$echo pos perlster $f
+$echo diff $f $f^.tidy
+f=test_pushDiffstoABRL.pm
+$echo mv $f^.tidy $f
+
+
+nb sh list duplicate line
+cat pushed topush | sort | uniq -d
+
+
+nb sh if return script status
+In called script, run
+
+	status revert
+
+In calling script, check immediately after call to script with
+
+	if {~ $status 'revert'}
+
+
+nb sh process id shell variable
+${pid}
+
+
+nb sh flag x print execute shell command
+flag x +
+
+
+nb sh dis shell header shebang
+#!/dis/sh
+
+
+nb sh split string character class load module rotate field
+load string
+(a b) = ${splitr 'ecbr_main.pl.local.addResourcetoSyncPool' '.'}
+echo $b $a
+(a b) = ${splitl 'ecbr_main.pl.local.addResourcetoSyncPool' '.'}
+echo $b $a
+
+addResourcetoSyncPool ecbr_main.pl.local.
+.pl.local.addResourcetoSyncPool ecbr_main
+
+
+nb sicp structure interpret computer program scheme habelson gjsussman mit abstract procedure data module object state meta language register machine
+Abelson, H. and Sussman, G.J.  Structure and interpretation of
+computer programs, 2 ed.  MIT press.
+http://mitpress.mit.edu/sicp/
+
+
+nb simbrain artificial intelligence
+
+
+nb simbrain jeopardy kjennings ibm watson
+Jennings, K.  20110215.  Jeopardy champion Ken Jennings q&a about
+IBM Watson.  The Washington post.
+http://live.washingtonpost.com/jeopardy-ken-jennings.html
+
+
+nb slang cant dictionary 1699 newyorker
+Foley-Mendelssohn, D. 20101111.  The thieves’ tongue.
+The New Yorker: Books.
+http://www.newyorker.com/online/blogs/books/2010/11/the-thieves-tongue.html
+
+A dictionary of the beggars and gypsies cant.
+The first English dictionary of slang, 1699.
+
+
+nb slang cant dictionary 1699 begentleman amazon
+http://www.amazon.com/First-English-Dictionary-Slang-1699/dp/1851243488/
+
+It’s a shame that so many very apt words fall out of common use over
+time, like “blobber-lippd,” which means having lips that are very thick,
+hanging down, or turning over; and “chounter”, which is to talk pertly,
+and sometimes angrily.  Both words can be found in /The First English
+Dictionary of Slang/, originally published in 1699 as /A New Dictionary
+of Terms, Ancient and Modern, of the Canting Crew/ by B. E. Gentleman.
+Though a number of early texts, beginning in the sixteenth century,
+codified forms of cant—the slang language of the criminal underworld—
+in word lists which appeared as appendices or parts of larger volumes,
+the dictionary of 1699 was the first work dedicated to slang words and
+their meanings.  It aimed to educate the more polite classes in the
+language and, consequently, the methods of thieves and vagabonds,
+protecting the innocent from cant speakers and their activities.
+	This dictionary is also the first that attempts to show the
+overlap and integration between canting words and common slang words.
+Refusing to distinguish between criminal vocabulary and the more
+ordinary everyday English of the period, it sets canting words side by
+side with terms used in domestic culture and those used by sailors and
+laborers.  With such a democratic attitude toward words, this text is
+genuinely a modern dictionary, as well as the first attempt by
+dictionary makers to catalog the ever-changing world of English slang.
+	Reproduced here with an introduction by John Simpson,
+chief editor of the Oxford English Dictionary, describing the history
+and culture of canting in the seventeenth and eighteenth centuries, as
+well as the evolution of English slang, this is a fascinating volume for
+all who marvel at words and may wish to reclaim a few—say, to dabble in
+the parlance of a seventeenth-century sailor one day and that of a
+vagabond the next.
+
+
+nb slang cant dictionary 1699 1899 begent
+B.E.  gent.  ca.  1698.  A new dictionary of the terms ancient and
+modern of the canting crew, in its several tribes, of gypsies, beggers,
+thieves, cheats, &c.  with an addition of some proverbs, phrases,
+figurative speeches, &c.  London.
+http://en.wikipedia.org/wiki/A_New_Dictionary_of_the_Terms_Ancient_and_Modern_of_the_Canting_Crew
+http://www.archive.org/details/newdictionaryoft00begeuoft
+/nb/pub/dicts/newdictionaryoft00begeuoft.pdf
+
+
+nb social social fund
+http://www.technologyreview.com/business/26647/
+http://www.hypebot.com/hypebot/2010/11/an-arguement-for-fan-funding-id-rather-be-owned-by-my-fans-than-by-a-record-company.html
+
+
+nb social academy research paper social network
+http://www.academia.edu/
+
+
+nb social greplin social media website index search
+https://www.greplin.com/
+
+
+nb stat health income trend industrial revolution hrosling video
+Hans Rosling's 200 countries, 200 years, 4 minutes—The joy of stats—
+BBC four.
+http://www.youtube.com/watch?v=jbkSRLYSojo
+
+Saenz, A.  20101209.  Hans Rosling shows you 200 years of global growth
+in 4 minutes.  Singularity hub.
+http://singularityhub.com/2010/12/09/hans-rosling-shows-you-200-years-of-global-growth-in-4-minutes-video/
+
+
+nb stat population infant mortality hrosling video
+Saenz, A.  20100721.  The solution to global population growth is
+saving children (video).  Singularity hub.
+http://singularityhub.com/2010/07/21/the-solution-to-global-population-growth-is-saving-children-video/
+
+
+nb style ligature accent unicode
+Use ligatures and accents since Unicode (UTF-8) is in most browsers,
+prevalent office-application fonts, and text editors.
+
+
+nb style justify paragraph line break pause colon comma period semicolon quote
+Start with ragged-right justify at 72, to keep space for longer lines.
+Adjust word position to break lines at natural pauses when speaking.
+Don't keep only one word of a phrase at end or beginning of line.
+
+
+nb style code formatter consistent indent tab
+Use code formatters to enforce a consistent style.  Use tabs to indent,
+so everyone sees lines indented as many space-equivalents as they like.
+
+
+nb style code map reduce filter for loop body
+Replace for loops with map, reduce, and filter, moving for-loop bodies
+into named functions, to add description, addressability for test,
+and fixed interface, and drive code from (test) data in collections.
+
+
+nb style refactor version control
+Refactor mercilessly to optimize code and reflect current
+understanding of program.  Use the version-control system to record
+now-unnecessary, deleted code.
+
+
+nb style test comment
+Prefer tests to comments.  They reflect reality, are executable, when
+the code changes they break, and they provide a tutorial on code usage.
+Save comments for justification and discussion of rejected alternatives.
+
+
+nb syntax justify list comprehension map filter
+Lee, X. -20101014.  What's list comprehension and why is it harmful?
+Jargons of software industry.
+http://xahlee.org/comp/list_comprehension.html
+
+
+nb tea overview
+http://worldoftea.org/hackers-guide-to-tea/
+
+
+nb travel travel pack
+rands: The more you travel, the less you'll pack.
+
+catenate: @rands For repeated weekly trips, I pack one clothes set,
+leave one with hotel, wear one.  Do laundry once, wearing swim shorts,
+undershirt.
+
+
+nb travel one bag
+http://www.onebag.com/
+
+
+nb twitter twitter
+http://m.twitter.com/
+https://mobile.twitter.com/session/new
+
+
+nb twitter tweetdeck column
+catenate
+text
+link
+"build system" OR "build master"
+All Friends
+"electric cloud" OR "electric accelerator" OR "electric commander"
+rim AND (playbook OR blackberry)
+
+
+nb twitter chicago restaurant wait time @waitlistchi
+
+
+nb twitter rockstar console video game company @rockstargames
+
+
+nb twitter american civil liberty @aclu
+
+
+nb twitter electronic frontier @eff
+
+
+nb twitter public radio international @pri
+
+
+nb twitter news update @breakingnews
+
+
+nb twitter politician president @barackobama
+
+
+nb twitter federal emergency disaster alert illinois @femaregion5
+
+
+nb twitter mountain bike magazine @mbrmagazine
+
+
+nb twitter @rands repose
+Michael Lopp
+
+
+nb twitter usa gov executive branch @whitehouse
+
+
+nb twitter list unfollow
+http://who.unfollowed.me/lite
+
+
+nb version control viz
+http://developers.slashdot.org/story/10/11/17/1537247/An-Illustrated-Version-Control-Timeline
+
+
+nb viz gource visualization version control source code directory file checkin git cvs svn mercurial bzr @acaudwell
+Gource: Software version control visualization.
+http://code.google.com/p/gource/
+
+Software projects are displayed by Gource as an animated tree with the
+root directory of the project at its centre.  Directories appear as
+branches with files as leaves.  Developers can be seen working on the
+tree at the times they contributed to the project.  Currently there is
+first party support for Git, Mercurial and Bazaar, and third party
+(using additional steps) for CVS and SVN.
+
+
+nb waterloo dinner restaurant
+http://www.sole.ca
+Oliver & Bonacini
+Wildcraft
+JB Mongolian Grill
+Boston Pizza
+
+
+nb waterloo dessert restaurant
+Marble Slab Creamery
+Williams
+
+
+nb waterloo lunch restaurant
+Mambella’s
+
+
+nb weather mesocyclone tornado supercell storm photograph
+http://www.dailymail.co.uk/sciencetech/article-1334672/Jaw-dropping-image-enormous-supercell-cloud-Glasgow-Montana.html
+
+
+nb wetshave justify introduce merkur trumper badger brush man home
+Couch, A.  200603.  The best a man can get: In search of the perfect shave.
+Books & Culture 12:2, pp.  26–27.
+http://www.culture-making.com/articles/best_a_man_can_get
+
+
+nb windows configure netmeeting
+Run… conf
+
+
+nb yacc parse theory rsc
+Cox, R.  20101206.  Yacc is not dead.  research!rsc.
+http://research.swtch.com/2010/12/yacc-is-not-dead.html
+
+
+nb τ euler pi wrong tau imaginary one
+ℯ↑(iτ) = 1
+
+
+nb τ tau day manifesto mhartl pi wrong
+Hartl, M.  2010.  No, really, pi is wrong: The tau manifesto.
+http://tauday.com/
+
+
+nb doc

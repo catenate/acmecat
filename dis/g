@@ -1,0 +1,4 @@
+#!/dis/sh.dis -n
+
+grep -n $* *.[chsylbm] /dev/null >[2]/dev/null
+grep -n $* *.p[lm] /dev/null >[2]/dev/null

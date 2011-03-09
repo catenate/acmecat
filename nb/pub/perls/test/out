@@ -1,0 +1,37 @@
+broDataProject ::gBRODataProject
+templateDataProject ::gTemplateDataProject
+debugLevel ::gDebugLevel
+notifierProcedure ::gNotifierProcedure
+broLibProject ::gLibraryProject
+broFlags ::gFlags
+
+broDataProject(14) ::gBRODataProject
+templateDataProject(19) ::gTemplateDataProject
+debugLevel(10) ::gDebugLevel
+notifierProcedure(17) ::gNotifierProcedure
+broLibProject(13) ::gLibraryProject
+broFlags(8) ::gFlags
+
+5
+81
+
+$::gBRODataProject = broDataProject
+$::gTemplateDataProject = templateDataProject
+$::gDebugLevel = debugLevel
+$::gNotifierProcedure = notifierProcedure
+$::gLibraryProject = broLibProject
+
+broDataProject
+templateDataProject
+notifierProcedure
+broLibProject
+
+broDataProject
+templateDataProject
+notifierProcedure
+broLibProject
+
+broDataProject
+templateDataProject
+notifierProcedure
+broLibProject

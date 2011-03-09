@@ -1,0 +1,44 @@
+#!/dis/sh
+(f re) = $*
+
+if {~ $#* 0} {
+	f = abcprw
+	re = .
+}
+
+if {~ $#* 1} {
+	re = $f
+	f = abcprw
+}
+
+if {~ $f '*a*'} {
+	nb -x ' archive ' | grep $re | sed 's,'^`{pwd}^'/,,'
+}
+
+if {~ $f '*b*'} {
+	nb -x ' backlog ' | grep $re | sed 's,'^`{pwd}^'/,,'
+}
+
+if {~ $f '*c*'} {
+	nb -x ' complete ' | grep $re | sed 's,'^`{pwd}^'/,,'
+}
+
+if {~ $f '*p*'} {
+	nb -x ' ping ' | grep $re | sed 's,'^`{pwd}^'/,,'
+}
+
+if {~ $f '*r*'} {
+	nb -x ' ready ' | grep $re | sed 's,'^`{pwd}^'/,,'
+	count=`{nb -x ' ready ' | grep $re | sed 's,'^`{pwd}^'/,,' | grep -v 'todate:' | wc -l}
+	load expr 
+	if {~ ${expr $count 5 gt} 1} {echo too many}
+}
+
+if {~ $f '*w*'} {
+	nb -x ' working ' | grep $re | sed 's,'^`{pwd}^'/,,'
+	count=`{nb -x ' working ' | grep $re | sed 's,'^`{pwd}^'/,,' | grep -v 'todate:' | wc -l}
+	load expr 
+	if {~ ${expr $count 2 gt} 1} {echo too many}
+}
+
+exit 0

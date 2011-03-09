@@ -1,0 +1,12 @@
+Goog perl die
+adiff reduce.pl reduce.pl.tidy
+chmod +x grep.pl
+grep reduce *
+mk
+mv grep.pl.tidy grep.pl
+pos perlster grep.pl
+pos perl --version
+pos perl for.pl
+sed 's,^  ,,'
+|sed 's,^ +,,'
+|sort|uniq

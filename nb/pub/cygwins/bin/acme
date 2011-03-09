@@ -1,0 +1,3 @@
+cd /cygdrive/e/acme-0.13
+tabstop=4
+./Acme.exe &

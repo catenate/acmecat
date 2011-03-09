@@ -1,0 +1,10 @@
+#!/dis/sh
+sed = $1
+ecmd = `{echo $sed | sed 's,\.sed$,,'}
+ecvar = `{ecvar $ecmd}
+apply {
+	nospace = $1
+	space = `{echo $nospace | sed 's,␣, ,;s,%%%,/,g'}
+	echo $space , $nospace | sed 's/^/s,\\$\\[/;s/ , /\\],$ecvar/;s/$/,/'
+} $ecvar > $sed
+echo $sed

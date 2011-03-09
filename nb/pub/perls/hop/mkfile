@@ -1,0 +1,6 @@
+tests: cmp_hanoi_funoi
+
+cmp_hanoi_funoi:
+	./hanoi > hanoi.out
+	./funoi > funoi.out
+	diff hanoi.out funoi.out

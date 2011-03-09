@@ -1,0 +1,22 @@
+This project publishes a variety of scripts and programs I wrote while  
+working in Acme SAC,¹ and the public part of my technical notebook.  
+Each directory tree starts at the root directory set while in Acme.²  
+ ¹ Acme SAC is a Windows/Linux/Mac port of the Acme editor, the  
+Inferno virtual machine, and essential unix-like tools derived through  
+Plan 9.  
+ ² For the latest Windows distribution, the root directory is the  
+acme-0.13 subdirectory created when you unzip acme-0.13.zip from  
+http://code.google.com/p/acme-sac/downloads/list  
+
+dis contains shell scripts, and a version of acme.dis with a white  
+grid instead of black.  
+
+lib/do contains template script and dependency files for mkdo.  
+
+lib/sed contains sed scripts files for filters in dis which pipe input  
+directly through them.  
+
+nb/nbindexes lists directories dis/nb should consult for indexes.  
+
+nb/pub contains the public part of my technical notebook, indexed  
+with the script dis/nb.  

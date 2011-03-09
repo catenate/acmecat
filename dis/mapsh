@@ -1,0 +1,7 @@
+#!/dis/sh
+if {~ $#* [01]} {exit}
+(f xs) = $*
+script = /tmp/map.sh.^${pid}
+apply {echo $f^' '^$1^' &'  >> $script} $xs
+sh $script
+rm -f $script

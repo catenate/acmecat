@@ -1,0 +1,29 @@
+nb parallel builtin apply
+/appl/cmd/sh/std.b:/builtin_apply/
+	"papply" =>	status = builtin_papply(c, cmd, last);
+
+builtin_papply(ctxt: ref Context, args: list of ref Listnode, nil: int): string
+{
+	args = tl args;
+	if (args == nil || !iscmd(hd args))
+		builtinusage(ctxt, "apply {cmd} [val...]");
+
+	status := "";
+	cmd := hd args;
+	for(;;){
+		{
+			for (args = tl args; args != nil; args = tl args)
+				spawn
+				status = setstatus(ctxt, ctxt.run(cmd :: hd args :: nil, 0));
+
+			return status;
+		} exception e{
+		"fail:*" =>
+			if (loopexcept(e) == BREAK)
+				return status;
+		}
+	}
+}
+
+
+nb doc

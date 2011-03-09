@@ -1,0 +1,41 @@
+perltidy had errors!! at line 1, column 1. See page 33 of PBP
+RCS keywords $Id$ not found at line 1, column 1. See page 441 of PBP
+RCS keywords $Revision$, $HeadURL$, $Date$ not found at line 1, column 1. See page 441 of PBP
+RCS keywords $Revision$, $Source$, $Date$ not found at line 1, column 1. See page 441 of PBP
+No "VERSION" variable found at line 1, column 1. See page 404 of PBP
+Code before strictures are enabled at line 2, column 1. See page 429 of PBP
+Code before warnings are enabled at line 2, column 1. See page 431 of PBP
+Literal line breaks in a string at line 4, column 15. See pages 60,61 of PBP
+Comma used to separate statements at line 9, column 1. See pages 68,71 of PBP
+String delimiter used with "split" at line 11, column 14. Express it as a regex instead
+Regular expression without "/x" flag at line 13, column 14. See page 236 of PBP
+Regular expression without "/m" flag at line 13, column 14. See page 237 of PBP
+Expression form of "grep" at line 17, column 8. See page 169 of PBP
+Builtin function called with parens at line 17, column 8. See page 13 of PBP
+Regular expression without "/x" flag at line 17, column 14. See page 236 of PBP
+Regular expression without "/m" flag at line 17, column 14. See page 237 of PBP
+Expression form of "grep" at line 21, column 8. See page 169 of PBP
+Regular expression without "/x" flag at line 21, column 14. See page 236 of PBP
+Regular expression without "/m" flag at line 21, column 14. See page 237 of PBP
+Expression form of "grep" at line 24, column 15. See page 169 of PBP
+Builtin function called with parens at line 24, column 15. See page 13 of PBP
+Regular expression without "/x" flag at line 24, column 21. See page 236 of PBP
+Regular expression without "/m" flag at line 24, column 21. See page 237 of PBP
+Postfix control "if" used at line 25, column 2. See pages 93,94 of PBP
+Expression form of "grep" at line 27, column 12. See page 169 of PBP
+Builtin function called with parens at line 27, column 12. See page 13 of PBP
+Regular expression without "/x" flag at line 27, column 18. See page 236 of PBP
+Regular expression without "/m" flag at line 27, column 18. See page 237 of PBP
+Expression form of "grep" at line 36, column 15. See page 169 of PBP
+Builtin function called with parens at line 36, column 15. See page 13 of PBP
+Regular expression without "/x" flag at line 36, column 21. See page 236 of PBP
+Regular expression without "/m" flag at line 36, column 21. See page 237 of PBP
+Postfix control "if" used at line 37, column 2. See pages 93,94 of PBP
+Expression form of "grep" at line 39, column 12. See page 169 of PBP
+Builtin function called with parens at line 39, column 12. See page 13 of PBP
+Regular expression without "/x" flag at line 39, column 18. See page 236 of PBP
+Regular expression without "/m" flag at line 39, column 18. See page 237 of PBP
+Expression form of "grep" at line 56, column 15. See page 169 of PBP
+Builtin function called with parens at line 56, column 15. See page 13 of PBP
+Regular expression without "/x" flag at line 56, column 21. See page 236 of PBP
+Regular expression without "/m" flag at line 56, column 21. See page 237 of PBP

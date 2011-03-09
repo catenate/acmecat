@@ -1,0 +1,6 @@
+#!/dis/sh
+tmp=/tmp/so
+nb -x $1 > $tmp
+cat $tmp | sed 's,.*: ,,' | fmt -w 1 | sort | uniq
+rm $tmp
+exit 0

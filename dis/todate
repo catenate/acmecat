@@ -1,0 +1,12 @@
+#!/dis/sh
+if {~ $#* 0} {re=.} {re=$*}
+
+(weekday monthname day time zone year)=`{date}
+monthnum=`{echo $monthname | monthnamenum}
+
+ nb -x todate | grep $year^$monthnum^' ' | grep $re | sed 's,'^`{pwd}^'/,,' | sed 's,(.*): (.*),\2 \1,g' | sort
+ nb -x todate | grep $weekday^' ' | grep $re | sed 's,'^`{pwd}^'/,,' | sed 's,(.*): (.*),\2 \1,g' | sort
+ nb -x todate | grep ' '^$monthnum^$day | grep $re | sed 's,'^`{pwd}^'/,,' | sed 's,(.*): (.*),\2 \1,g' | sort
+ nb -x todate | grep $year^$monthnum^$day | grep $re | sed 's,'^`{pwd}^'/,,' | sed 's,(.*): (.*),\2 \1,g' | sort
+
+exit 0

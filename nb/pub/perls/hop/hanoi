@@ -1,0 +1,23 @@
+#!/usr/bin/perl
+print "hanoi 1:\n";
+hanoi(1, "A", "C", "B");
+
+print "\nhanoi 2:\n";
+hanoi(2, 'A', 'C', 'B');
+
+print "\nhanoi 3:\n";
+hanoi(3, "A", "C", "B");
+
+print "\nhanoi 4:\n";
+hanoi(4, 'A', 'C', 'B');
+
+sub hanoi {
+	my ($n, $start, $end, $extra) = @_;
+	if ($n == 1) {
+		print "Move disk #1 from $start to $end.\n";
+	} else {
+		hanoi($n-1, $start, $extra, $end);
+		print "Move disk #$n from $start to $end.\n";
+		hanoi($n-1, $extra, $end, $start);
+	}
+}

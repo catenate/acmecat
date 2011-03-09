@@ -1,0 +1,2 @@
+#!/dis/sh
+pos curl 'http://twitter.com/'^$1 >[2]/dev/null | grep entry-content | dehtml | sed 's,^[	 ]+,\n,' | fmt -w 63

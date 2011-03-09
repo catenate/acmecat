@@ -1,0 +1,13 @@
+#!/dis/sh
+if {~ $#* [01]} {
+	exit
+}
+
+(f xs) = $*
+
+mkfile = /tmp/map.mk.^${pid}
+apply {echo $1^':Q:
+	'^$f^' '^$1 >> $mkfile
+} $xs
+
+if {mk -a -k -f $mkfile $xs} {rm $mkfile}

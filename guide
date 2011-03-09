@@ -1,0 +1,11 @@
+pos git rm -r -f 
+sync
+twit github
+|fmt
+:,$ |sed 's, *$,,;s,$,  ,;/^  $/s,  ,,'
+|sort|uniq
+
+pos git status
+pos git add .
+pos git commit -a -m 'Add /dis, /lib/do, /lib/sed and /nb/pub.'
+$ git push -u origin master

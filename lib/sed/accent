@@ -1,0 +1,14 @@
+s,([Dd])usseldorf,\1üsseldorf,g
+s,([Mm])ontreal,\1ontréal,g
+s,Elysee,Élysée,g
+s,elite,élite,g
+s,elitism,élitism,g
+s,elysee,élysée,g
+s,expose,exposé,g
+s,naive,naïve,g
+s,nee ,née ,g
+s,premiere,première,g
+s,protege,protégé,g
+s,reeducat,reëducat,g
+s,resume,résumé,g
+s,role ,rôle ,g

@@ -1,0 +1,5 @@
+#!/dis/sh
+grep $1 $2 > /tmp/grepdiff.1.$acmewin
+grep $1 $3 > /tmp/grepdiff.2.$acmewin
+diff /tmp/grepdiff.1.$acmewin /tmp/grepdiff.2.$acmewin
+rm /tmp/grepdiff.1.$acmewin /tmp/grepdiff.2.$acmewin

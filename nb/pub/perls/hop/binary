@@ -1,0 +1,18 @@
+#!/usr/bin/perl
+print "dec 0 = bin ", binary(0), "\n";
+print "dec 1 = bin ", binary(1), "\n";
+print "dec 2 = bin ", binary(2), "\n";
+print "dec 10 = bin ", binary(10), "\n";
+print "dec 37 = bin ", binary(37), "\n";
+
+sub binary {
+	my ($n) = @_;
+	return $n if $n == 0 || $n == 1;
+
+	my $k = int($n/2);
+	my $b = $n % 2;
+	
+	my $E = binary($k);
+
+	return $E . $b;
+}

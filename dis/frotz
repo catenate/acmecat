@@ -1,0 +1,51 @@
+#!/dis/sh
+story = $1
+found = ''
+
+if {ftest -f /n/C/Program␣Files/Windows␣Frotz/Frotz.exe} {
+	frotz = 'c:\Program Files\Windows Frotz\Frotz.exe'
+}
+
+if {ftest -f '/n/C/Program␣Files␣(x86)/Windows␣Frotz/Frotz.exe'} {
+	frotz = 'c:\Program Files (x86)\Windows Frotz\Frotz.exe'
+}
+
+if {~ $frotz ''} {
+	echo error: frotz not found
+	exit 1
+}
+
+if {ftest -f /n/C/Documents␣and␣Settings/jcatena/My␣Documents/Downloads/$story} {
+	dir = 'c:\Documents and Settings\jcatena\My Documents\Downloads\'
+	found = $story
+}
+
+if {ftest -f /nb/pub/intlits/$story} {
+	dir = 'e:\acme-0.13\nb\pub\intlits\'
+	found = $story
+}
+
+if {ftest -f /n/C/Users/jcatena/Downloads/$story} {
+	dir = 'c:\Users\jcatena\Downloads\'
+	found = $story
+}
+
+if {ftest -f /n/C/Users/jcatena/Documents/Inform/Projects/$story.inform/Build/output.z5} {
+	dir = c:\\Users\jcatena\Documents\Inform\Projects\$story.inform\Build
+	story = output.z5
+	found = $story
+}
+
+if {ftest -f /nb/me/inform/project/$story.inform/Build/output.z5} {
+	dir = e:\acme-0.13\nb\me\inform\project\$story.inform\Build
+	story = output.z5
+	found = $story
+}
+
+if {~ $found ''} {
+	echo error: $story not found
+	exit 1
+}
+
+os -d $"dir $"frotz $"story
+exit $status

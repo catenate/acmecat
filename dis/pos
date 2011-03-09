@@ -1,0 +1,29 @@
+#!/dis/sh
+#flag x +
+
+(cmd args) = $*
+dir = `{pwd}
+
+if {or {~ $dir '/nb*'} {~ $dir '/dis*'} {~ $dir '/acmecat*'}} {
+	dir = `{echo $dir | sed 's,^,g:\\acme-0.13,;s,/,\\,g;'}
+}
+
+if {~ $dir '/n/C/*'} {
+	dir = `{echo $dir | sed 's,^/n/C,c:\\,;s,/,\\,g;s,␣, ,g'}
+}
+
+if {ftest -f /n/C/cygwin/bin/^$cmd.exe} {
+	os -d $"dir C:\cygwin\bin\$cmd.exe $args
+	status $status
+} {if {ftest -f /n/C/cygwin/home/jcatena/bin/^$cmd} {
+	#os -d $"dir C:\cygwin\bin\bash.exe C:\cygwin\home\jcatena\bin\$cmd $args
+	os -d $"dir C:\cygwin\bin\bash.exe /home/jcatena/bin/$cmd $args
+	status $status
+} {if {ftest -f /n/C/Program␣Files/Electric␣Cloud/ElectricCommander/bin/^$cmd.exe} {
+	os -d $"dir 'c:\Program Files\Electric Cloud\ElectricCommander\bin\'^$cmd^'.exe' $args
+	status $status
+} {if {ftest -f /n/C/Windows/System32/^$cmd.exe} {
+	os -d $"dir C:\Windows\System32\$cmd.exe $args
+	status $status
+} { status $cmd not found}
+} } }

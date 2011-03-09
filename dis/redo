@@ -1,0 +1,27 @@
+#!/dis/sh
+if {no $*} {
+	lsdo
+	exit
+}
+
+top = `{pwd}
+apply {
+	cd $top
+	target = $1
+	if {~ $target '*/*'} {
+		dirsed = 's,(.*)/[^/]+$,\1,'
+		filesed = 's,.*/([^/]+)$,\1,'
+		
+		dir = `{echo $target | sed $dirsed}
+		echo cd $dir >[1=2]
+		cd $dir
+		
+		if {~ `{pwd} '*/'^$dir} {
+			target = `{echo $target | sed $filesed}
+		} {
+			exit
+		}
+	}
+	
+	redoer $target
+} $*

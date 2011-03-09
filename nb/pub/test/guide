@@ -1,0 +1,52 @@
+#!/dis/sh
+/dis/redoer
+cat fail.reold fail fail.renew
+cp /media/69C4-9275/acme-0.13/nb/pub/test/default.do.do /media/69C4-9275/acme-0.13/nb/pub/test/guide .
+cp ndo.do do.do
+date; ls -ltr
+echo; redo 1
+ftest(1)
+if {pos ls ths} {echo ok} {echo not ok}
+if {pos pwd} {echo ok} {echo not ok}
+redo 0 1
+redo 2 3 4 5 6 7 8 9
+redo clean sleeps
+redo fail success; ls -l fail* success*
+rm -f fail success fail.re* success.re* *sum
+rm c.h; redo c.h &; sleep 1; redo c.h
+sh(1)
+sh-std(1)
+|sort|uniq
+
+echo '0	2
+0	3' > 1.dep
+
+
+nb test execute parallel
+apply {redo $1.sleep} `{seq 0 9}
+apply { echo $1:; cat $1; echo } *.sleep
+apply { $1 } *.sleep
+date; mapmk sh *.sleep; date
+date; mapsh sh *.sleep; date
+date; map sh *.sleep; date
+# make a script with & after each line
+
+pos make --version
+
+
+nb parallel test avoid multiple dispatch
+# don't redo while doing
+rm *.h
+map 'repare ''  ''  ' a.h c.h
+map 'repare ''  ''  ' b.h c.h
+
+# already done
+rm *.h
+map 'repare ''  ''  ' a.h c.h
+sleep 10
+map 'repare ''  ''  ' b.h c.h
+
+# race too close to lock via file
+# put lock file in a lockfs(4) ?
+rm *.h
+map 'repare ''  ''  ' a.h c.h b.h c.h

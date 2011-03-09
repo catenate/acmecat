@@ -1,0 +1,10 @@
+nb working parallel builtin apply map
+whatis map
+whatis mapmk
+/appl/cmd/sh/std.b:/builtin_apply/
+/appl/cmd/sh/std.b:/map/
+cd /dis/sh; cp std.dis std.dist
+/man/sh(2)
+
+
+nb doc

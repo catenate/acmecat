@@ -1,0 +1,41 @@
+nbnew
+todate
+twitter 
+
+/dis/pos
+:,$ |sed 's,^nb ,nb pdc ,'
+apply {nbend $1} *
+apply { sed '/^nb doc$/d;s,^nb ,nb '^$1^' ,' $1 >> 201009–201102; rm $1 }  r* s* tea travel twitter u* v* w* y*
+cat pdc >> 201009–201102
+cp -r -x Perl-Tidy-20090616 perl; rm -f Perl-Tidy-20090616
+echo; 
+echo; if {ftest -e fred} {echo 0 $status} {echo 1 $status}
+echo; if {redo fail/me} {echo 1 $status} {echo 2 $status}
+echo; if {redo limbos/distclean fail/me limbos/dep limbos/hw.dis} {echo 1 $status} {echo 2 $status}
+echo; if {redo limbos/that} {echo 1 $status} {echo 2 $status}
+echo; if {redo test/1 limbos/dep limbos/that limbos/hw.dis} {echo 1 $status} {echo 2 $status}
+kanban film
+kanban pub
+ls -ltr
+nb zork
+nbdoc `{nb redo | sed 's,: .*,,'}
+wc -l * | sort -n
+pos curl --help
+|fmt
+|sed 's,,,'
+|sed 's,^,	,'
+|sed -f /dis/deurl.sed
+|sort|uniq
+|tr '[A-Z]' '[a-z]'
+
+
+nb twitter recent study post text
+ls -t -F | sed 's,\*$,,;/\/$/d;/^guide$/d;/^nbindex$/d' | sed '1s,^,Recent study: ,' | fmt -w 140 | sed -n '1p' | wc -c
+Recent study: company perl keyboard htchero secure sh make refactor hudson travel redo τ gnu gnumake limbo stat twitter compile press manage
+
+dates='2011022'
+words=`{nb $dates | grep -v ': doc$' | grep -v todate | grep /pub/ | sed 's,^.*: ,,' | fmt -w 1 | sort | uniq -d}
+apply {word=$1; echo `{nb $dates | grep $word | wc -l} $word} $words | sort -n -r | sed 's,[0-9]+ ,,' | sed '1s,^,Recent study: ,' | fmt -w 140
+
+
+nb doc

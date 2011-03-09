@@ -1,0 +1,21 @@
+#!/dis/sh
+if {~ $"* '/nb/*'} {
+	echo $"* | sed 's,^,e:\\acme-0.13,;s,/,\\,g;'
+}
+
+if {~ $"* '/n/C/*'} {
+	echo $"* | sed 's,^/n/C,c:\\,;s,/,\\,g;s,␣, ,g'
+	echo $"* | sed 's,^/n/C,/cygdrive/c,;s,␣, ,g'
+}
+
+if {~ $"* '/cygdrive/c/*'} {
+	echo $"* | sed 's,^/cygdrive/c,/n/C,;s, ,␣,g'
+	echo $"* | sed 's,^/cygdrive/c,c:\\,;s,/,\\,g'
+}
+
+if {~ $"* 'c:\\*'} {
+	echo $"* | sed 's,^c:\\,/n/C/,;s, ,␣,g;s,\\,/,g'
+	echo $"* | sed 's,^c:\\,/cygdrive/c/,;s,\\,/,g'
+}
+
+exit 0

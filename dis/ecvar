@@ -1,0 +1,2 @@
+#!/dis/sh
+sed -n -f /lib/sed/ecvar $1 | sed 's,\].*$,,' | sort | uniq

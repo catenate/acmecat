@@ -1,0 +1,3 @@
+#!/dis/sh
+apply {gorn $1} `{du | sed 's,[^ ]+ +,,'} | grep $*
+#map gorn `{du | sed 's,[^ ]+ +,,'}

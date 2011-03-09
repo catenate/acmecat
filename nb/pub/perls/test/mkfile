@@ -1,0 +1,2 @@
+exit:
+	pos perl exit.pl

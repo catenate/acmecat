@@ -1,0 +1,38 @@
+s,a         א	hebrew letter alef, aleph
+s,b         ב	hebrew letter bet
+s,g         ג	hebrew letter gimel
+s,d         ד	hebrew letter dalet
+s,h         ה	hebrew letter he
+s,v      ו	hebrew letter vav
+s,w      ו	hebrew letter vav
+s,z         ז	hebrew letter zayin
+s,H     ח	hebrew letter het
+s,_h     ח	hebrew letter het
+s,#t         ט	hebrew letter tet
+s,y   י	hebrew letter yod
+s,i   י	hebrew letter yod
+s,e   י	hebrew letter yod
+s,KH     ך	hebrew letter final kaf
+s,_K     ך	hebrew letter final kaf
+
+s,kh #_k     כ	hebrew letter kaf
+s,l         ל	hebrew letter lamed
+s,M         ם	hebrew letter final mem
+s,m         מ	hebrew letter mem
+s,N          ן	hebrew letter final nun
+s,n         נ	hebrew letter nun
+s,#s         ס	hebrew letter samekh
+s,#'        ע	hebrew letter ayin
+s,F         ף	hebrew letter final pe
+s,f         פ	hebrew letter pe
+s,TS         ץ	hebrew letter final tsadi
+s,ts         צ	hebrew letter tsadi, zade
+s,#k #q   ק	hebrew letter qof
+s,r         ר	hebrew letter resh
+s,sh         ש	hebrew letter shin
+s,#T #_t     ת	hebrew letter tav
+s,||        װ	hebrew ligature yiddish double vav
+s,`|        ױ	hebrew ligature yiddish vav yod
+s,``        ײ	hebrew ligature yiddish double yod
+s,'         ׳	hebrew punctuation geresh
+s,"         ״	hebrew punctuation gershayim

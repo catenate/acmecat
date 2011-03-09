@@ -1,0 +1,6 @@
+$ pdftotext -layout -enc UTF-8 -nopgbrk HigherOrderPerl-trimmed.pdf
+$ xpdf HigherOrderPerl-trimmed.pdf
+:/^ *1\.6/
+|fmt -w 72
+|sed 's,^                        ,,;s,^    ,	,;s,^	    ,		,'
+|sort|uniq

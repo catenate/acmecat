@@ -1,0 +1,25 @@
+:, |nocr
+Air air
+apply { echo $1^':'; cat $1 | sed 's,^,	,' } *_ca
+apply { sed -f notwest.sed $1 > $1^'_east' } ord phl pit
+apply { touch $1^'_ca' } ord phl pit
+wc -l ord ord_east phl phl_east pit pit_east
+|sed 's,[^	]+	,,'
+|sort|uniq
+
+    141 ord
+    101 ord_east
+ord_ca:
+	San Jose (CA)
+	Toronto-Pearson
+
+     94 phl
+     81 phl_east
+phl_ca:
+	Toronto-Pearson
+
+     63 pit
+     53 pit_east
+pit_ca:
+	San Jose (CA)
+	Toronto-Pearson

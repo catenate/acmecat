@@ -1,0 +1,37 @@
+nb @hipchat api converse build system skype
+@hugorodgerbrown: @micahgodbolt - we moved from Skype to @hipchat—
+great so far—API allows your build system / deployments etc.  to
+join the conversation.
+
+
+nb redo web dependency example
+Casarin, B.  20110304.  Redo by example: Web dependencies. Bill Casarin.
+http://blog.jb55.com/post/3645205329/redo-by-example-web-dependencies
+
+djb redo¹ is a software build system designed to be a replacement for make.
+The goal of these ‘redo by example’ posts are to show the power of redo,
+mainly through evidence instead of me talking about it.  The goal of this
+example is to track a list of urls via the ‘Last- Modified’ HTTP header.
+When the ‘Last-Modified’ header changes, we redownload the file.  I wrote
+this build script to keep track of a list of .mobi ebooks that occasionally
+get updated.  You can imagine using this technique to download updated
+library packages or something similar.
+ ¹ https://github.com/apenwarr/redo
+
+
+nb entaggle tag people software developer
+http://entaggle.com/people/catenate
+
+
+nb gofast scons perform gmake parallel clean increment build time swap memory disk
+Melski, E.  20100811.  The last word on SCons performance.  Electric Cloud: Blog.
+http://www.electric-cloud.com/blog/2010/08/11/the-last-word-on-scons-performance/
+
+It’s definitely better than vanilla SCons, but still nowhere near as
+fast as gmake.  … To my amazement, SCons with GoFast settings actually
+beats gmake on clean builds.  My guess is that this is probably
+because SCons handles file deletion in-process, while gmake must
+invoke a separate process (rm).
+
+
+nb doc

@@ -1,0 +1,3 @@
+perltidy $1 > $1.tidy
+chmod +x $1.tidy
+perlcritic $1.tidy > $1.critic

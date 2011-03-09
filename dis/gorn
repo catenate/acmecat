@@ -1,0 +1,9 @@
+#!/dis/sh
+(path)=$*
+if {~ $#* 0} {
+	path=.
+}
+
+/dis/ftest -e $path/guide && {/dis/echo $path/guide; exit}
+/dis/ftest -e $path/nbindex && {/dis/echo $path/nbindex; exit}
+/dis/ftest -e $path/kanban && {/dis/echo $path/kanban; exit}
