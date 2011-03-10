@@ -1,10 +1,23 @@
 #!/dis/sh
-# nbdoc `{nb ec_agent | grep password | sed 's,: .*,,'}
-load string
+(nb greps) = $*
 
+tmp1 = /tmp/nbdoc1.${pid}
+tmp2 = /tmp/nbdoc2.${pid}
+nb $nb > $tmp1
+
+apply {
+	grep $1 $tmp1 > $tmp2
+	mv $tmp2 $tmp1
+} $greps
+
+refs = `{sed 's,: .*,,' $tmp1}
+
+load string
 apply {
 	ref = $1
 	(file line) = `{echo ${splitr $ref ':'}}
 	file = `{echo $file | sed 's,:$,,'}
 	sed -n $line^',/^nb/p' $file | sed '$d'
-} $*
+} $refs
+
+rm -f $tmp1 $tmp2

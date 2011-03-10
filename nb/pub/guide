@@ -1,6 +1,6 @@
 nbnew
 todate
-twitter 
+nbdoc search twitter daily
 
 /dis/pos
 :,$ |sed 's,^nb ,nb pdc ,'
@@ -18,7 +18,8 @@ kanban film
 kanban pub
 ls -ltr
 nb zork
-nbdoc `{nb redo | sed 's,: .*,,'}
+nbdoc redo
+nbdoc search twitter 
 wc -l * | sort -n
 pos curl --help
 |fmt

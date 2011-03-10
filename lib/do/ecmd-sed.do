@@ -1,6 +1,6 @@
 #!/dis/sh
 sed = $1
-ecmd = `{echo $sed | sed 's,\.ecpl.sed$,.ecmd,'}
+ecmd = `{echo $sed | sed 's,\.sed$,,'}
 ecvar = `{ecvar $ecmd}
 rm -f $sed
 apply {

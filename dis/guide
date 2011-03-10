@@ -40,6 +40,8 @@ redo
 stardate | sed 's,\..*,,'
 todate
 twitter catenate
+unicode ' '
+unicode '#'
 |fmt
 |sed 's,,,'
 |sed 's,^,	,'

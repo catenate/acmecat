@@ -1,5 +1,6 @@
+pos git mv sync update
 pos git rm -r -f 
-sync
+update
 twit github
 |fmt
 :,$ |sed 's, *$,,;s,$,  ,;/^  $/s,  ,,'
@@ -7,5 +8,5 @@ twit github
 
 pos git status
 pos git add .
-pos git commit -a -m 'Add /dis, /lib/do, /lib/sed and /nb/pub.'
+pos git commit -a -m 'Refine ecmd do-templates, better interface for nbdoc.'
 $ git push -u origin master

@@ -1,6 +1,8 @@
 s,<[^>]+>,,g
 /^[ 	]*$/d
 s,,',g
-s,&apos;,',g
 s,&amp;,&,g
+s,&apos;,',g
+s,&gt;,>,g
+s,&lt;,<,g
 s,&quot;,",g

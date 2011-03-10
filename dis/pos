@@ -5,7 +5,7 @@
 dir = `{pwd}
 
 if {or {~ $dir '/nb*'} {~ $dir '/dis*'} {~ $dir '/acmecat*'}} {
-	dir = `{echo $dir | sed 's,^,g:\\acme-0.13,;s,/,\\,g;'}
+	dir = `{echo $dir | sed 's,^,e:\\acme-0.13,;s,/,\\,g;'}
 }
 
 if {~ $dir '/n/C/*'} {
