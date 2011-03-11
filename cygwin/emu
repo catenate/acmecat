@@ -1,0 +1,6 @@
+cd /home/jcatena/acme-0.13
+runme=/cygdrive/c/Users/jcatena/AppData/Roaming/acme-home/runme
+echo '#!/dis/sh' > $runme
+echo $* >> $runme
+./Acme.exe
+cat $runme.out

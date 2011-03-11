@@ -1,4 +1,5 @@
 #!/dis/sh
+cp /n/C/cygwin/home/jcatena/bin/emu /usr/jcatena/lib/profile /acmecat/cygwin
 cd /dis; cp -x accent acme.dis acme.dist cyrillic ecvar findguide frotz g gorn greek grepdiff guide indent kanban kbdoc keyboard ligature lsdo map mapmk mapsh mas mistype mkdo monnum monthnamenum nb nbdoc nbend nbnew nocr paths pos redo redoer repare resum so stardate todate twit twitter unindent /acmecat/dis
 rm -f /acmecat/lib/do/*; cp -x /lib/do/* /acmecat/lib/do
 rm -f /acmecat/lib/sed/*; cp -x /lib/sed/* /acmecat/lib/sed

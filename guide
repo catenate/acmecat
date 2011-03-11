@@ -8,5 +8,5 @@ twit github
 
 pos git status
 pos git add .
-pos git commit -a -m 'Refine ecmd do-templates, better interface for nbdoc.'
+pos git commit -a -m 'Run sh commands from cygwin: emu pwd, emu acme.'
 $ git push -u origin master
