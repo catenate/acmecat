@@ -2,41 +2,48 @@
 (f re) = $*
 
 if {~ $#* 0} {
-	f = abcprw
+	f = abcrpnd
 	re = .
 }
 
 if {~ $#* 1} {
 	re = $f
-	f = abcprw
+	f = abcrpnd
 }
 
 if {~ $f '*a*'} {
-	nb -x ' archive ' | grep $re | sed 's,'^`{pwd}^'/,,'
+	nb -x ' _archive ' | grep $re | sed 's,'^`{pwd}^'/,,'
 }
 
 if {~ $f '*b*'} {
-	nb -x ' backlog ' | grep $re | sed 's,'^`{pwd}^'/,,'
+	nb -x ' _backlog ' | grep $re | sed 's,'^`{pwd}^'/,,'
 }
 
 if {~ $f '*c*'} {
-	nb -x ' complete ' | grep $re | sed 's,'^`{pwd}^'/,,'
-}
-
-if {~ $f '*p*'} {
-	nb -x ' ping ' | grep $re | sed 's,'^`{pwd}^'/,,'
+	nb -x ' _complete ' | grep $re | sed 's,'^`{pwd}^'/,,'
 }
 
 if {~ $f '*r*'} {
-	nb -x ' ready ' | grep $re | sed 's,'^`{pwd}^'/,,'
+	nb -x ' _roadmap ' | grep $re | sed 's,'^`{pwd}^'/,,'
 	count=`{nb -x ' ready ' | grep $re | sed 's,'^`{pwd}^'/,,' | grep -v 'todate:' | wc -l}
+	load expr 
+	if {~ ${expr $count 13 gt} 1} {echo too many}
+}
+
+if {~ $f '*p*'} {
+	nb -x ' _ping ' | grep $re | sed 's,'^`{pwd}^'/,,'
+}
+
+if {~ $f '*n*'} {
+	nb -x ' _next ' | grep $re | sed 's,'^`{pwd}^'/,,'
+	count=`{nb -x ' _next ' | grep $re | sed 's,'^`{pwd}^'/,,' | grep -v 'todate:' | wc -l}
 	load expr 
 	if {~ ${expr $count 5 gt} 1} {echo too many}
 }
 
-if {~ $f '*w*'} {
-	nb -x ' working ' | grep $re | sed 's,'^`{pwd}^'/,,'
-	count=`{nb -x ' working ' | grep $re | sed 's,'^`{pwd}^'/,,' | grep -v 'todate:' | wc -l}
+if {~ $f '*d*'} {
+	nb -x ' _doing ' | grep $re | sed 's,'^`{pwd}^'/,,'
+	count=`{nb -x ' _doing ' | grep $re | sed 's,'^`{pwd}^'/,,' | grep -v 'todate:' | wc -l}
 	load expr 
 	if {~ ${expr $count 2 gt} 1} {echo too many}
 }

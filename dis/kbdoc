@@ -1,0 +1,27 @@
+#!/dis/sh
+(states nb greps) = $*
+
+tmp1 = /tmp/kbdoc1.${pid}
+tmp2 = /tmp/kbdoc2.${pid}
+kanban $states $nb > $tmp1
+
+apply {
+	grep $1 $tmp1 > $tmp2
+	mv $tmp2 $tmp1
+} $greps
+
+refs = `{sed 's,: .*,,' $tmp1}
+
+load string
+apply {
+	ref = $1
+	(file line) = `{echo ${splitr $ref ':'}}
+	file = `{echo $file | sed 's,:$,,'}
+	sed -n $line'p' $file > $tmp1
+	echo `{stardate} `{sed -n $line^'p' $file | sed 's,^[^_]+(_[^ ]+) .*$,\1,'} >> $tmp1
+	echo  >> $tmp1
+	sed -n $line^',/^nb/p' $file | sed '1d;$d' >> $tmp1
+	cat $tmp1
+} $refs
+
+rm -f $tmp1 $tmp2

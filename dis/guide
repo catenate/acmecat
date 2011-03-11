@@ -1,6 +1,7 @@
 #!/dis/sh
 /lib/sed/guide
 :, |nocr
+:, |sed '/^nb /s, complete , _complete ,'
 :, |sed 's,,,'
 :, |sed 's,$,,'
 :, |sed 's,([^])$,\1,;s,^$,,'
@@ -8,8 +9,8 @@
 :, |sed 's,^nb ,nb acme ,'
 :, |sort -r
 Goog eucalyptus koala
-chmod +x mkdo
 cd /nb; du -a | grep '\.do$' | sed 's,.* +,,'
+chmod +x mkdo
 cp -x indent unindent
 cp accent cyrillic ecvar findguide frotz g gorn greek grepdiff guide indent kanban keyboard ligature lsdo map mapmk mapsh mas mistype mkdo monnum monthnamenum nb nbdoc nbend nbnew nocr paths pos redo redoer repare resum so stardate todate twit twitter unindent /nb/pub/acmesacs/dis
 echo; map 'ls -ltr' map mas a b
@@ -17,8 +18,8 @@ findguide '(lang|tool)'
 findguide acmesac
 findguide me
 findguide perl
-if {pos pwd} {echo ok} {echo not ok}
 if {pos ls ths} {echo ok} {echo not ok}
+if {pos pwd} {echo ok} {echo not ok}
 kanban bcprw ec/
 kanban rally
 kanban ready
