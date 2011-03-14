@@ -1,14 +1,18 @@
 #!/dis/sh
 nbindexes = /nb/nbindexes
-re = $*
+if {~ $1 '-x'} {(opt re res) = $*} {(re res) = $*}
 
-if {~ $1 '-x'} {
-	(opt re) = $*
-} 
+tmp1 = /tmp/nb1.${pid}
+tmp2 = /tmp/nb2.${pid}
+grep $re `{cat $nbindexes} /dev/null | sed 's,nbindex: ,,' > $tmp1
 
-grep $re `{cat $nbindexes} /dev/null | sed 's,nbindex: ,,'
-# do not remove current directory so soon, so we can grep on file paths
-# | sed 's,'^`{pwd}^'/,,'
+apply {
+	grep $1 $tmp1 > $tmp2
+	mv $tmp2 $tmp1
+} $res
+
+cat $tmp1
+rm -f $tmp1 $tmp2
 
 if {! ~ $opt '-x'} {
 	files=`{ls -d -F * | sed 's,\*$,,' | grep -v '.exe$' | grep -v '/$' | grep -v nbindex}
@@ -19,4 +23,4 @@ if {! ~ $opt '-x'} {
 	mv /tmp/nbindexes $nbindexes
 }
 
-exit 0
+exit

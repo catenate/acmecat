@@ -1,16 +1,6 @@
 #!/dis/sh
-(nb greps) = $*
-
-tmp1 = /tmp/nbdoc1.${pid}
-tmp2 = /tmp/nbdoc2.${pid}
-nb $nb > $tmp1
-
-apply {
-	grep $1 $tmp1 > $tmp2
-	mv $tmp2 $tmp1
-} $greps
-
-refs = `{sed 's,: .*,,' $tmp1}
+res = $*
+refs = `{nb $res | sed 's,: .*,,'}
 
 load string
 apply {
@@ -19,5 +9,3 @@ apply {
 	file = `{echo $file | sed 's,:$,,'}
 	sed -n $line^',/^nb/p' $file | sed '$d'
 } $refs
-
-rm -f $tmp1 $tmp2
