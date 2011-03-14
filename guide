@@ -8,5 +8,5 @@ twit github
 
 pos git status
 pos git add .
-pos git commit -a -m 'Run sh commands from cygwin: emu pwd, emu acme.'
+pos git commit -a -m 'Modify emu to work with a Winows XP machine.  Revert profile change.'
 $ git push -u origin master

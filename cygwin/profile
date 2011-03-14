@@ -33,10 +33,15 @@ if {! ftest -d /fonts/lucidasans}{
 	acme-Font=/fonts/vera/VeraMono/VeraMono.14.font
 }
 
-#tabstop=2
-acme -a $home/guide
-sleep 1
-waitid = `{sed '' /prog/*/status | sort -n | grep Acme | sed 1q | sed 's/^ +([0-9]+) +.*/\1/'}
-read < /prog/^$waitid^/wait
-sleep 2
+rm -f runme.out
+touch runme.out
+if {grep '^acme$' runme} {
+	acme -a $home/guide
+	sleep 1
+	waitid = `{sed '' /prog/*/status | sort -n | grep Acme | sed 1q | sed 's/^ +([0-9]+) +.*/\1/'}
+	read < /prog/^$waitid^/wait
+	sleep 2
+} {
+	sh runme > runme.out >[2=1]
+}
 echo halt > /dev/sysctl
