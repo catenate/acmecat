@@ -1,0 +1,9 @@
+mkdo in out roman_alphabet.out
+mkdo in test roman_alphabet.test
+mkdo redo clean
+redo
+
+
+cyrillic
+0	/dis/cyrillic
+0	/lib/sed/cyrillic

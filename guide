@@ -8,5 +8,5 @@ twit github
 
 pos git status
 pos git add .
-pos git commit -a -m 'Add man page for map.  Add emu per drive letter until I clean it up. Simple head.  Change $root to $ta in mkdo templates.  Explicit echo in ecmd-step.do.'
+pos git commit -a -m 'Add /test directories (like /man), tests for simple greek and cyrillic transliteration filters, and mkdo templates for same.'
 $ git push -u origin master

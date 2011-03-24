@@ -1,0 +1,8 @@
+mkdo in out roman_alphabet.out
+mkdo in test roman_alphabet.test
+mkdo redo clean
+redo
+
+
+0	/dis/greek
+0	/lib/sed/greek

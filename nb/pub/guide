@@ -1,6 +1,7 @@
+nbdoc daily
+nbdoc search twitter
 nbnew
 todate
-nbdoc search twitter daily
 
 /dis/pos
 :,$ |sed 's,^nb ,nb pdc ,'

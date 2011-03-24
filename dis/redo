@@ -16,7 +16,7 @@ apply {
 		echo cd $dir >[1=2]
 		cd $dir
 		
-		if {~ `{pwd} '*/'^$dir} {
+		if {or {~ `{pwd} '*/'^$dir} {~ `{pwd} '*'^$dir}} {
 			target = `{echo $target | sed $filesed}
 		} {
 			exit
