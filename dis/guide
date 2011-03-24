@@ -12,7 +12,6 @@ Goog eucalyptus koala
 cd /nb; du -a | grep '\.do$' | sed 's,.* +,,'
 chmod +x mkdo
 cp -x indent unindent
-cp accent cyrillic ecvar findguide frotz g gorn greek grepdiff guide indent kanban keyboard ligature lsdo map mapmk mapsh mas mistype mkdo monnum monthnamenum nb nbdoc nbend nbnew nocr paths pos redo redoer repare resum so stardate todate twit twitter unindent /nb/pub/acmesacs/dis
 echo; map 'ls -ltr' map mas a b
 findguide '(lang|tool)'
 findguide acmesac
@@ -27,6 +26,7 @@ kanban rim | grep plugin | grep -v plugins
 kanban todate
 kanban working
 ls -ltr
+map(1)
 mkdo
 nb -i calendar
 nb acmesac

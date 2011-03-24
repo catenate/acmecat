@@ -1,0 +1,21 @@
+nb parse date time perl cpan library
+http://search.cpan.org/~gbarr/TimeDate-1.20/lib/Date/Parse.pm
+
+use Date::Parse; 
+$time = str2time($date); 
+($ss,$mm,$hh,$day,$month,$year,$zone) = strptime($date);
+
+
+nb perl local time string format strftime
+http://perldoc.perl.org/functions/localtime.html
+($sec,$min,$hour,$mday,$mon,$year,$wday,$yday,$isdst) = localtime(time);
+
+http://perldoc.perl.org/POSIX.html
+strftime(fmt, sec, min, hour, mday, mon, year, wday = -1, yday = -1, isdst = -1)
+
+
+nb clang strftime format string code
+http://pubs.opengroup.org/onlinepubs/007908799/xsh/strftime.html
+
+
+nb doc

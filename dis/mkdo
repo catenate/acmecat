@@ -34,8 +34,8 @@ if {ftest -x $depfile} {
 	apply {
 		target = $1
 		targ = `{echo $target | sed 's,\.[^.]*$,,'}
-		root = `{echo $target | sed 's,\..*,,'}
-		cat $depfile | sed 's,\$target,'^$target^',;s,\$targ,'^$targ^',;s,\$root,'^$root^',' > $1.dep
+		ta = `{echo $target | sed 's,\..*,,'}
+		cat $depfile | sed 's,\$target,'^$target^',;s,\$targ,'^$targ^',;s,\$ta,'^$ta^',' > $1.dep
 	} $targets
 }
 

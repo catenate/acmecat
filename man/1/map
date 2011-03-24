@@ -1,0 +1,25 @@
+.TH MAP 1
+.SH NAME
+map \- apply in parallel command to each argument.
+.SH SYNOPSIS
+.B map
+.I command
+[
+.IR arg ...
+]
+.SH DESCRIPTION
+.B Map
+executes the separate program
+.I command
+once for each
+.IR arg ,
+passing it as the last argument.
+.B Map
+dispatches all these commands in parallel,
+and waits for them all to finish before exiting.
+.TP
+.SH SOURCE
+.B /dis/map
+.SH SEE ALSO
+apply in
+.IR sh-std (1)

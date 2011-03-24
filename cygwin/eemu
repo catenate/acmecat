@@ -1,4 +1,4 @@
-cd /home/jcatena/acme-0.13
+cd /cygdrive/e/acme-0.13
 runme=/cygdrive/c/Users/jcatena/AppData/Roaming/acme-home/runme
 echo '#!/dis/sh' > $runme
 echo $* >> $runme

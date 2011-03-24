@@ -1,0 +1,2 @@
+#!/dis/sh
+apply {sed '11q' $1} $*
