@@ -8,5 +8,5 @@ twit github
 
 pos git status
 pos git add .
-pos git commit -a -m 'Add tests for perl substitution and number-string polymorphism.  Redo[er] prints status from *.do.'
+pos git commit -a -m 'Remove sleep residue.'
 $ git push -u origin master

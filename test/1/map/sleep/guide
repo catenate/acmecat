@@ -3,3 +3,13 @@ mkdo in test sleeps.test
 mkdo redo clean
 redo
 |sort |uniq
+
+
+nb test execute parallel apply map sh mk
+apply {redo $1.sleep} `{seq 0 9}
+apply { echo $1:; cat $1; echo } *.sleep
+apply { $1 } *.sleep
+date; mapmk sh *.sleep; date
+date; mapsh sh *.sleep; date
+date; map sh *.sleep; date
+# make a script with & after each line
