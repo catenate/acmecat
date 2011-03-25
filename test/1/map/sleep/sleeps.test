@@ -1,0 +1,36 @@
+map 'repare ''  ''' redo-clean
+redo   redo-clean
+redo clean
+map 'repare ''  ''' 0.sleep 1.sleep 2.sleep 3.sleep 4.sleep 5.sleep 6.sleep 7.sleep 8.sleep 9.sleep
+redo   5.sleep
+redo   0.sleep
+redo   1.sleep
+redo   3.sleep
+redo   2.sleep
+redo   6.sleep
+redo   4.sleep
+redo   8.sleep
+redo   9.sleep
+redo   7.sleep
+start 5
+start 0
+start 1
+start 2
+start 3
+start 7
+start 6
+start 4
+start 9
+start 8
+9 done
+8 done
+7 done
+6 done
+5 done
+4 done
+3 done
+2 done
+1 done
+0 done
+redo sleeps
+sleeps done

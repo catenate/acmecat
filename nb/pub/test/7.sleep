@@ -1,4 +1,0 @@
-#!/dis/sh
-echo start 7
-sleep 3
-echo 7 done

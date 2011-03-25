@@ -1,4 +1,0 @@
-#!/dis/sh
-echo start 0
-sleep 10
-echo 0 done

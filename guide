@@ -8,5 +8,5 @@ twit github
 
 pos git status
 pos git add .
-pos git commit -a -m 'Add /test directories (like /man), tests for simple greek and cyrillic transliteration filters, and mkdo templates for same.'
+pos git commit -a -m 'Add tests for perl substitution and number-string polymorphism.  Redo[er] prints status from *.do.'
 $ git push -u origin master

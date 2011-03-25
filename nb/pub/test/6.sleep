@@ -1,4 +1,0 @@
-#!/dis/sh
-echo start 6
-sleep 4
-echo 6 done

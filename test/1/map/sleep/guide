@@ -1,0 +1,5 @@
+mkdo in out sleeps.out
+mkdo in test sleeps.test
+mkdo redo clean
+redo
+|sort |uniq
