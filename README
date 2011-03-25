@@ -8,6 +8,9 @@ Plan 9.
 acme-0.13 subdirectory created when you unzip acme-0.13.zip from  
 http://code.google.com/p/acme-sac/downloads/list  
 
+cygwin contains a few files to start acme or any other SAC program
+from the cygwin command line.
+
 dis contains shell scripts, and a version of acme.dis with a white  
 grid instead of black.  
 
@@ -20,3 +23,6 @@ nb/nbindexes lists directories dis/nb should consult for indexes.
 
 nb/pub contains the public part of my technical notebook, indexed  
 with the script dis/nb.  
+
+test contains tests for parts of Acme SAC and cygwin, laid out like
+the manual files under /man.

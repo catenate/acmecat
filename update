@@ -6,6 +6,6 @@ rm -f /acmecat/lib/do/*; cp -x /lib/do/* /acmecat/lib/do
 rm -f /acmecat/lib/sed/*; cp -x /lib/sed/* /acmecat/lib/sed
 cd /man/1; cp -x map /acmecat/man/1
 echo /nb/pub/nbindex > /acmecat/nb/nbindexes
-rm -f /acmecat/test/*; cp -x -r /test/* /acmecat/test
+rm -r -f /acmecat/test/*; cp -x -r /test/* /acmecat/test
 
 rm -f -r /acmecat/nb/pub/*; cp -x -r /nb/pub/* /acmecat/nb/pub

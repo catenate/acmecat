@@ -67,22 +67,23 @@ if {and {! ~ $#newdosum 0} {! ~ $olddosum $newdosum}} {
 }
 
 if {or {! ~ $olddepsum $newdepsum} {! ~ $olddosum $newdosum} {! ftest -e $target}} {
-       if {ftest -f $target} {cp $target $target.reold; reold=1} {reold=0}
+	if {ftest -f $target} {cp $target $target.reold; reold=1} {reold=0}
 
-       if {! ftest -f $target.redoing} {
-               touch $target.redoing
-               $do
-               rm -f $target.redoing
-       }
-
-       if {and {~ $status 'revert'} {~ $reold 1}} {
-               echo revert $target
-               if {ftest -f $target} {cp $target $target.renew}
-               if {ftest -f $target.reold} {cp $target.reold $target}
-               status revert
-       } {
-               exit
-       }
+	if {! ftest -f $target.redoing} {
+		touch $target.redoing
+		$do
+		dostatus = $status
+		rm -f $target.redoing
+	}
+       
+	if {and {~ $dostatus 'revert'} {~ $reold 1}} {
+		if {ftest -f $target} {cp $target $target.renew}
+		if {ftest -f $target.reold} {cp $target.reold $target}
+	}
+       
+	if {! ~ $dostatus ''} {
+		echo 'redo:error:' $target $dostatus
+	}
 }
 
 exit

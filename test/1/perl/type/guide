@@ -1,0 +1,10 @@
+mkdo redo clean
+pos perl numstr.pl
+redo
+
+
+apply {
+	old = $1
+	new = `{echo $old | sed 's,deaz,numstr,'}
+	mv $old $new
+} deaz.*
