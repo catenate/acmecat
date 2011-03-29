@@ -1,0 +1,5 @@
+#!/dis/sh
+cd /n/C/cygwin/home/jcatena/bin
+rm -f ttytter.in
+echo '/unfollow '^$1 >> ttytter.in
+pos perl ttytter.pl -silent ttytter.in

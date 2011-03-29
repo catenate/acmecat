@@ -1,2 +1,3 @@
 #!/dis/sh
-pos perl /home/jcatena/bin/ttytter.pl $*
+cd /n/C/cygwin/home/jcatena/bin
+pos perl ttytter.pl -simplestart

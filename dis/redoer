@@ -68,13 +68,26 @@ if {and {! ~ $#newdosum 0} {! ~ $olddosum $newdosum}} {
 
 if {or {! ~ $olddepsum $newdepsum} {! ~ $olddosum $newdosum} {! ftest -e $target}} {
 	if {ftest -f $target} {cp $target $target.reold; reold=1} {reold=0}
-
-	if {! ftest -f $target.redoing} {
-		touch $target.redoing
-		$do
-		dostatus = $status
-		rm -f $target.redoing
+	
+	if {ftest -f $target.redoing} {
+		while {ftest -f $target.redoing} {
+			sleep 1
+			$target.redoing >[2]/dev/null
+		}
+		
+		# Another process may have satisfied all conditions to build
+		# while we were waiting, so restart to check again.
+		redo $target
+		exit
 	}
+	
+	touch $target.redoing
+	echo '#!/dis/sh' >> $target.redoing
+	echo 'if {! ftest -d /prog/'^${pid}^'} {rm -f '^$target^'.redoing}' >> $target.redoing
+	
+	$do
+	dostatus = $status
+	rm -f $target.redoing
        
 	if {and {~ $dostatus 'revert'} {~ $reold 1}} {
 		if {ftest -f $target} {cp $target $target.renew}
@@ -82,7 +95,7 @@ if {or {! ~ $olddepsum $newdepsum} {! ~ $olddosum $newdosum} {! ftest -e $target
 	}
        
 	if {! ~ $dostatus ''} {
-		echo 'redo:error:' $target $dostatus
+		echo redo $indent^$target error: $dostatus
 	}
 }
 

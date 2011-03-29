@@ -40,7 +40,7 @@ pos which which
 redo
 stardate | sed 's,\..*,,'
 todate
-tweet @catenate Testing command-line twitter client ttytter running in cygwin, called from acme.
+tweet '@grimm26 Doesn''t a plugin for vim violate the very point of vi? You''re starting to get into emacs territory.' 
 twit catenate
 twitter @catenate
 twitter catenate

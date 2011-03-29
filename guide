@@ -9,5 +9,5 @@ update
 du -a | grep '/nbindex$' | sed 's,^.*  ,/,' > /acmecat/nb/nbindexes
 pos git status
 pos git add .
-pos git commit -a -m 'Better twittering.'
+pos git commit -a -m 'If redo finds target in progress, wait then restart.  Add twhois and unfollow.'
 $ git push -u origin master

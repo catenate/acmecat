@@ -2,6 +2,7 @@ nbdoc daily
 nbdoc search twitter
 nbnew
 todate
+win ttytter
 
 /dis/pos
 :,$ |sed 's,^nb ,nb pdc ,'

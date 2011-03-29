@@ -1,0 +1,5 @@
+#!/dis/sh
+cd /n/C/cygwin/home/jcatena/bin
+rm -f ttytter.in
+echo '/whois '^$1 >> ttytter.in
+pos perl ttytter.pl -simplestart ttytter.in | sed '1,/TTYtter>/d' | sed '/^--/,$d'

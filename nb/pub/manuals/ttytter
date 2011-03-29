@@ -1,0 +1,1884 @@
+ † [Back to the Floodgap main page] 
+ Return to Floodgap ₂
+Software₂
+
+TTYtter for Perl
+
+*** TTYtter is currently at version 1.1.10 (20 January 
+2011). You can skip to the changelog/download₃ if you 
+like.
+
+*** Subscribe to updates over Twitter! -- twitter.com/₄
+ttytter₄
+
+*** The 1.2 public beta is now available! Wanna be on 
+the bleeding edge? Give it a try!₅
+
+*** Want to expand your TTYtter? Check out these 
+extensions from @vkoser₆, @reuteras₇, @₈
+stormdragon2976₈, @colindean₉, and @pr4wn₁₀! Send yours
+ @ttytter! 
+
+Noooo, not another Twitter client! Yes, another Twitter 
+client. The difference here is that you're dealing with a 
+multi-functional, fully 100% text, Perl command line 
+client.
+
+• In interactive mode, it is a fully interactive client 
+with asynchronous background updates and 
+commands. Use it over telnet, ssh or even a dummy 
+terminal. Supports ANSI colour, UTF-8, hashtags₁₁ and 
+Twitter Search!
+• Works within your favourite environment: use a 
+compatible readline library (like our own bespoke 
+Term::ReadLine::TTYtter₁₂), or modify prompt and 
+input methods for many popular window and session
+ managers. Or don't: basic editing and screen 
+management features built-in.
+• From the command line, use it to update your 
+Twitter in shell scripts, from cron, and so on.
+• Notification support with Growl₁₃ and libnotify (and 
+extendable to others via the API₁₄).
+• Geolocation support: hand your GPS coordinates 
+to TTYtter for any application.
+• Security: Supports Twitter OAuth₁₅ and HTTP Basic 
+Authentication, and SSL where supported by your 
+user agent.
+• Supports Twitter-alike APIs such as StatusNet and 
+Identi.ca.
+• Supports standard timelines and automatically 
+fetches direct messages, and optionally replies/
+mentions, and runs queries against the Search API 
+and incorporates them into your timeline as well.
+• Write and use your own custom extensions!₁₆
+• Run detached in -daemon mode, and make your 
+own Twitter bot₁₇!
+
+TTYtter minimally requires Perl 5.005 or better (5.8.6 and
+ up are recommended), and either cURL or Lynx (chosen 
+on purpose since more people are likely to have one or 
+both of those instead of LWP, and also to allow people to 
+carry over their proxy settings and whatnot). Support for 
+OAuth, which is required to access Twitter, requires cURL
+. Lynx is only supported for servers allowing Basic 
+Authentication. Nothing else is necessary; it does not 
+use Net::Twitter and does not require it, and in fact will 
+run happily with just a bare Perl and cURL/Lynx with no 
+libraries at all like on my OLPC XO-1. It will work fine 
+over any dummy terminal, serial connection or telnet/ssh
+ login. TTYtter is offered as freeware under the Floodgap ₁₈
+Free Software License₁₈.
+
+Yes, I do eat my own dog food.₁₉
+
+If you are using a Perl version prior to 5.8.6, please read 
+this important support note₂₀.
+
+Setting up TTYtter and getting OAuth keyfiles
+
+This is primarily intended for Twitter accounts using 
+OAuth (which will be the majority of users). If you will be 
+using TTYtter with a Twitter-like service such as 
+StatusNet or Identi.ca that uses HTTP Basic 
+Authentication, the OAuth portion of this introduction 
+may not pertain to you; you should also read TTYtter₂₁ and ₂₁
+Basic Auth₂₁.
+
+TTYtter logs into Twitter using a system called OAuth, not
+ with your Twitter username and password. OAuth uses a 
+set of keys and secrets to authenticate your installation 
+of TTYtter to Twitter. The OAuth keys and secrets for 
+each account are stored in that account's TTYtter 
+"keyfile" and are used by TTYtter as credentials. You 
+need a keyfile for each account you access Twitter with 
+(but you only need to do this once for each account, and 
+you can copy the keyfile to multiple computers if you use
+ it multiple places). We'll talk about how you create that 
+keyfile in a second.
+
+To install TTYtter, download it to the location you want to 
+run it from (such as your home directory or bin/), make it 
+executable with chmod +x, and then start it from your 
+shell prompt with something like ./ttytter. If your Perl is 
+not in /usr/bin, change the first line (/usr/bin/env on 
+some systems does not support passing arguments in 
+shebang lines, so for maximum compatibility it is not 
+used here).
+
+When you start TTYtter without a keyfile, which will be 
+the case the first time you run it (or the first time you run 
+it after the Basic Auth switchover), it will automatically 
+start an assistant to help you create the keyfile. You only 
+need to create the keyfile once for each account. It will 
+never expire. TTYtter will find where your cURL is 
+located, and if successful, you should see something like 
+this: 
+
+% ./ttytter 
+trying to find cURL ... /usr/local/bin/curl 
+-- no version check performed (use /vcheck, or -vcheck to check on startup) 
+ 
+++-------------------------------------------------------------------++ 
+||  WELCOME TO TTYtter: let's get you set up with an OAuth keyfile!  || 
+++-------------------------------------------------------------------++ 
+Twitter now requires all applications authenticating to it use OAuth, a 
+more complex authentication system that uses tokens and keys instead of 
+screen names and passwords. To use TTYtter with this Twitter account, 
+you will need your own app key and access token. This requires a browser. 
+ 
+The app key/secret and user access token/secret go into a keyfile and 
+act as your credentials; instead of using -user, you use -keyf. THIS 
+KEYFILE NEVER EXPIRES. YOU ONLY NEED TO DO THIS ONCE FOR EACH ACCOUNT. 
+ 
+If you DON'T want to use OAuth with TTYtter, PRESS CTRL-C now. Restart 
+TTYtter with -authtype=basic to use a username and password. THIS IS 
+WHAT YOU WANT FOR STATUSNET, BUT WILL NOT WORK WITH TWITTER! 
+If you need help with this, talk to @ttytter or E-mail ckaiser@floodgap.com. 
+ 
+Otherwise, this wizard will create a keyfile /home/screwtape/.ttytterkey 
+for you. Press ENTER/RETURN to begin the process. 
+
+(If TTYtter complains that it cannot enable UTF-8 
+support, re-run it with the -seven option for now. You 
+might want to look at the TTYtter₂₂ and UTF-8₂₂ section 
+later.)
+
+Assuming you got that far, when you press RETURN, you 
+go to the second step. You will need a web browser for 
+this part. 
+
+Start your browser. 
+1. Log in to https://twitter.com/₂₃ with your desired account. 
+2. Go to this URL (all one line). You must be logged into Twitter FIRST! 
+ 
+http://dev.twitter.com/apps/key_exchange?oauth_consumer_key=XtbRXaQpPdfssFwdUmeYw₂₄ 
+ 
+3. Twitter will confirm. Click Authorize, and accept the terms of service. 
+4. Copy the entire string you get back. 
+-- Paste it into this terminal, then hit ENTER and CTRL-D to write it --------- 
+
+Follow the steps exactly; namely, make sure you are 
+logged into Twitter in your browser₂₅, then visit the key ₂₆
+exchange₂₆. What this does is generate a new application 
+key and secret and a new user token and secret, cloned 
+from TTYtter's master key, exclusively for you. Don't 
+worry if you have to do this multiple times; Twitter will 
+just give you the same keys and secrets back each time.
+
+(Yes, Lynx does work! Use the mobile browser at 
+m.twitter.com.)
+
+When completed successfully, Twitter will display in your 
+browser a textbox containing a long string of gibberish. 
+These are your keys and secrets. Copy the entire string 
+and paste it into your terminal window, then press 
+ENTER, and CTRL-D. (This tells the shell you have 
+finished pasting data.) Don't worry about spaces or 
+newlines; those will get filtered out. If you did this right, 
+you should see something like this (the key in the 
+example below is non-functional): 
+
+ck=fjiVEJObjmeo83793NVjrengDJ984r032NFIEgj3809CXFVUIEoe83wnVN223NFER09&at=123456 
+7-eighpGEPI389vmVikoGG3483vgijrekfjFVB293xqd&ats=00GeivnPPPqncpodsuQ18VNi3eiBBig 
+OuOchekwIGE 
+ 
+   ^D 
+-- EOF ------------------------------------------------------------------------ 
+Written new key file /home/screwtape/.ttytterkey 
+Now, restart TTYtter to use this keyfile -- it will use this one by default. 
+(For multiple key files with multiple accounts, manually write them to other 
+ filenames, and tell TTYtter where the key is using -keyf=... . You can just 
+ use a text editor for that.) 
+
+The keyfile this creates lives by default in your home 
+directory, in ~/.ttytterkey. This is the first place TTYtter 
+will look for a keyfile. When you restart TTYtter, it will log 
+you into Twitter using that keyfile, like so: 
+
+% ./ttytter 
+trying to find cURL ... /usr/bin/curl 
+-- no version check performed (use -vcheck to check on startup) 
+(checking credentials) test-login SUCCEEDED! 
+-- processing credentials: logged in as screwtape 
+ 
+######################################################        +oo=========oo+ 
+        TTYtter 1.1.10 (c)2011 cameron kaiser                 @             @ 
+                 all rights reserved.                         +oo=   =====oo+ 
+       http://www.floodgap.com/software/ttytter/            a==:  ooo 
+                                                            .++o++. ..o**O 
+  freeware under the floodgap free software license.        +++   :O::::: 
+        http://www.floodgap.com/software/ffsl/              +**O++ #   :ooa 
+                                                                   #+$$AB=. 
+         tweet me: http://twitter.com/ttytter                      #;;ooo;; 
+            tell me: ckaiser@floodgap.com                          #+a;+++;O 
+######################################################           ,$B.*o*** O$, 
+#                                                                a=o$*O*O*$o=a 
+# when ready, hit RETURN/ENTER for a prompt.                        @$$$$$@ 
+# type /help for commands or /quit to quit.                         @o@o@o@ 
+# starting background monitoring process.                           @=@ @=@ 
+
+TTYtter> a0> <barely> Looks like I am going to 
+Baltimore next week 
+a1> <pamela> Redesign for bookstore website is 
+almost done! RFP for custom publishing projects in the 
+works due to start in Sept. Keeping busy. 
+-- checking for most recent direct messages: 
+[DM da0][cbqueue/Fri Sep 28 02:01:33 +0000 2007] test 
+test 
+[DM da1][ttytter/Fri Sep 28 03:01:51 +0000 2007] don't 
+forget to update the website  
+-- notification: API rate limit is currently 350 req/hr 
+-- no version check performed (use -vcheck to check on 
+startup) 
+-- you are logged in as screwtape
+
+You have now successfully logged into TTYtter and you 
+can use that keyfile indefinitely for that Twitter screen 
+name. If you use this screen name on other machines 
+you use TTYtter on, simply copy the keyfile there; the 
+credentials are machine-independent. If you are on a 
+machine with other users, verify no one else can read 
+the keyfile (this should be done for you, but consider a 
+prophylactic chmod go-r on your keyfile(s) so that only 
+you can read them).
+
+At this point, the client is ready to go and you can start 
+tweeting, and we'll talk about that below. In the 
+background, TTYtter will automatically fetch new tweets 
+and optionally direct messages and mentions, and feed 
+them to you at regular intervals, allowing you to follow 
+your timeline just like in any other interactive client.
+
+If you're not seeing ANSI colours and you know your 
+terminal supports it, either use the -ansi option on the 
+command line or type /set ansi 1 now. Your terminal 
+must understand ANSI colour escape sequences or 
+things will look rather weird. There are other things we 
+can also enable (all in good time):
+
+• You can keep your version up to date with the -
+vcheck command-line option. No personally 
+identifiable information is transmitted and I strongly
+recommend using it; it only informs you about new 
+versions, and does not replace any files. If you're 
+ultra-paranoid about this, be reassured by reading 
+its description in Command-line options₂₇.
+
+• You can enhance TTYtter with readline support if 
+your Perl supports it and you have a compatible 
+Term::ReadLine::* module, but make sure you read 
+the rest of this page before reading about TTYtter₂₈ ₂₈
+and ₂₈readline₂₈support₂₈. Use our bespoke "beta" driver 
+Term::ReadLine:TTYtter₂₉ for Twitter-specific features
+, including repainting prompts and even a character 
+counter!
+
+• You can send and receive tweets in UTF-8 if your 
+Perl supports it, but make sure you read the rest of 
+this page before reading about TTYtter₃₀ and UTF-8₃₀.
+
+• You can tunnel your traffic under SSL if your cURL 
+(or Lynx) supports it, but make sure you read the 
+rest of this page before reading about TTYtter₃₁ and ₃₁
+SSL₃₁.
+
+• You can enable ANSI terminal sequences/colour 
+sequences if your terminal emulation supports it by 
+using -ansi on the command line, or putting ansi=1 
+in your .ttytterrc file, but see Command-line options₃₂.
+
+• You can geo-tag your tweets with your location and 
+coordinates if your account is geo-enabled, but 
+make sure you read the rest of this page before 
+reading about geolocation support₃₃.
+
+• You can have TTYtter send you notifications of 
+specific types of tweets and direct messages over 
+Growl or a compatible messaging system (currently 
+either Growl₃₄ or libnotify using (modified) notify-send
+), but make sure you read the rest of this page 
+before reading about TTYtter₃₅and notification support₃₅
+.
+
+• You can adjust how the prompt is displayed, or tell 
+TTYtter to signal your terminal environment (like 
+ssfe or irssi), but make sure you read the rest of this 
+page before reading about TTYtter₃₆ and your special ₃₆
+terminal environment₃₆.
+
+• You can have multiple keyfiles for multiple 
+accounts. Switch between them with the -keyf=... 
+option (e.g., -keyf=w loads your OAuth information 
+from ~/.ttytterkeyw). If you specify a full path 
+starting with /, then that is used as the filename itself
+ without further interpretation.
+
+Like with the ANSI example above, once you find a set of 
+options you like, you can put them into the .ttytterrc file 
+in your home directory along with your username and 
+password if you prefer. See Command-line options: the ₃₇
+.ttytterrc₃₇ file₃₇ for how to do this. You can even select from
+ multiple .ttytterrc* files using the -rc option; see the 
+same link.
+
+Basic use: TTYtter as a command-line posting agent
+
+If you specify any arguments on the command line (like 
+ttytter foo), then foo is seen as a filename to read tweets 
+and commands from instead of standard input (a 
+"script"). A fatal error will occur if foo doesn't exist. You 
+can pipe data to TTYtter as well; it will terminate when it 
+runs out of stdin to read.
+
+You can alsouse the -status=... option to post a single 
+tweet, which is more efficient (and can be made 
+bulletproof using the -hold option):
+
+% ./ttytter -status="Writing a letter to my nephew."
+
+This will be posted as the user in your keyfile (in our 
+examples above, that was screwtape). If you add -silent, 
+then there is no output, which is good for unattended 
+jobs. If you use "-" (a single dash) as your status, then a 
+single line is accepted over standard input.
+
+For some scripts, that's all you'll need to get started. 
+We'll talk about scripting ₃₈TTYtter₃₈ in a moment, but first 
+let's get to the
+-------------
+
+
+Table of contents (it's not that complex, I swear!)
+
+User's guide: 
+Basic tweeting₃₉ | Built-in commands₄₀ 
+Direct messaging₄₁ | Replying to tweets/DMs, threading ₄₂
+("in reply to"), favourites₄₂ | Geolocation support₄₃ 
+Following and leaving users₄₄ | Tracking keywords and ₄₅
+hashtags/Twitter Search API₄₅ | Command history and ₄₆
+substitution₄₆
+
+Special features: 
+TTYtter₄₇ and UTF-8 support₄₇ | TTYtter₄₈ and SSL₄₈ | TTYtter₄₉ ₄₉
+and ₄₉readline₄₉ support₄₉ 
+TTYtter₅₀ and notification support, Growl, ₅₀libnotify₅₀ 
+TTYtter₅₁ and HTTP Basic Authentication₅₁ | TTYtter₅₂ and ₅₂
+StatusNet/Identi.ca₅₂ 
+TTYtter₅₃ and your special terminal environment₅₃ | 
+Scripting ₅₄TTYtter₅₄ | Writing extensions for ₅₅TTYtter₅₅
+-------------
+
+ 
+
+Basic tweeting
+
+By and large, most people use TTYtter as an interactive 
+client. In this mode, it acts much like a command line IRC
+ or micq. Like such clients, unless you specify otherwise,
+ updates occur automatically and without any intervention
+ from you, although you can request an update early (see 
+Built-in commands₅₇).
+
+To send a tweet, just type it. Whatever doesn't appear to 
+be a command (see Built-in commands₅₈) will be 
+submitted and appear on the next update. Keep in mind 
+that posting tweets and executing most commands are 
+asynchronous operations, so don't expect instant 
+feedback.
+
+If an update occurs and your tweet is overwritten on 
+screen, don't worry: just hit CTRL-R, and the line you're 
+currently working on will be redisplayed. (If you have -
+readline, SPACE/BACKSPACE will usually do it; if you are 
+using -readline and Term::ReadLine::TTYtter, your 
+prompt should repaint itself automatically. See TTYtter₅₉ ₅₉
+and ₅₉readline₅₉.)
+
+If you don't like the background updates, and only want 
+updates to occur when you request them, use the -synch 
+option. In this mode, only tweets, or pressing RETURN/
+ENTER, cause updates to occur. This is useful for input 
+methods like Kotoeri that may make it hard to refresh 
+your current line, or if you simply don't like the effect, 
+but robs you of automatic updates.
+
+If you want to cancel what you're typing and start over, 
+press CTRL-U.
+
+If your tweet is over 140 characters, it will be 
+automatically trimmed (hopefully intelligently to a word 
+or punctuation boundary) and you will be offered a 
+chance to accept or edit the trimmed version. This 
+affects the command history₆₀. If you use the -autosplit 
+option, you can let TTYtter break up long lines for you 
+into multiple tweets (see Command-line options₆₁). (NB: 
+bytes != characters. See TTYtter₆₂ and UTF-8 support₆₂ for 
+why this matters.)
+
+If your terminal supports ANSI colour sequences (or you 
+force it on with -ansi), then replies to you appear in red, 
+and your own tweets appear in yellow, by default.
+
+If you want to pass coordinates for your current location 
+and your account is already geo-enabled, look at 
+geolocation support₆₃.
+
+If tweets are too wide for your screen, you can wordwrap 
+them with the -wrap option. This defaults to 79 
+characters, sufficientfor most terminals and terminal 
+programs.
+
+If you keep fat-fingering your tweets, or are prone to 
+cutting and pasting in the wrong window, or just want a 
+second chance to approve stuff before it goes out to the 
+Interwebs, you can force TTYtter to verify every tweet 
+you (unintentionally or otherwise) type with the -verify 
+option. A gentler option might even be -slowpost. For 
+both of these (very useful: I couldn't live without -
+slowpost) options, again see Command-line options₆₄.
+
+If TTYtter can't download any tweets or messages, or if 
+the Obvious folks have put up an announcement or 
+service outage page, ttytter will report the error and 
+retry automatically when it can. If your terminal supports 
+ANSI colour sequences (or you force it on with -ansi), 
+then server messages appear in magenta by default.  
+
+Built-in commands
+
+Speaking of commands, there are also some TTYtter 
+internal commands you can use. All internal commands 
+start with /. If you enter a bogus command, TTYtter will 
+complain at you instead of tweeting it, which cuts down 
+on mildly useless but enormously entertaining tweets 
+like /quot and /refrehs. If you really want to send a tweet 
+that starts with a slash, just double slash it (e.g., //the 
+ants are my friends/they're blowing in the wind/) and the 
+double slash will be made a single slash and passed on.
+
+Most commands have a quick abbreviation, which is 
+given in parentheses. Most commands are 
+asynchronous, meaning that you can do stuff in the 
+foreground while the background process does the 
+work, but some are synchronous and will hold your 
+console temporarily for technical reasons.
+
+Not all commands work or are fully supported in earlier 
+versions.
+
+/help (/?)
+Displays mad-k001 ASCII art. Oh, and a quick list of 
+commands, secondarily speaking.
+/set [key] [value] (/s), /unset [key] (/uns) and /print [key] (
+/p)
+Allow setting and printing of command line options 
+at runtime. Not all command line options can be 
+changed. For more about this, see Command-line ₆₆
+options₆₆. If you type /print by itself with no key, the 
+(visible) settable values are displayed. With boolean 
+values, /set [key] and /unset [key] set the key to 1 
+(true) or 0 (zero) respectively. You can use /unset on 
+other options, but it sets them to a null string, which 
+may not be desirable.
+/refresh (/r)
+Thumps the background process to do another 
+update for new tweets right away instead of waiting 
+for the next one scheduled. If you are in -synch 
+mode, this is automatically done every time a tweet 
+is posted. If you have a very busy timeline or a lot of 
+friends, Twitter may only give you a partial list, 
+though this is generally not a big deal until you start 
+following a good thousand or more or are watching 
+the public timeline. If nothing new is available, the 
+background process will politely tell you so. (/thump
+ is a synonym since I keep typing it.)
+/again (/a)
+Displays the last thirty tweets from your timeline, 
+even old ones, along with refreshing the most recent
+ results from keywords and hashtags you may be 
+tracking (if any). If you use the -backload option, you 
+can get more than that (but be careful! - see 
+Command-line options₆₇).
+
+/again [username] (/a [username])
+Displays the last twenty tweets for user username 
+(sans braces, of course). If the user doesn't exist, or 
+is protected/otherwise not available to you, you will 
+get an error message instead. This command is 
+synchronous and the foreground process will pause 
+until the tweets are received or timed out.
+/whois [username] (/w [username])
+Displays the Twitter "vital statistics" for the 
+specified user, including number of people they 
+follow and are followed by (f:), number of updates (u:
+), real name, location, description, URL and image/
+picture, along with (if you are not anonymous) if you 
+already follow this user and if this user follows you. 
+Their URL, if they have one, is loaded into the 
+variable %URL% so you can substitute it in a tweet 
+(see command history and substitution below), /
+shorten it, or open it with /url.
+
+If you specify a filter with -avatar, then the URL for 
+the user's picture is passed to the specified shell 
+command to operate upon it, including saving it, 
+opening it in a window somewhere else, or even 
+converting it to ASCII art₆₈. See Command-line options₆₉
+ for more. This command is synchronous and the 
+foreground process will pause until the data is 
+received or timed out.
+/wagain [username] (/wa [username])
+Combines /again followed by /whois (yes, the name 
+is out of order, but it sounded better than /againw).
+/follow [username] and /leave [username]
+Follows or unfollows a username (/unfollow also 
+works).
+/doesfollow [user1] [user2] or /doesfollow [user] (/df [
+user1] [user2] or /df [user])
+Tells you if the first user follows the second. If you 
+just use one screen name, then yours is substituted 
+for the second (telling you if that user follows you).
+/block [user] and /unblock [user]
+Blocks or unblocks a user (you are prompted to 
+confirm the former).
+
+/dm [username] [message]
+Sends a direct message to the specified user. See 
+the section on direct messaging below.
+/dmrefresh (/dm by itself)
+Thumps the background process to do another 
+check for direct messages right away instead of 
+waiting for the next one scheduled. Again, this is 
+limited tothe last twenty, if you are a particularly 
+popular person to whisper to. See the section on 
+direct messaging below.
+/dmagain (/dma)
+/again:/refresh::/dmagain:/dmrefresh
+
+/replies (/re)
+Displays your last twenty @ replies, mentions and 
+old-style RTs. This may be affected by your Twitter ₇₀
+account notifications₇₀ settings. This command is 
+synchronous and the foreground process will pause 
+until the replies are received or timed out. If you 
+specify -mentions, then replies and mentions are 
+mixed into your timeline automatically, even from 
+users you don't follow, making this command 
+unnecessary.
+/reply [menu code] [tweet] (/re), /vreply [menu code] [
+tweet] (/vre), /thread [menu code] (/th)
+This set of commands respectively replies directly 
+to a tweet or direct message using threading if 
+possible (the first using conventional replies; the 
+second using a publicly visible reply a la ".@
+twitterapi Twitter API roxx"), and the last displays the
+ thread a tweet is part of (if any). See the sections on
+ tweet selection and DM selection₇₁ below.
+
+/delete [menu code] (/del)
+Deletes a tweet (only your own tweet -- nice try) or a 
+direct message. See the sections on tweet and DM ₇₂
+selection₇₂ below.
+/deletelast (/dlast)
+Deletes the last tweet (that is, the most recent tweet)
+ you posted during this session. This doesn't work 
+for direct messages nor carries forward from 
+session to session, in case you have a habit of 
+posting incorrectly targeted death threats and then 
+quitting TTYtter (in that case, use /delete against said
+ bogus tweet).
+
+/favourite [menu code] (/fave, /f), /unfavourite [menu 
+code] (/unfave, /unf)
+Favourites or unfavourites a tweet, respectively. See 
+the section on tweet selection₇₃ below.
+/favourites (/faves, /fl)
+Displays your most recent favourite tweets. This 
+command is synchronous and the foreground 
+process will pause until the data is received or timed
+ out.
+/favourites [username] (/faves [username], /fl [username]
+)
+Displays someone else's most recent favourite 
+tweets. This command is synchronous and the 
+foreground process will pause until the data is 
+received or timed out.
+
+/retweet [menu code] (/rt), /eretweet [menu code] (/ert), /
+fretweet [menu code] (/frt)
+Retweets a tweet (direct messages, wisely, not 
+allowed). /eretweet loads the tweet into the special 
+substitution variable %RT% which you can use at the 
+beginning or end of your next tweet; regular /retweet
+ just sticks on RT @username: and sends it right 
+away. If you really like the tweet, then /fretweet will 
+favourite it for you at the same time as you retweet 
+it. See the sections on tweet selection and command₇₄
+ history/substitution₇₄ below. On purpose TTYtter 
+does not create "NewRTs" currently or use the new 
+retweet mechanism, as the API support for these is 
+incomplete.
+/rtsofme (/rtom)
+Displays tweets of yours that other people have 
+retweeted through the NewRT system (different from
+ the old manual retweets). This support is currently 
+incomplete in the Twitter API; you can't see who 
+retweeted the tweet, just what of yours they 
+retweeted. When this is supported, this will be 
+added to future versions. Old-style "manual" RTs are
+ seen by the Twitter API as mentions, and can be 
+seen with /replies.
+
+/search [query] (/se)
+Queries the Twitter Search API, as if you had typed it 
+into the box on search.twitter.com₇₅, and displays the 
+most recent results. See the section on Search API ₇₆
+integration₇₆ below. This command is synchronous 
+and the foreground process will pause until the data 
+is received or timed out.
+/track [keywords] and /tron [keywords], /troff [keywords],
+ /#[hashtag], /notrack
+Keyword and hashtag tracking (respectively: set 
+your keywords, add a keyword, remove a keyword, 
+shortcut for adding a hashtag, and cancel all tracking
+ keywords). See the section on Search API ₇₇
+integration₇₇ below.
+/trends (/tre)
+Asks the Twitter Search API for the most current 
+trending topics. Displays them as /search and /tron 
+commands (qq.v.) you can simply cut and paste to 
+execute. See the section on Search API integration₇₈ 
+below. This command is synchronous and the 
+foreground process will pause until the data is 
+received or timed out. 
+/dump [menu code] (/du)
+Dumps out the internal structure and metadata for 
+the tweet referenced by the specified menu code 
+(which, if only stored in TTYtter's backing store, may 
+omit fields irrelevant to TTYtter). You can also view 
+information such as creation date, source and 
+Geolocation API₇₉ position data, and is particularly 
+useful for people who want to grab URLs to individual
+ tweets as the URL for the specified tweet is placed 
+into %URL% for additional use.
+/url [menu code]
+Opens the URL(s) specified in the tweet or direct 
+message indicated by the selected menu code, 
+according to the current -urlopen option. See the 
+sections on tweet and DM selection below. If you 
+don't specify a menu code, then the current value of 
+%URL% is substituted (you can also use an arbitrary 
+URL if you like). (Nota bene: While /url will accept UTF
+-8 characters as valid parts of a URL (damn you 
+tinyarro.ws), that doesn't mean your underlying 
+browser will.)
+/short (/sh)
+Shortens a supplied URL (by default using the is.gd₈₀ 
+service, but may be compatible with others). The 
+new shortened URL is displayed and you can 
+substitute it at the beginning or end of subsequent 
+tweets using %URL% (see command history and 
+substitution). If you don't specify a URL, then the 
+current value of %URL% is substituted.
+
+/versioncheck(/vcheck)
+Pings the floodgap.com server (this one!) to see if 
+you are using the most current version.
+/!
+Allows you to enter a shell command from within 
+TTYtter. This is run with whatever Perl thinks your 
+shell is (inside system()); for example, /!ls displays 
+the contents of the current working directory. 
+Remember that this opens up subshells (on 
+purpose), so you can't change, say, an environment 
+variable this way and expect the Perl running TTYtter
+ to see it.
+/history (/h)
+Displays the last set of commands entered (see 
+Command history and substitution₈₁ below).
+/me
+For the IRC freaks. Simply echoed as a tweet, /me 
+included.
+/clear (/cls)
+Clears the screen, either with an ANSI sequence or 
+printing linefeeds.
+/ruler (/ru)
+Prints a "ruler," 140 characters wide plus the size of 
+the prompt, as a convenient visualaid.
+/eval
+I'm sorry, this command is classified.
+
+/quit (/q)
+Leaves ttytter. Pressing CTRL-D or CTRL-C will also 
+do this. It's preferable to use this command (or 
+those keysequences) to exit ttytter because if you 
+kill the console process outside of ttytter, the 
+background process may not get cleaned up and will
+ have to be killed separately. /exit and /bye are 
+synonyms by popular request.
+
+/quit immediately stops anything running in the 
+background, including pending requests for new 
+tweets or DMs. If you want to wait for these to 
+complete, use /end (/e).
+ 
+
+Direct messaging
+
+Direct messages are handled like any other tweet, 
+except they appear with special formatting to set them 
+apart. Because most people receive more tweets than 
+DMs, DM checks are handled less frequently than regular
+ tweets (the default is to check every fourth time 
+interval). Any new DMs arethen displayed as part of the 
+tweet stream. (Also see the -dmpause option under 
+Command-line options₈₃.)
+
+If your terminal supports ANSI colour sequences (or you 
+force it on with -ansi), then DMs that you receive appear 
+in green by default.
+
+Since ttytter does not save state (on purpose), it doesn't 
+know where you left off in your DM inbox. When you start 
+ttytter, it will display the two most recent DMsand their 
+time stamps. If both are new to you, a quick /dmagain 
+will show you the full last twenty to see if there are any 
+others.
+
+To send a direct message, use /dm with a username and 
+message, e.g., /dm zaphod trillian is gonna kill you when
+ you get home you two-faced jerk. Direct messages are 
+also subject to -verify, -slowpost and -autosplit (again, 
+see Command-line options₈₄).
+
+You can also use the /reply command to reply to a DM 
+menu code, which we will talk about now.  
+
+Replying to tweets and direct messages, threading ("in 
+reply to"), favourites and DM/tweet selection (or, "what 
+are those funny little codes for?")
+
+After a bit of time using TTYtter, you will have noticed the
+ a letter-number code on the left of every tweet. This is 
+the tweet's menu code. The letter ranges from a-z and 
+the number from 0-9, with tweets za0-zz9 reserved for 
+temporary menus the foreground process constructs (
+zz0-zz9 always reserved for thread requests).
+
+That sounded a little dizzying, so I think an example will 
+be the best way to show how to use this effectively. As 
+your timeline moves along, say there is a tweet you want 
+to reply to. You could simply use @username, but this 
+does not thread your reply (there is no 'reply to'). 
+Instead, the /reply command can take a menu code and 
+you can then tell TTYtter the exact tweet youare 
+referencing. For example,
+
+h2> <ev> I am so awesome. You all want me. #
+eviswanted 
+h3> <ttytter> Version 16.0.9 will enable world 
+domination. 
+TTYtter> /re h3 I would like very much to dominate the 
+planet. 
+(expanded to "@ttytter I would like very much to 
+dominate the planet.") 
+TTYtter> h4> <@doctorlinguist> @ttytter I would like 
+very much to dominate the planet. 
+
+Notice that your reply appeared with its own menu code 
+(so you can reference your own tweets), that the reply 
+had the correctly referenced screen name added for you 
+(you don't need to retype that), and that your tweet 
+appeared with a @ before your screen name. The @ 
+means that your tweet is now part of a thread (i.e., it has 
+"reply to" information attached to it). If you asked TTYtter
+ for the thread it belongs to using the /thread command, 
+you would get
+
+TTYtter> /th h4 
+zz0> <ttytter> Version 16.0.9 will enable world 
+domination. 
+zz1> <@doctorlinguist> @ttytter I would like very much 
+to dominate the planet. 
+
+(up to 10 tweets in a thread can be retrieved, if it's that 
+long), ending with the tweet you asked to have threaded.
+
+Notice that the menu codes are different. Any collection 
+of tweets requested by your command uses special 
+menu codes constructed just for those tweets. For 
+example, if you asked for your mentions-replies, you mig
+ht see
+
+h5> <@ttytter> @doctorlinguist I like your world 
+domination code. 
+TTYtter> /re 
+za0> <@ttytter> @doctorlinguist I like your world 
+domination code. 
+za1> <cbqueue> Waiting for @doctorlinguist to hack into
+ my wireless.  
+za2> <@floodgap> @doctorlinguist We have fired you 
+for being too awesome. Please see HR.  
+
+Then you can see the threads that any of those belong 
+to:
+
+TTYtter> /th za0 
+zz0> <ttytter> Version 16.0.9 will enable world 
+domination. 
+zz1> <@doctorlinguist> @ttytter I would like very much 
+to dominate the planet. 
+zz2> <@ttytter> @doctorlinguist I like your world 
+domination code. 
+TTYtter> /th za2 
+zz0> <doctorlinguist> I have converted lead, puppy 
+poop and rubber bands into gold. I am awesome. 
+zz1> <@floodgap> @doctorlinguist We have fired you 
+for being too awesome. Please see HR.  
+Replies and mentions (with /replies), asking for a user's 
+tweets (/again username) and searches all create 
+foreground menu codes starting with z. These roll 
+forward from za0 to zy9; when the foreground process 
+runs out of menu codes, it simply wraps around (viz., 
+after zy9 comes za0 again).
+
+Threads occupy their own special temporary menu from 
+zz0-zz9 so that you don't have to keep grabbing, say, 
+your replies when you want tolook at a whole bunch of 
+threads. In fact, that is exactly what we did above. Each 
+time you request a new thread, the previous thread menu
+ is destroyed and a new set of codes generated. If you try
+ to access a tweet that has gone out of scope, you simply
+ get an error message. For example, we made a new 
+temporary thread menu when we asked for the second 
+thread. To prove this,
+
+TTYtter> /re zz2 I will E-mail my world domination code 
+update to you. 
+-- no such tweet (yet?): zz2  
+
+Likewise, because you are always receiving new tweets, 
+the background menu codes also roll forward, viz., after 
+tweet y9 comes a0 again. This means that the 
+background has a "memory" of 250 tweets, after which 
+the tweet is removed from the backlog. Don't worry: if 
+you should miss the chance to reference a tweet, you can
+ still get a temporary menu code by calling up that user's 
+tweets (or your replies) and referencing that tweet that 
+way using a foreground menu code.
+
+If you don't know if a tweet still exists, don't fret. 
+Whatever is the most recently displayed tweet with that 
+code is always the tweet it will reference.
+
+Deletion (/delete), retweets (/retweet, /eretweet and /
+fretweet), marking and unmarking favourites (/fave, /
+unfave and /fretweet), and opening URLs (/url) also all 
+take menu codes. The /url command opens all URLs in a 
+tweet according to the current -urlopensetting; for 
+example, try /set urlopen lynx -dump %U | more and 
+then run /url on a tweet with URLs in it. Mac OS X users, 
+try /set urlopen open %U
+
+Note that /url will permit UTF-8 characters in URLs thanks 
+to the proliferation of faddish shortners like tinyarro.ws, 
+but some browsers don't understand them on the 
+command line (in fact, Mac OS X's open will see these 
+characters and think its argument is a filename, so 
+caveat scriptor).
+
+If you want to make a visible reply everyone can see 
+regardless of whether they follow the user you replied to,
+ or regardless of their settings, you can use /vreply. This 
+generates a tweet like r @username your reply, and 
+threads it. Use sparingly to avoid annoying people.
+
+/delete deletes your own tweets, after you confirm which 
+tweet you have flagged for destruction. You cannot use it 
+to erase another user's. Deletion is not guaranteed: even
+ if TTYtter reports it received successful confirmation, it 
+may be queued for later by Twitter internally, or it may 
+not happen at all if Twitter is having database problems. 
+If you're really prone to fatfingering your tweets, you 
+might want to use the -verify or -slowpost options so you
+ have a chance to catch mistaken tweets before they are 
+sent. You can use /deletelast as a shortcut for deleting 
+the most recently posted tweet in this session.
+
+/retweet simply retweets the selected tweet, with RT @
+userwhosaidit: followed by the tweet. If you want to add 
+your own commentary, you can use /eretweet, which 
+loads the tweet into the substitution variable %RT% 
+which can then be used at the beginning or end of a 
+subsequent tweet. Here is an example of both in action:
+
+s5> <doctorlinguist> I am awesome 
+TTYtter> /rt s5 
+(expanded to "RT @doctorlinguist: I am awesome") 
+TTYtter> s6> <@ttytter> RT @doctorlinguist: I am aw
+esome 
+/ert s5 
+-- ok, %RT% is now "RT @doctorlinguist: I am awesome" 
+TTYtter> yes, you are %RT% 
+(expanded to "yes, you are RT @doctorlinguist: I am 
+awesome") 
+TTYtter> s7> <@ttytter> yes, you are RT @
+doctorlinguist: I am awesome
+
+If even this is not expressive enough for you, you can 
+also edit %% with the usual substitution sequences (see 
+Command history and substitution₈₆ below), which is also 
+populated by /eretweet. If you really enjoyed the post, 
+then /fretweet will retweet and favourite the tweet for you
+ all at the same time.
+
+Direct messages also have their own menu codes. These
+ three-character codes always start with the letter d, and 
+are completely separate from each other (e.g., tweet 
+code a5 is unrelated to DM code da5). For example, when
+ you start up you might see
+
+-- checking for most recent direct messages: 
+[DM da0][cbqueue/Fri Sep 28 02:01:33 +0000 2007] test 
+test 
+[DM da1][ttytter/Fri Sep 28 03:01:51 +0000 2007] don't 
+forget to update the website
+
+These codes can also be used to /reply (sending them a 
+direct message reply), to /delete (deleting it from your 
+direct message inbox), or for /url to extract URLs from, 
+just like a tweet menu code would be. Instead of using 
+the two-character tweet menu code, however, use the 
+three-character DM menu code and "the right thing" (tm)
+ will be done automagically:
+
+TTYtter> /re da0 test test back atcha 
+(expanded to "/dm cbqueue test test back atcha")
+
+Currently Twitter does not support threading for direct 
+messages, so /thread cannot be used for DMs at present
+ (and /reply to a direct message thus cannot thread it; in 
+this version it acts merely as a convenient shortcut). 
+Also, there is no /retweet for DMs. If you want to be like 
+that, cut and paste yourself.
+
+Like regular tweet menu codes, DM menu codes wrap 
+around. There are no temporary menus for DMs, 
+however; if you use /dmagain to redisplay your inbox, the
+ codes simply keep advancing. Whatever is the last DM 
+on screen with a particular DM menu code will always be 
+referenceable by that code. Because there are no 
+temporary menus, the range of DM codes is da0 through 
+dz9, meaning a "memory" of 250 direct messages. You 
+can always get them back with /dmagain.
+
+If your /reply or /(e)retweet of a tweet (or, where allowed,
+ a DM) ends up expanding over length, the usual 
+automatic trimming or autosplitting applies with one 
+important change: if you use %-substitution on the most 
+recent tweet that is or originally was a reply or retweet, 
+then the substituted tweet is also linked (see Command ₈₇
+history and substitution₈₇). This allows things like autosplit 
+or %-based line editing to work correctly and connect to 
+the same thread. As soon as you type a new tweet or 
+reference a new one, however, TTYtter may automatically
+ purge it if it thinks you are no longer working with the 
+selected tweet.  
+
+Geolocation support
+
+To geotag your tweets with location coordinates, your 
+account must be geo-enabled first. This cannot be done 
+from within TTYtter for security reasons; you will need to 
+change your settings from the Twitter web interface. 
+Once this is done, your account will be ready to pass 
+location information.
+
+Three options control how TTYtter manages Geolocation 
+API support. You specify coordinates as either -lat and -
+long options on the command line (see Command-line ₈₉
+options₈₉), or by using the commands /set lat and /set long
+ from within the client, such as /set lat -35.4925. You 
+need to specify coordinates as signed decimal: Twitter 
+does not accept (and therefore neither does TTYtter) 
+minutes/seconds and directions. You can change your 
+coordinates as often as you like dynamically. Note that 
+on the command line, zero is seen as undefined -- if you 
+are sitting on the Equator or the Prime Meridian, use 0.0 
+(that is, a floating value) as the coordinate.
+
+Once you have a completely specified set of latitude and 
+longitude, the -location option controls whether TTYtter 
+transmits it. This defaults to false so that you do not 
+inadvertently leak location information with your tweets. 
+To turn this on, say -location on the command line, or /
+set location within the client. To disable it, say -location=
+0 on the command line, or /unset location within the 
+client, and your location information is no longer 
+transmitted. If your location information is incomplete, it 
+is not transmitted and a warning is displayed.
+
+Whenever you tweet with location enabled, TTYtter 
+reminds you as a security measure that your location was
+ sent, and specifically what coordinates were 
+transmitted.
+
+To see the location information for a tweet, use the /
+dump command. This displays whether the user in 
+question is geo-enabled, and gives you their latitude and 
+longitude which you can directly punch into a tool such as
+ Google Maps. If a tweet contains geolocation 
+information, it has a + (plus sign) next to the user's 
+screen name. Note that even if a user is geo-enabled, 
+that does not mean they are always transmitting location 
+information, so not all their tweets may be so marked 
+(including yours!).  
+
+Following and leaving users
+
+You can follow or unfollow users using /follow, and /
+unfollow or /leave, respectively (or block and/or unblock 
+them with /block and /unblock). You can always find out if
+ a user follows you with /whois or /doesfollow.  
+
+Tracking keywords and hashtags, and integration with 
+Twitter Search API
+
+TTYtter can also talk to and run queries automatically 
+against the Twitter Search API. You can use this to search
+ for keywords and topics as if you were searching Twitter
+ from your browser, or you can even tell TTYtter to watch 
+for #hashtags and keywords you specify, and add them 
+to your stream of tweets automatically with regular 
+refreshes.
+
+Let's start with a typical workflow. What are people 
+looking at? The /trends command tells you what the 
+current topics du jour are:  
+TTYtter> /trends 
+<<< TRENDING TOPICS >>> 
+/search #sxsw OR SXSW 
+/tron #sxsw SXSW 
+/search Twilight 
+/tron Twilight 
+/search Ireland 
+/tron Ireland 
+[...] 
+<<< TRENDING TOPICS >>> 
+
+This displays a string of topics, formatted into /search 
+and /tron commands you can cut and paste from and into
+ your terminal. If you see a search you want to run, the /
+search command runs it as if you had typed it into the 
+Twitter Search page, and displays the most current 
+tweets that match. You can use any search term and 
+operator the web page would normally let you. Obviously
+ you are not limited to the trends list; those are just 
+suggestions.
+
+But say you want to actually follow that topic or hashtag. 
+The /tron command adds that topic or hashtag to your 
+list to follow, and automatically executes that search on 
+your behalf, mixed into your regular updates from your 
+timeline and updated whenever your timeline would 
+normally update. If your terminal supports ANSI colour 
+sequences (or you force it on with -ansi), then keywords 
+and hashtags you are tracking are highlighted, and 
+results that came only from a search (i.e., weren't part of
+ your normal timeline) and aren't replies or your own 
+tweets are marked in cyan by default so they stand out. 
+(If you only want to see tracked results, then either use 
+the -notimeline command line option or say /set 
+notimeline 1 andyour timeline will be turned off -- only 
+direct messages and tracked results will appear.) For 
+example, you can say /tron #twitter, or use a keyword: /
+tron ttytter or even a quoted string: /tron "Jack Dorsey". 
+You can follow multiple at once; you don't need to say 
+AND or OR (they are treated as OR).
+
+Following certain topics can literally flood your terminal 
+out with a massive stream of tweets. If you want to 
+completely replace your tracking list with a new list, use /
+track (such as /track "Cameron Kaiser" #gopher); 
+however, if you want to just withdraw one single term, 
+use /troff (such as /troff #twitter) to remove that search 
+term or hashtag from your tracking list.
+
+If you've totally had enough, you can turn off tracking 
+entirely with /notrack, which cancels all your keywords, 
+or you can reversibly disable tracking with the -notrack 
+commandline option (or /set notrack 1 to turn it off, and /
+set notrack 0to turn it back on).
+
+To see what you are tracking now, type /print track. 
+When you quit TTYtter, your tracking list is shown and 
+you can either pass it on the command line next time or 
+put it in your ₉₂.ttytterrc₉₂ with the -track option.
+
+Because hashtags are so popular, you can use the /# 
+shortcut to follow a particular hashtag, such as /#twitter. 
+To turn it off, use /troff like usual (/troff #twitter).
+
+Automatic keyword/hashtag tracking does not support 
+using Search API operators or logicals. Occasionally you 
+want an automatic search that is more prolix, and the 
+semi-secret command /set tquery allows you to specify a
+ single complex query that the Search API will support. 
+This overrides your keywords. For technical reasons, 
+tquery requests still highlight your old keywords, if you 
+specified any before. To cancel a custom query and 
+return to regular tracking (if any), say /set tquery 0; your 
+old keywords will be reinstalled.  
+
+Command history and substitution
+
+Command-line history and editing is significantly 
+changed, and sometimes even improved, if readline 
+support is enabled. See TTYtter₉₄ and ₉₄readline₉₄ support₉₄ for
+ what changes when you use -readline.
+
+A simple one-command history (I used to call this the "re
+-tweet," which was a term I used long before the johnny-
+come-lately "RTs"! sigh) allows you to recall the last 
+command. Instead of using !!, which can sometimes start
+ (or be) a tweet, the last command is recalled with %%, 
+and can be further modified. If the last tweet was too 
+long, the truncated version is added to the history, 
+allowing you to approve or append to it (and you are 
+reminded of the new length). For example,
+
+TTYtter> this is an attempt at a really long tweet which 
+will almost certainly be greater than one hundred and 
+forty characters even without UTF-8 overhead. 
+*** sorry, tweet too long by 7 characters; truncated to 
+"this is an attempt at a really long tweet which will almost
+ certainly be greater than one hundred and forty 
+characters even without UTF-8" (137 chars) 
+*** use %% for truncated version, or append to %%. 
+TTYtter> now is the time 
+TTYtter> %% for all good men to eat pizza 
+(expanded to "now is the time for all good men to eat 
+pizza") 
+TTYtter> q3> <doctorlinguist> now is the time 
+q4> <doctorlinguist> now is the time for all good men to
+ eat pizza 
+[DM dn4][cbqueue/Mon Oct 01 07:31:54 +0000 2007] 
+stop doing that 
+
+If you have -autosplit on, then the split tweets get placed 
+into %%. See Command-line options₉₅ for how this works.
+
+In addition, a proper and full command history is also 
+available, by default the last twenty in a session. Just as 
+%% replaces !!for the immediately preceding command,
+ so does, say, %-3 replace !-3 to retrieve (in our 
+example) the command you entered three lines ago. If 
+you add a :p (e.g., %-3:p) it will print it for you, or you can
+ type /history to see all the commands in the buffer. :p 
+and /history don't get added to the history themselves, 
+but all other commands and tweets are. %% also still 
+works just like before.
+
+When using %-substitution sequences, you may either 
+append to a substitution, such as %% jumps the shark, 
+or prepend to it, such as American Idol jumps the %%. 
+To avoid ambiguity, intercalation is not supported (e.g., 
+American Idol %% the shark is not subject to 
+substitution). /%% is specifically allowed to let you 
+escape tweets that look like commands.
+
+You can also use %-sequences to do primitive history 
+editing. Since a particularly common task is to try to take
+ words off the end toshorten a tweet, you can do this by 
+adding -x to the end of a history command (or -- for one 
+word only). For example, %%-- takes the last word off 
+the last command and resends that, or for a more 
+complex example, %-2-4 takes the command two lines 
+ago, and takes four words off that. You can then append 
+to this construct, e.g., %-3-2 with Phyllis I mean, or 
+prepend to it, e.g., this is cool >> %-3-2. Note that this 
+does not work with :p.
+
+The most recently-shortened URL is always available as 
+%URL% (e.g., if you shorten http://www.example.com/, 
+then %URL% is http://is.gd/7bP). Again, to eliminate 
+ambiguity in potentially compressed 140-character 
+missives, it is only interpreted at the beginning or end of
+ a line.
+
+%URL% is also set by /whois and /wagain from the user's
+ URL (if any), along with the last URL you looked at with /
+url, and the URL for the tweet dumped by /dump. If you 
+say /short or /url with no arguments, then %URL% is used
+ as the default, so you can open someone's home page 
+with /whois user followed by /url.
+
+As mentioned above, the /eretweet command loads a 
+selected tweet menu code into %RT%, allowing you to 
+frame a tweet with your own commentary before you 
+send it. Once again, to eliminate ambiguity in potentially 
+compressed 140-character missives, it is only 
+interpreted at the beginning or end of a line. If even this 
+is not flexible enough for you, it also populates %% so 
+that you can use the other %-substitution sequences to 
+edit it or shorten it.
+
+If you use %-substitution on the most recent tweet and it 
+was connected to another tweet (such as making a /reply
+ to specify a tweet you are replying to, or a /(e)retweet), 
+then any immediate substitutions made on that tweet are
+ linked to that tweet also. Note that these kinds of 
+tweets, such as /reply, appear in your history in their 
+original unexpanded form, i.e., literally as you typed 
+them (e.g., "/re f9 bletch foo bar"), except if they are 
+auto-split. This is, in fact, how /eretweet works by 
+design. If you reference another tweet or type another 
+tweet, however, this context is automatically purged if 
+TTYtter believes you have stopped working with this 
+one.
+
+Remember to read TTYtter₉₆ and ₉₆readline₉₆ support₉₆ if you 
+intend to use readline support.
+
+Command-line options
+
+There are many useful options you can pass on the 
+command line. Not all options are supported in prior 
+versions. Here is the complete list of command-line ₉₇
+options₉₇.
+
+Special features
+ 
+
+TTYtter and UTF-8 support
+
+TTYtter does support receiving and making tweets using 
+UTF-8 encoding for Unicode code points larger than 8 
+bits.However, there are a number of gotchas that need 
+to be considered.
+
+For minimal support of UTF-8, including receiving and 
+decoding UTF-8 tweets, your Perl must have support for 
+Unicode (thus 5.005 won't work) and the internal utf8 
+pragma (which usually means you must have utf8.pm), 
+and your terminal program must be configured to 
+understand a UTF-8 locale or at least not interfere with 
+bytes with the high bit set. For example, even many 
+modern xterms will not properly display UTF-8 unless 
+the LC_CTYPE environment variable is correctly set prior
+ to launching the xterm (this is particularly relevant to 
+Mac OS X), such as en-US.UTF-8. You may also need to 
+set other LC_* environment variables, or the LANG 
+environment variable. Users of terminal programs in 
+other environments should enable UTF-8 encoding in 
+their settings, and if you are using Telnet or rlogin, make 
+sure your connection is 8-bit safe. Your font must also 
+include the needed glyphs for display.
+
+If you do not meet these minimum requirements, or 
+ttytter complains your Perl does not support enough 
+features to enable UTF-8 support, then you must disable 
+UTF-8 with the -seven option. This is the only supported 
+way for 5.005 or for impoverished installations.
+
+To send UTF-8 encoded tweets, there are several more 
+gotchas. First, you will need to make sure that your 
+terminal environment gives you the ability to enter the 
+desired character; TTYtter does not support any specific 
+input methods internally and relies on your terminal. As a
+ corollary, if your terminal program or input method does
+ not properly support wide characters such that a 
+backspace or delete does not delete all bytes in a "wide"
+ multibyte character, backspacing over a wide character 
+only once will leave an incomplete UTF-8 sequence even 
+if it looks like the glyph was deleted. This is entirely 
+under the control of your terminal environment; TTYtter 
+only reads from standard input. If you don't know, press 
+CTRL-R to redisplay the current line. Don't worry, 
+however: if you enter a tweet with demonstrably invalid 
+UTF-8 encoding, ttytter will refuse to post it. Pressing 
+CTRL-U will always clear your line in this case. You might 
+also consider using -synch if your input method is 
+unhappy with TTYtter's background updates.
+
+As of 1.0.1, TTYtter counts tweets in characters, not 
+bytes, allowing you to post a 140-character tweet even if 
+it is longer than 140 bytes when encoded as UTF-8. This 
+is properly supported by -autosplit such that you can 
+split on character and word boundaries. Note that -
+autosplit=word might be a little odd if you mix, say, 
+Japanese and English in your tweets, because TTYtter 
+currently only knows to split words on spaces and may 
+make a wrong best guess about where to split up your 
+tweet; no okurigana support yet, すみません。
+
+Certain -readline drivers may not allow you to enter UTF-
+8 (although virtually all I have tested will let you receive 
+it). If you get Malformed UTF-8 errors while you try to 
+type or edit a line, your readline driver is not UTF-8 safe. 
+For more on readline, see TTYtter₉₉ and ₉₉readline₉₉ support₉₉.
+
+UTF-8 support is not possible for every combination of 
+font, terminal, locale and Perl version, and while I'm 
+trying to make sure it works in most places, I can't make 
+it work every place. If you'd rather just junk UTF-8 or 8-
+bit characters in general altogether, use -seven. In this 
+mode, all 8-bit characters are rendered as printable dots
+ and UTF-8 entry is not allowed. This is the lowest 
+common denominator for compatibility.  
+
+TTYtter and SSL
+
+For modern versions of either Lynx or cURL, OpenSSL is 
+mandatory for the following section.
+
+TTYtter supports encryption as long as your Lynx or cURL
+ does, since obviously the network lifting is done by Lynx
+ or cURL, not TTYtter. For this reason, since not everyone
+ has a crypto-enabled client, SSL is not enabled by 
+default. If you are using HTTP Basic Authentication₁₀₁, your 
+password is sent in the clear; and even if you are using 
+OAuth (the default), all updates and information you send 
+and receive are also transmitted in the clear except your 
+OAuth secrets, which are only used to generate 
+cryptographic signatures. This may be a problem if you 
+require high security for your application or are on an 
+insecure link such as open wireless.
+
+If your client does support SSL, then you can easily 
+change TTYtter to use it (do note that this may scale less 
+well due to the additional overhead) by simply using the -
+ssl option. All of the applicable URLs will be changed for 
+you. (This assumes you are using the regular Twitter API 
+URLs and might not work properly with Twitter-alike 
+APIs. Also, this does not apply to -shorturl for the URL 
+shortening service, which is not a Twitter service, and it 
+does not apply to the Search API URLs which do not offer
+ SSL access. You should make sure your URL shortening 
+service allows SSL access first, and if so, specify -
+shorturl=... yourself. See Command-line options₁₀₂.)
+
+If you aren't using the Twitter default URLs, you can use 
+the various URL command-line options₁₀₃ to manually 
+specify https:// URLs, or using -apibase to establish a 
+single "root" URL for services such as Identi.ca or ₁₀₄
+StatusNet₁₀₄.
+
+By default, cURL's certificate bundle is old and does not 
+support Twitter's current CA. cURL offers an updater ₁₀₅
+script in Perl₁₀₅ which will rebuild a new certificate bundle 
+suitable for installation, which requires LWP, along with 
+the standard Getopt and MIME modules. (A more current 
+version may have already come with your cURL install.) If 
+you need a version of this updater script for systems 
+without LWP (like Mac OS X) and don't want to install LWP 
+to run it, I offer a modified version using ₁₀₆cURL₁₀₆ itself₁₀₆. 
+Once it's downloaded and converted, copy the resulting 
+bundle file over the old one, or put a line in your~/.curlrc 
+to specify --cacert to the location of the new bundle 
+(such as --cacert /home/zivadavid/ca-bundle.crt). (On 
+Mac OS X and probably most systems, the default bundle
+ lives at /usr/share/curl/curl-ca-bundle.crt.)
+
+For Lynx users, if you get certificate errors, read how to ₁₀₇
+manage certificates in Lynx₁₀₇. The MirOS root certificates ₁₀₈
+package₁₀₈ is known to work with Lynx 2.8.6 (yours truly 
+uses it); simply expand the sh-archive into your OpenSSL
+ certificates folder, by default /usr/local/ssl/certs, and 
+Lynx should automatically start using them.  
+
+TTYtter and readline support (and 
+Term::ReadLine::TTYtter)
+
+If you need more advanced command line management 
+than the basic client offers, TTYtter also supports 
+readline for interactive command line history, TAB 
+completion and editing. You must have Perl 5.6 or higher
+ for readline support to properly function -- it is not 
+supported in 5.005 -- along with the Term::ReadLine 
+stub module (part of the standard Perl distribution), and a
+ functional Term::ReadLine::* driver.
+
+Starting with 1.1.6, TTYtter offers tight integration with 
+its own bespoke "beta" driver, Term::ReadLine::TTYtter₁₁₀,
+ which offers several unique features including automatic 
+prompt updating, history synchronization, background 
+control and even a character counter. As a descendant of
+ Term::ReadLine::Perl, it is pure-Perl and should run on 
+most systems and environments. This is now the 
+recommended driver for most users, but T::RL::T is beta 
+and under development and may have bugs. Your ₁₁₁
+impressions are appreciated.₁₁₁
+
+If you don't want to use T::RL::TTYtter, TTYtter should 
+support any module that follows the API laid out in Term/
+ReadLine.pm.
+
+To start TTYtter in readline mode, pass the -readline=... 
+option, along with a (n optional) string of words to 
+preload the TAB completer with. This string is space 
+delimited, so you may need to quote it, or you can just 
+type -readline by itself with no string and use the 
+defaults. (If you have multiple drivers and want to choose
+ between them, set the PERL_RL environment variable 
+before starting TTYtter to an appropriate value, such as 
+Gnu, Perl, TTYtter or Stub. If you do not specify it, the 
+default is TTYtter.)
+
+TTYtter displays the driver it is using on startup. If you 
+get Term::ReadLine::Stub and you were expecting 
+another driver, try specifying it in the PERL_RL 
+environment variable (see above). The default is TTYtter;
+ if Term::ReadLine can't find it, it falls back on the basic 
+Stub driver unless another driver was requested.
+
+With readline enabled, assuming your driver supports it, 
+your cursor keys will become enabled allowing you to go 
+back and forth through your history, and you will be able 
+to use them to edit the current command plus any 
+additional editing keys enabled by your driver's features 
+and/or keybindings.
+
+Tweets will still print on screen and may overwrite what 
+you're typing. How you redisplay your current line varies 
+on the keybindings of your driver, but a routine that 
+works for most is to press SPACE, and then BACKSPACE.
+ (This might not work for certain input methods, 
+however, particularly ones like Kotoeri where nothing is 
+transmitted until a completed word is sent. There is 
+nothing TTYtter or Term::ReadLine can do about that. 
+The -synch option can help you here, but disables 
+automatic updates.) If you are using T::RL::TTYtter, 
+however, your prompt will be refreshed for you 
+automatically as updates occur. If you need a manual 
+update despite that, press CTRL-R.
+
+TAB is also active in readline mode for standard TAB 
+completion. The TAB completer starts out with the 
+standard TTYtter command set (completed only at the 
+beginning of a line, natch), plus any additional keywords 
+you give it with the -readline=... option. These can be 
+regular words, or they can be Twitter users (if so, they 
+should be prefaced with @, e.g., -readline="@
+doctorlinguist @ttytter"). Like any sane TAB completion 
+routine, if you press TAB and multiple options match, you
+ will be given a list.
+
+During the course of your session, people you @-reply 
+to, people you DM and people you query with /again, /
+whois and etc. will be added to the completer's 
+vocabulary. The completer is smart -- it will add the 
+name in context whether the @ is needed (replies) or 
+where it isn't (commands), but commands will accept @
+user arguments as well so that improved orthogonality is 
+achieved. (Your list is not populated out of tweets you 
+receive: this would scale very badly, and edge cases 
+would find themselves running out of memory!) When 
+you quit TTYtter, the words you preloaded plus the added
+ usernames (ranked with highest usage to the top) will 
+be displayed in command line form, up to 15. You can 
+pass this directly to ttytter or cut it up to put in your 
+.ttytterrc₁₁₂. Note that of course you can have active, and 
+specify on the command line, more than 15 terms; I just 
+picked that number to make it easier for people to parse
+ and cut and paste. If you want to know what the 
+optimized readline string is now, type /print tabcomp; if 
+you just want to see what got added to your TAB 
+completer (and all of it), use /print ntabcomp.
+
+TAB completion can also shorten URLs for you. Type any 
+http:// URL and at the end before you hit SPACE, press 
+TAB. Aftera brief pause the URL will be replaced with a 
+shortened one as if you had used the /short command. 
+This does not always work for characters that the driver 
+eats before handing the string to the TAB completer -- it 
+is best used for URLs that do not query forms or use 
+excessively complex parameters. If you're having 
+trouble with the TAB URL shortener, use /short.
+
+There is less need to use %-based command line history
+ in readline as it's much easier to just cursor back and re-
+use or edit the line yourself interactively with the cursor 
+keys. Nevertheless, %-sequences are still active and can
+ still be used (and for things like oversize tweets, 
+autosplit, etc., still have to be). Because of the way the 
+history is generated, %-substitutions appear in your 
+cursor up/down history in their unsubstituted original 
+form. Also, the -maxhist option (q.v.₁₁₃) only affects TTYtter
+'s internal history, not readline's. If you intend to mix and
+ match TTYtter's internal history and readline's (not 
+recommended!), check the /history command to make 
+sure that you and TTYtter agree on what particular 
+portion of the history is being operated upon. If you are 
+using T::RL::TTYtter, however, your history is 
+synchronized between TTYtter and ReadLine so that 
+most cursor-back and %-sequences work as expected.
+
+Remember that readline does not necessarily work like 
+standard input. For example, characters you type 
+between prompts may not be seen.
+
+If you intend to work in an UTF-8 locale, some readline 
+drivers may not handle UTF-8 character entry correctly 
+(the current version of Term::ReadLine::Perl is the most 
+notorious). If you receive Malformed UTF-8 errors while 
+attempting to edit a string with UTF-8 encoded 
+characters, your driver is not UTF-8 safe. Note that you 
+may still be able to receiveand see UTF-8 encoded 
+tweets, so if you don't need to send them, you can still 
+use that driver. However, neither TTYtter nor Perl nor 
+Term/ReadLine.pm can magically make a driver accept 
+input methods it does not understand. For more about 
+UTF-8 support in TTYtter, see TTYtter₁₁₄ and UTF-8₁₁₄. 
+T::RL::TTYtter does accept UTF-8 characters entered at 
+the command line, but may not be compatible with all 
+keyboard layouts. If characters you type are appearing 
+incorrectly, send a bug report₁₁₅.
+
+[For advanced users, you can add repaintable support to 
+your favourite readline driver if you want to modify it. 
+Make sure your driver advertises canRepaint 
+canRemoveReadline canSetTopHistory in your Features, 
+which map to redisplay, removereadline and 
+settophistory functions in your readline object (you can 
+do this incompletely and only advertise the implemented
+ functions if you like). redisplay and removereadline 
+should be prepared for getting called outside of an actual
+ prompt (and silently ignore those calls). You might also 
+change your readline routine to send PID $main::child a 
+signal 30 when a key is being processed and signal 31 
+when processing is complete, which stops background 
+work while you are typing. This only works with 1.1.6 and
+ later; it will crash earlier versions of TTYtter!]  
+
+TTYtter and notification support (Growl, libnotify, ...)
+
+Depending on your operating environment's support, 
+TTYtter can pass selected tweets and direct messages 
+on to a notification system. Thus, not only will they 
+appear on your regular terminal window, but you can also
+ be alerted to them in another customizable way. For 
+example, with Growl₁₁₇ support (built in to TTYtter), you can
+ then configure Growl to send selected tweets and DMs 
+to your iPhone via Prowl₁₁₈. Or, when I'm working out and 
+not sitting at the computer, I have Growl configured to 
+display very large alerts on the screen, driven by TTYtter
+, so I can see tweets I might need to respond to from 
+across the room without having to watch the window all 
+the time.
+
+To enable notifications, specify the notifications driver(s)
+ you want to use with the -notifytype=... option, and the 
+class(es) of messagesyou want to send through the 
+driver using the -notifies=... option. For example, this 
+command line enables Growl support and passes 
+notifications for (and only for) direct messages and 
+replies that you receive:
+
+% ./ttytter -notifytype=growl -notifies=dm,reply
+
+TTYtter supports Growl and libnotify drivers (more about
+ that below) and dm, me, reply, search and default 
+message classes, corresponding to, respectively in 
+order of precedence, direct messages, tweets you wrote,
+ replies and mentions, tweets that appear in search, and 
+other unclassified tweets from your timeline. The highest
+ level class is selected, so a tweet selected from search 
+that mentions you is promoted to a reply; if you retweet 
+yourself (you shameless publicity whore), it is promoted 
+to a self-written tweet. If you want to be notified about 
+everything that you get in your timeline, you might say
+
+% ./ttytter -notifytype=growl -notifies=
+dm,me,reply,search,default
+
+Each notification is tagged as a TTYtter alert, along with 
+the class of the notification, and the contents of the DM 
+or tweet.
+
+Growl support is built-in and well-tested, and uses the 
+growl driver (i.e., -notifytype=growl). Growl₁₁₉ is available 
+for Mac OS X (although there are endpoints supported on
+ other systems such as iPhone OS via Prowl₁₂₀). You must 
+also install growlnotify, which comes separately with the 
+standard distribution of Growl in the installation disk 
+image. Run the growlnotify install script; it places 
+growlnotify in /usr/local/bin by default. When you start 
+TTYtter for the first time with Growl, it registers itself as 
+an application so that you can make application-specific 
+settings such as alert type, sticky alerts and timeouts 
+specific to TTYtter within the Growl preference pane. 
+Changes to settings are stored by Growl, become active 
+immediately, and are remembered for future TTYtter 
+sessions.
+
+libnotify support is also built-in but currently 
+experimental, and uses the libnotify driver (i.e., -
+notifytype=libnotify). Although it uses the standard notify
+-send utility, currently it requires that notify-send be 
+recompiled with standard input support (use this patch₁₂₁) 
+in order to protect the command line from malicious 
+data. Replace notify-send with the new binary and start 
+TTYtter. If notifications appear successfully, your 
+configuration is correct. On purpose no special settings 
+or categories are currently used. Please report any bugs 
+you find to ckaiser@floodgap.com₁₂₂, as this support is 
+currently not well tested.
+
+You can specify multiple notification endpoints in 1.1.4 
+and later, such as -notifytype=growl,libnotify by 
+separating them with commas, if you have multiple 
+notification drivers installed.
+
+I would invite any other suggestions for notification 
+frameworks, although I am intentionally restricting built-
+in notification support to the most common applications 
+and systems. You can, however, build a handler for your 
+own preferred notification system using the API₁₂₃.
+ 
+TTYtter and HTTP Basic Authentication
+
+Prior to version 1.1, TTYtter's default (and only) method 
+of authenticating to the server was with HTTP Basic 
+Authentication. Although TTYtter now uses OAuth by 
+default, Basic Auth is still the method used by StatusNet/
+Identi.ca (below) and probably other Twitter-alike APIs 
+for right now, and is the only authentication method 
+available if your only available user agent is Lynx. For 
+that reason, it is still supported in TTYtter as a legacy 
+method of authentication, and the only version available 
+if you need to use an older version of TTYtter. If at all 
+possible, you should use Basic Auth with SSL₁₂₅ to avoid 
+sending your password in the clear.
+
+To switch to Basic Authorization, override TTYtter's 
+normal authentication with -authtype=basic. You will 
+need to specify your username and password with the -
+user option, like so:
+
+% ./ttytter -authtype=basic -user=screwtape:wormwood
+
+If you don't want to type your password on the command 
+line, then just use a username like -user=screwtape, and 
+TTYtter will ask for the password. (NB: If you have a 
+password like pa$$word that has shell metacharacters in
+ it, you may need to single quote it like ./ttytter '-user=
+screwtape:pa$$word'.) You can also put these options 
+into your .ttytterrc. In this mode, any keyfile you may 
+specify is ignored.
+
+Do not use Basic Auth with Twitter: it will not work.  
+
+TTYtter and StatusNet/Identi.ca (and other Twitter-alike 
+APIs)
+
+TTYtter will speak with other Twitter-alike APIs, although 
+less functionally depending on how much of the Twitter 
+API is implemented.
+
+The special command line option -apibase rewrites the 
+default Twitter URLs (and only the Twitter URLs, not, say, 
+Search API URLs or URL-shortening-service API URLs) to 
+point to a different server. For example, Identica offers a
+ Twitter-alike API with URLs starting with http://identi.ca/
+api. Identi.ca only supports Basic Authentication, so 
+additionally add -authtype=basic (described above₁₂₇). 
+Thus, a command like
+
+% ttytter -apibase=http://identi.ca/api -authtype=basic
+
+, plus your usual login options (such as ₁₂₈-user=..₁₂₈ with your
+ username and password) and such, will suddenly enable 
+you to authenticate and twitter on that server.
+
+You may need to disable certain features if your remote 
+system doesn't support them; this can cause TTYtter to 
+halt unexpectedly with a security warning if it gets data it 
+isn't expecting. Relevant options might include -notrack,
+ to disable the Search API; -nonewrts, to disable 
+NewRTs; -dmpause=0, to disable checking for direct 
+messages; -linelength=..., to enable longer lines for 
+those APIs that support it (1.1.9+); or -noratelimit, to 
+disable automatic rate limit checking (use -pause with a 
+fixed interval also). You can also put these options into 
+your .ttytterrc file. To find out what all these command 
+line options do, see Command-line options₁₂₉.
+
+Depending on the service you use, you may need to only 
+include some of these options, but this is the minimum 
+lowest common denominator of functionality supported 
+in TTYtter.  
+
+TTYtter and your special terminal environment
+
+It is possible, and quite often entirely functional, to run 
+ttytter within a custom terminal environment. For 
+example, your humble author runs ttytter routinely in 
+GNU screen. This works as-is and requires no special 
+options.
+
+For environments that try to provide a custom editing 
+environment, such as running ttytter under ssfe (a 
+simple full screen environment that is part of the sirc₁₃₁ 
+package) or similar, often TTYtter needs to signal the 
+environment that it is running, and TTYtter's normal 
+prompt handling usually must be suppressed. This is 
+accomplished with two options: -noprompt, which as its 
+name implies means no prompt is displayed and TTYtter
+ simply waits on standard input; and -leader=..., which 
+prints a lead line even before TTYtter has started up in 
+order to flag the environment. Depending on your real 
+terminal or terminal program, you may alsoneed -ansi or 
+-noansi to handle escape sequences correctly. Details 
+on all these options are on the Command-line options₁₃₂ 
+page.
+
+For example, this command line will start TTYtter under 
+ssfe:
+
+% ssfe ttytter -leader='`#ssfe#sTTYtter' -noprompt
+
+(Naturally include your login and any other relevant 
+options; also, my particular environment does in fact 
+require -noansi, but I have omitted those options for 
+clarity. This patch₁₃₃ may be useful for passing ANSI 
+sequences through.)
+
+If you are trying to get TTYtter to run under rlwrap or 
+other kinds of readline-specific wrappers, this usually 
+will work, but a better idea is to use TTYtter's own built-in₁₃₄
+ ₁₃₄readline₁₃₄ support₁₃₄ instead.
+
+It is not possible for me to support every possible 
+environment in TTYtter, and some just won't work. Also, I
+ do not like to add special trivial cases to the code if I can
+ help it. However, if there is a general way I can extend 
+support to your favourite runtime environment, or if you 
+have written an extension to accomplish this, please let 
+me know at ckaiser@floodgap.com₁₃₅. Please, no 
+attachments unless I request them. Thank you :)  
+
+Scripting TTYtter
+
+TTYtter can be easily "scripted" by passing it console 
+commands on standard input (and tweets, although if you
+ are doing a single tweet -status=... works much better 
+and can be made 'bulletproof' with -hold to boot):
+
+% ./ttytter -status="Writing a letter to my nephew."
+
+For many custom applications where you just need, say, 
+a cron job to fetch your last 20 DMs or your replies, 
+simply passing commands can be all you need. When 
+passing commands to TTYtter, most of the time you will 
+want to use -script to ensure that you have full control 
+over the environment and that prompts are suppressed.
+ For example, if you put this in a file and pipe it to ttytter 
+-script,
+/r 
+/dm
+
+TTYtter will fetch your 20 most recent tweets on the 
+timeline (since /r will start from the beginning, having no 
+history) and your 20 most recent direct messages, and 
+emit them all to standard output. You don't even need to 
+use a file at all, of course, and naturally you can pipe it to 
+something else such as in this marginally useless 
+example:
+
+echo "/again twitterapi" | ttytter -script -anonymous | 
+grep -i banana
+
+Any command that the console understands can be 
+passed, even history substitutions and actual tweets.
+
+You can also specify an arbitrary Perl expression on the 
+command line for simple filtering of tweet content; see 
+the -filter option under Command-line options₁₃₇. For 
+example, here is the banana example again, using 
+TTYtter to do the filtering:
+
+echo "/again twitterapi" | ttytter -script -anonymous -
+filter="\!/banana/i"
+
+Or you can make it even simpler and use -runcommand, 
+which combines -script and your (single) console 
+command all in one:
+
+ttytter -anonymous -filter="\!/banana/i" -runcommand="/
+again twitterapi"
+
+You can even search Twitter for hashtags and keywords. 
+For example, you can find a lot of Japanese poets this 
+way:
+
+ttytter -anonymous -runcommand="/search #haiku"
+
+Or you can get your replies on the command line (I have 
+this very line in my crontab so that replies to @ttytter get
+ E-mailed to me at regular intervals -- notice it's not 
+anonymous):
+
+ttytter -runcommand="/re"
+
+Such things suffice for simple tasks, but you cannot 
+change the format of tweets this way (except with things 
+like -timestamp), and there is no reliable error detection 
+or conditional logic. For much more custom behaviour, 
+you need to write an extension in Perl, which brings us to
+ ...  
+
+Writing extensions for TTYtter (-exts)
+
+If scripting isn't enough, you can completely override the
+ engine's guts for your specific purpose. Using the -exts
+=... option, you can specify extensions to augment 
+TTYtter's core behaviour, including but not limited to 
+adding new user commands, changing how received 
+tweets and DMs are dealt with, changing how errors are 
+reported or altering even how the console itself is 
+handled. You can either use this in interactive mode, or, 
+if you use -daemon, even make a Twitter bot. You can 
+load as many extensions as you like and mash them up 
+together.
+
+For more information on this very useful function, see 
+Advanced usage₁₃₉.
+
+Using TTYtter as a bot or daemon (-daemon)
+
+If you launch ttytter as a detached process using the -
+daemon option, it will immediately return but after 
+installing a background process that monitors tweets 
+and direct messages just like the asynchronous monitor 
+does in interactive mode. The PID of the new 
+background process is printed for your reference.
+
+If you just pass -daemon and don't specify any custom 
+behaviour with -exts=..., then tweets and DMs are 
+printed asynchronously in the background and you can 
+watch them while you use the terminal session for 
+something else (it will just print over what you're doing). 
+However, you must do something like ttytter -status=... 
+to post tweets, as there is no console process, and you 
+must kill the daemon process manually to turn it off.
+
+Combine -daemon with the -exts=... option and, as 
+mentioned above, you can use ttytter as a Twitter bot. 
+Again, for more information on this very useful function, 
+see Advanced usage₁₄₀.
+
+Now that you've read all that ...
+
+... read the list of command line options₁₄₁, or,
+
+... go download ₁₄₂TTYtter₁₄₂ and look at the change log and 
+known bug list.
+
+Send comments and blank cheques to ckaiser@₁₄₃
+floodgap.com₁₄₃.
+-------------
+
+
+Cameron Kaiser₁₄₄
+ 
