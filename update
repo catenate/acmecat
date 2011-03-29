@@ -1,11 +1,11 @@
 #!/dis/sh
-cd /n/C/cygwin/home/jcatena/bin; cp *emu /acmecat/cygwin
-cd /usr/jcatena/lib; cp profile /acmecat/cygwin
-cd /dis; cp -x accent acme.dis acme.dist cyrillic ecvar findguide frotz g gorn greek grepdiff guide head indent kanban kbdoc keyboard ligature lsdo map mapmk mapsh mas mistype mkdo monnum monthnamenum nb nbdoc nbend nbnew nobl nocr paths pos redo redoer redont repare resum so stardate todate twit twitter unindent /acmecat/dis
+cd /n/C/cygwin/home/jcatena/bin; cp *emu ttytter.pl /acmecat/cygwin
+cd /usr/jcatena; cp guide /acmecat/cygwin
+cd /usr/jcatena/lib; cp plumbing profile /acmecat/cygwin
+cd /dis; cp -x accent acme.dis acme.dist cyrillic ecvar findguide frotz g gorn greek grepdiff guide head indent kanban kbdoc keyboard ligature lsdo map mapmk mapsh mas mistype mkdo monnum monthnamenum nb nbdoc nbend nbnew nobl nocr paths pos redo redoer redont repare resum so stardate todate ttytter tweet twit twitter unindent /acmecat/dis
 rm -f /acmecat/lib/do/*; cp -x /lib/do/* /acmecat/lib/do
 rm -f /acmecat/lib/sed/*; cp -x /lib/sed/* /acmecat/lib/sed
 cd /man/1; cp -x map /acmecat/man/1
-echo /nb/pub/nbindex > /acmecat/nb/nbindexes
 rm -r -f /acmecat/test/*; cp -x -r /test/* /acmecat/test
 
 rm -f -r /acmecat/nb/pub/*; cp -x -r /nb/pub/* /acmecat/nb/pub

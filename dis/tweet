@@ -1,0 +1,4 @@
+#!/dis/sh
+cd /n/C/cygwin/home/jcatena/bin
+echo $* | sed 's,^,ttytter.pl -status=",;s,$,",' > postweet
+pos postweet

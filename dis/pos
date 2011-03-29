@@ -1,11 +1,13 @@
 #!/dis/sh
-#flag x +
-
 (cmd args) = $*
 dir = `{pwd}
 
+if {~ $dir '/usr*'} {
+	dir = `{echo $dir | sed 's,^/usr/jcatena,c:\\\\Documents and Settings\\jcatena\\Application Data\\acme-home,;s,/,\\,g;'}
+}
+
 if {or {~ $dir '/nb*'} {~ $dir '/dis*'} {~ $dir '/acmecat*'} {~ $dir '/test*'}} {
-	dir = `{echo $dir | sed 's,^,g:\\acme-0.13,;s,/,\\,g;'}
+	dir = `{echo $dir | sed 's,^,e:\\acme-0.13,;s,/,\\,g;'}
 }
 
 if {~ $dir '/n/C/*'} {

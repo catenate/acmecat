@@ -4,6 +4,7 @@ Sonstein, J.  20091120. Shell scripts to manage twitter lists.
 
 nb search twitter catenate me
 twit catenate
+twitter @catenate
 
 
 nb search twitter build system
@@ -14,17 +15,17 @@ twitter '%23plan9'
 
 
 nb search twitter electric cloud
-twit JennaRecruitSV
-twit emelski
-twit gmmaciag
+twitter @JennaRecruitSV
+twitter @emelski
+twitter @gmmaciag
 
 
 nb search twitter daily arab news
-twit ajenglish
+twitter @ajenglish
 
 
 nb search twitter daily coupon shop chicago
-twit grouponchicago
+twitter @grouponchicago
 
 
 nb tmbg birdhouse soul

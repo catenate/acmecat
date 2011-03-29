@@ -1,4 +1,9 @@
 #!/dis/sh
 space = $*
 nospace = `{echo $space | sed 's, ,+,g'}
-pos curl 'http://search.twitter.com/search?q=%22'^$nospace^'%22' >[2]/dev/null | grep msgtxt | dehtml | sed 's,^[	 ]+,\n,' | fmt -w 63
+if {~ $space '@*'} {
+	noat = `{echo $space | sed 's,^@,,g'}
+	pos curl 'http://twitter.com/'^$noat >[2]/dev/null | grep entry-content | dehtml | sed 's,^[	 ]+,\n,' | fmt -w 63
+} {
+	pos curl 'http://search.twitter.com/search?q=%22'^$nospace^'%22' >[2]/dev/null | grep msgtxt | dehtml | sed 's,^[	 ]+,\n,' | fmt -w 63
+}

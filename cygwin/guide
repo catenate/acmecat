@@ -1,0 +1,25 @@
+todate
+
+/n/C/Program␣Files/
+/n/C/Users/jcatena/Desktop
+/n/C/Users/jcatena/Downloads
+/n/C/cygwin/home/jcatena/bin
+/nb/pub/9keyboard
+/usr/jcatena/lib/profile
+jcatena@electric-cloud.com
+ls -tr /nb/*/guide /*/guide /lib/*/guide
+ls -tr dump/* | sed 's,^,Load ,'
+rm -r -f /nb/pub/acmesacs/jcatena; cp -r -x /usr/jcatena /nb/pub/acmesacs
+rm -rf /n/C/Users/jcatena/Documents/nb; cp -r -x /nb/ /n/C/Users/jcatena/Documents/
+|sort|uniq
+
+
+cd /nb; cat 20110303.tar | lstar
+cd /nb; cat 20110303.tar | gettar
+
+
+Wheezing air conditioner at gate works,
+nice and chilly, but occasionally sounds
+like TARDIS trying desperately to land.
+
+post-sales software support

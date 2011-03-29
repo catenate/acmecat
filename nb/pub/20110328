@@ -1,0 +1,28 @@
+nb sh and or set exit error
+screwtape: Any particular reason these tests are phrased negatively
+ 
+	[ ! -e "$1" ] || cat "$1"
+ 
+rather than positively?
+
+	[ -e "$1" ] && cat "$1"
+
+apenwarr: I’ve gotten into the habit of doing things that way since
+the latter one will abort if you use set -e.
+
+
+nb contact redoconf tim allen tallen email screwtape@froup.com
+
+
+nb contact redo avery pennarun apennarun email apenwarr@gmail.com
+
+
+nb ttytter oauth command line twitter client
+http://www.floodgap.com/software/ttytter/
+/n/C/cygwin/home/jcatena/bin/ttytter.pl
+/n/C/cygwin/home/jcatena/.ttytterkey
+/dis/ttytter
+/dis/tweet
+
+
+nb doc

@@ -1,2 +1,18 @@
 #!/dis/sh
-pos curl 'http://twitter.com/'^$1 >[2]/dev/null | grep entry-content | dehtml | sed 's,^[	 ]+,\n,' | fmt -w 63
+twit = $1
+html = /tmp/twit.$twit
+jpg = /nb/pub/twits/$twit.jpg
+pos curl 'http://twitter.com/'^$twit >[2]/dev/null > $html
+#echo $html
+grep '"fn"' $html | dehtml | sed 's,^[	 ]+,,;s,[^ ]* ,,'
+pic = `{grep 'profile_image' $html | grep $twit | sed 's,.*src=",,;s,".*$,,'}
+pos curl $pic > $jpg >[2]/dev/null
+echo $jpg
+grep 'adr' $html | dehtml | sed 's,^[	 ]+,,;s,[^ ]* ,,'
+grep '>Web<' $html | sed 's,.*href=",,;s,".*$,,'
+grep 'bio' $html | dehtml | sed 's,^[	 ]+,,;s,[^ ]* ,,'
+echo follows `{grep 'following_count' $html | dehtml}
+echo followers `{grep 'follower_count' $html | dehtml}
+echo lists `{grep 'lists_count' $html | dehtml} `{grep 'view-all' $html | sed 's,.*href=",,;s,".*$,,;/#/d'}
+echo tweets `{grep 'update_count' $html | dehtml | sed 's,Tweets,,;s/,//'}
+#rm -f $tmp

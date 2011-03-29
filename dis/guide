@@ -40,10 +40,16 @@ pos which which
 redo
 stardate | sed 's,\..*,,'
 todate
+tweet @catenate Testing command-line twitter client ttytter running in cygwin, called from acme.
+twit catenate
+twitter @catenate
 twitter catenate
 unicode ' '
 unicode '#'
-|fmt
+win units
+|keyboard
+|ligature
+|nocr |nobl |fmt
 |sed 's,,,'
 |sed 's,^,	,'
 |sed 's,^[ 	]+,,'

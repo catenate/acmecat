@@ -1,12 +1,13 @@
 pos git mv sync update
 pos git rm -r -f 
-update
 twit github
 |fmt
 :,$ |sed 's, *$,,;s,$,  ,;/^  $/s,  ,,'
 |sort|uniq
 
+update
+du -a | grep '/nbindex$' | sed 's,^.*  ,/,' > /acmecat/nb/nbindexes
 pos git status
 pos git add .
-pos git commit -a -m 'Remove sleep residue.'
+pos git commit -a -m 'Better twittering.'
 $ git push -u origin master
