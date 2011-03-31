@@ -37,8 +37,8 @@ ls -t -F | sed 's,\*$,,;/\/$/d;/^guide$/d;/^nbindex$/d' | sed '1s,^,Recent study
 Recent study: company perl keyboard htchero secure sh make refactor hudson travel redo τ gnu gnumake limbo stat twitter compile press manage
 
 dates='201103'
-words=`{nb $dates | grep -v ': doc$' | grep -v todate | grep /pub/ | sed 's,^.*: ,,' | fmt -w 1 | sort | uniq -d}
-apply {word=$1; echo `{nb $dates | grep $word | wc -l} $word} $words | sort -n -r | sed 's,[0-9]+ ,,' | sed '1s,^,Recent study: ,' | fmt -w 140
+words=`{nb -x $dates | grep -v ': doc$' | grep -v todate | grep /pub/ | sed 's,^.*: ,,' | fmt -w 1 | sort | uniq -d}
+apply {word=$1; echo `{nb -x $dates | grep $word | wc -l} $word} $words | sort -n -r | sed 's,[0-9]+ ,,' | sed '1s,^,Recent study: ,' | fmt -w 140
 
 
 nb doc

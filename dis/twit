@@ -16,4 +16,5 @@ echo followers `{grep 'follower_count' $html | dehtml}
 echo listed `{grep 'lists_count' $html | dehtml} `{grep 'view-all' $html | sed 's,.*href=",,;s,".*$,,;/#/d'}
 echo tweets `{grep 'update_count' $html | dehtml | sed 's,Tweets,,;s/,//'}
 echo lists `{sed -n '/sidebar-menu lists-links/,/\/ul/p' $html | dehtml | sed 's,@.*/,,'} 
-#rm -f $tmp
+
+rm -f $html

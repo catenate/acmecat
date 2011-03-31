@@ -13,7 +13,7 @@ plumb start /dis/sh.dis -c 'plumb -d edit /n/^`{echo $1 | tr A-Z a-z}^`{echo $2 
 # files to send to host (windows)
 kind is text
 data matches '[a-zA-Z0-9␣_\-./]+'
-data matches '([a-zA-Z0-9␣_\-./]+)\.(jpg|jpeg|gif|bit|png|pdf|dvi|ps|doc|xls|cgm|zip|ppt|pptx|exe|wav|wmv|bmp)'
+data matches '([a-zA-Z0-9␣_\-./]+)\.(jpg|jpeg|gif|bit|png|pdf|dvi|ps|doc|xls|cgm|zip|ppt|exe|wav|bmp)'
 data isfile $0
 plumb alwaysstart winstart 
 plumb start /dis/sh.dis -c 'dos $0'
@@ -62,42 +62,6 @@ attr set	'action=showfile	addr=$3'
 plumb to edit
 plumb start /dis/acme.dis -c1 $file
 
-# my existing files, possibly tagged by line number, go to acme
-kind is text
-data matches '([.a-zA-Z0-9_/\-]+[a-zA-Z0-9_/\-])(:(((#?[0-9]+)|(/[A-Za-z0-9_\^]+/?)|[.$])([,;+\-]((#?[0-9]+)|(/[A-Za-z0-9_\^]+/?)|[.$]))*))?'
-data isfile	/nb/me/$1
-data set	$file
-attr set	'action=showfile	addr=$3'
-plumb to edit
-plumb start /dis/acme.dis -c1 $file
-
-# existing public files, possibly tagged by line number, go to acme
-kind is text
-data matches '([.a-zA-Z0-9_/\-]+[a-zA-Z0-9_/\-])(:(((#?[0-9]+)|(/[A-Za-z0-9_\^]+/?)|[.$])([,;+\-]((#?[0-9]+)|(/[A-Za-z0-9_\^]+/?)|[.$]))*))?'
-data isfile	/nb/pub/$1
-data set	$file
-attr set	'action=showfile	addr=$3'
-plumb to edit
-plumb start /dis/acme.dis -c1 $file
-
-# existing ec files, possibly tagged by line number, go to acme
-kind is text
-data matches '([.a-zA-Z0-9_/\-]+[a-zA-Z0-9_/\-])(:(((#?[0-9]+)|(/[A-Za-z0-9_\^]+/?)|[.$])([,;+\-]((#?[0-9]+)|(/[A-Za-z0-9_\^]+/?)|[.$]))*))?'
-data isfile	/nb/ec/$1
-data set	$file
-attr set	'action=showfile	addr=$3'
-plumb to edit
-plumb start /dis/acme.dis -c1 $file
-
-# existing rim files, possibly tagged by line number, go to acme
-kind is text
-data matches '([.a-zA-Z0-9_/\-]+[a-zA-Z0-9_/\-])(:(((#?[0-9]+)|(/[A-Za-z0-9_\^]+/?)|[.$])([,;+\-]((#?[0-9]+)|(/[A-Za-z0-9_\^]+/?)|[.$]))*))?'
-data isfile	/nb/rim/$1
-data set	$file
-attr set	'action=showfile	addr=$3'
-plumb to edit
-plumb start /dis/acme.dis -c1 $file
-
 # existing directories go to acme
 kind is text
 data matches '[a-zA-Z¡-￿0-9_./\-]+'
@@ -120,12 +84,6 @@ kind is text
 data matches '([a-zA-Z¡-￿0-9_\-./]+)\(([0-9]+)\)'
 plumb alwaysstart man # nasty plumbing hack
 plumb start /dis/sh.dis -c '/dis/man -b $2 $1'
-
-# twitter user
-#kind is text
-#data matches '@([0-9A-Za-z]+)'
-#plumb alwaysstart twit # nasty plumbing hack
-#plumb start /dis/sh.dis -c '/dis/twit $1'
 
 # change plumb namespace
 kind is text

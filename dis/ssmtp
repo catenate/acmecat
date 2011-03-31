@@ -1,0 +1,12 @@
+#!/dis/sh
+(msg to) = $*
+
+maildir=/n/C/cygwin/home/jcatena/mail/
+cp $msg $maildir^$msg
+
+cd $maildir
+echo 'cat '^$msg^' | /usr/sbin/ssmtp -F"Jason Catena" -f"jason.catena@gmail.com" $*' > ssmtp.^${pid}
+chmod +x ssmtp.^${pid}
+pos ssmtp.^${pid} $to
+
+rm -f ssmtp.^${pid}

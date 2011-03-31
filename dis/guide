@@ -1,5 +1,5 @@
 #!/dis/sh
-/lib/sed/guide
+/acmecat/update
 :, |nocr
 :, |sed '/^nb /s, complete , _complete ,'
 :, |sed 's,,,'

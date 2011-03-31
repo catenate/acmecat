@@ -7,7 +7,7 @@ if {~ $dir '/usr*'} {
 }
 
 if {or {~ $dir '/nb*'} {~ $dir '/dis*'} {~ $dir '/acmecat*'} {~ $dir '/test*'}} {
-	dir = `{echo $dir | sed 's,^,e:\\acme-0.13,;s,/,\\,g;'}
+	dir = `{echo $dir | sed 's,^,g:\\acme-0.13,;s,/,\\,g;'}
 }
 
 if {~ $dir '/n/C/*'} {
@@ -17,9 +17,14 @@ if {~ $dir '/n/C/*'} {
 if {ftest -f /n/C/cygwin/bin/^$cmd.exe} {
 	os -d $"dir C:\cygwin\bin\$cmd.exe $args
 	status $status
+} {if {ftest -f /n/C/cygwin/usr/sbin/^$cmd.exe} {
+	os -d $"dir C:\cygwin\usr\sbin\$cmd.exe $args
+	status $status
 } {if {ftest -f /n/C/cygwin/home/jcatena/bin/^$cmd} {
-	#os -d $"dir C:\cygwin\bin\bash.exe C:\cygwin\home\jcatena\bin\$cmd $args
 	os -d $"dir C:\cygwin\bin\bash.exe /home/jcatena/bin/$cmd $args
+	status $status
+} {if {ftest -f /n/C/cygwin/home/jcatena/mail/^$cmd} {
+	os -d $"dir C:\cygwin\bin\bash.exe /home/jcatena/mail/$cmd $args
 	status $status
 } {if {ftest -f /n/C/Program␣Files/Electric␣Cloud/ElectricCommander/bin/^$cmd.exe} {
 	os -d $"dir 'c:\Program Files\Electric Cloud\ElectricCommander\bin\'^$cmd^'.exe' $args
@@ -28,4 +33,4 @@ if {ftest -f /n/C/cygwin/bin/^$cmd.exe} {
 	os -d $"dir C:\Windows\System32\$cmd.exe $args
 	status $status
 } { status $cmd not found}
-} } }
+} } } } }

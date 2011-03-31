@@ -1,0 +1,12 @@
+#!/dis/sh
+twit = $1
+
+html = /tmp/twisted.html.$twit
+pos curl 'http://twitter.com/'^$twit >[2]/dev/null > $html
+grep 'lists_count' $html | dehtml | sed 's,^[ ]+,,'
+
+htmlist = /tmp/twisted.htmlist.$twit
+pos curl 'http://twitter.com/'^$twit^'/lists/memberships' >[2]/dev/null > $htmlist
+grep 'class="list' $htmlist | dehtml | sed 's,^ +,,;s, +,	,;s,[ 	]+$,,'
+
+rm -f $html $htmlist
