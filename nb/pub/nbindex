@@ -410,7 +410,8 @@
 20110330:98: inferno plan9 resource mail list link
 20110330:102: doc
 20110331:1: manual page unix 7 edition pdf postscript
-20110331:8: doc
+20110331:8: make override rebuild redoer store compare sum
+20110331:21: doc
 guide:22: zork
 guide:35: twitter recent study post text
 guide:44: doc

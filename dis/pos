@@ -7,7 +7,11 @@ if {~ $dir '/usr*'} {
 }
 
 if {or {~ $dir '/nb*'} {~ $dir '/dis*'} {~ $dir '/acmecat*'} {~ $dir '/test*'}} {
-	dir = `{echo $dir | sed 's,^,g:\\acme-0.13,;s,/,\\,g;'}
+	drive = `{echo $dir | sed 's,^,e:\\acme-0.13,;s,/,\\,g;'}
+	if {! os -d $"drive C:\cygwin\bin\sh.exe >[2]/dev/null} {
+		drive = `{echo $dir | sed 's,^,g:\\acme-0.13,;s,/,\\,g;'}
+	}
+	dir = $drive
 }
 
 if {~ $dir '/n/C/*'} {
@@ -29,8 +33,11 @@ if {ftest -f /n/C/cygwin/bin/^$cmd.exe} {
 } {if {ftest -f /n/C/Program␣Files/Electric␣Cloud/ElectricCommander/bin/^$cmd.exe} {
 	os -d $"dir 'c:\Program Files\Electric Cloud\ElectricCommander\bin\'^$cmd^'.exe' $args
 	status $status
+} {if {ftest -f /n/C/Program␣Files/Perforce/^$cmd.exe} {
+	os -d $"dir 'c:\Program Files\Perforce\'^$cmd^'.exe' $args
+	status $status
 } {if {ftest -f /n/C/Windows/System32/^$cmd.exe} {
 	os -d $"dir C:\Windows\System32\$cmd.exe $args
 	status $status
 } { status $cmd not found}
-} } } } }
+} } } } } }

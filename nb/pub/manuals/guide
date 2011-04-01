@@ -1,0 +1,2 @@
+/n/C/cygwin/usr/local/etc/xpdfrc
+apply {pos pdftotext -enc UTF-8 -layout -nopgbrk $1.pdf $1} v7vol1 v7vol2a v7vol2b

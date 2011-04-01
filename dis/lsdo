@@ -13,4 +13,4 @@ dos = `{apply {
 
 deps = `{ls *.dep >[2]/dev/null | sed 's,\.dep,,'}
 
-echo $dos $deps | fmt -w 1 | sort | uniq | sed 's,^,redo ,'
+echo $dos $deps | fmt -w 1 | sort | uniq | sed 's,^,credo ,'

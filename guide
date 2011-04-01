@@ -5,9 +5,16 @@ twit github
 :,$ |sed 's, *$,,;s,$,  ,;/^  $/s,  ,,'
 |sort|uniq
 
+
 update
 du -a | grep '/nbindex$' | sed 's,^.*  ,/,' > /acmecat/nb/nbindexes
 pos git status
 pos git add .
-pos git commit -a -m 'Use ssmtp in cygwin to send gmail. Add twisted to list a twit''s list memberships.'
+pos git commit -a -m 'Credo [sic] now respects manual changes to derived files.  Convert unix v7 manuals to text.'
 $ git push -u origin master
+
+
+apply {diff /usr/jcatena/lib/$1 /acmecat/cygwin/$1} plumbing
+apply {diff /usr/jcatena/$1 /acmecat/cygwin/$1} guide
+apply {diff /n/C/cygwin/home/jcatena/bin/$1 /acmecat/cygwin/$1} emu
+flag x +

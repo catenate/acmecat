@@ -5,4 +5,24 @@ http://plan9.bell-labs.com/7thEdMan/bswv7.html
 /nb/pub/manuals
 
 
+nb make override block rebuild redoer store compare sum
+/nb/pub/manuals/v7vol2a:/if it has not been modiﬁed since its generators were/
+
+/dis/redoer: Don't rebuild if a file’s current sum is different than a
+sum which redo stored.  In ordinary practice, a derived file will not
+change between runs of redo.  If the derived file has changed, then it
+has been changed by hand, which redo should not undo.
+
+To force redo to regenerate (and write over) a changed file, remove
+the derived file, or remove the sum file of the derived file,
+or update the sum file with the sum of the derived file’s new content,
+or revert the file to its summed content.
+
+This also means you can prevent redo from rebuilding a derived file:
+in its sum file, set the checksum for the derived file to 0.
+
+
+nb taxi sitcom theme angela reverend jim clloyd mhenner
+
+
 nb doc

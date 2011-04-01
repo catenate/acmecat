@@ -8,6 +8,7 @@
 :, |sed 's,,,g'
 :, |sed 's,^nb ,nb acme ,'
 :, |sort -r
+Edit ,s,redo,credo,g
 Goog eucalyptus koala
 cd /nb; du -a | grep '\.do$' | sed 's,.* +,,'
 chmod +x mkdo
