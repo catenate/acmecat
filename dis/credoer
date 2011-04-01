@@ -8,12 +8,24 @@ field2sed = 's,^.*[ 	],,'
 
 target = $1
 
+if {ftest -f $target.redoing} {
+	while {ftest -f $target.redoing} {
+		sleep 1
+		$target.redoing >[2]/dev/null
+	}
+}
+
+touch $target.redoing
+echo '#!/dis/sh' >> $target.redoing
+echo 'if {! ftest -d /prog/'^${pid}^'} {rm -f '^$target^'.redoing}' >> $target.redoing
+
 # exit before we update dependencies, so we don't forget we need to rebuild
 oldtargsum = `{cat $target^.sum >[2]/dev/null | sed $field1sed}
 (newtargsum newtargfile) = `{cresum $target}
 if {and {! ~ $#oldtargsum 0} {! ~ $#newtargsum 0}} {
 	if {! ~ $oldtargsum $newtargsum} {
 		echo credo $indent^$target will not overwrite non-credo change
+		rm -f $target.redoing
 		exit
 	}
 }
@@ -47,7 +59,11 @@ if {ftest -s $target^.dep} {
 }
 
 # delay exit to here, to redo dependencies of a target with no do script
-if {grep '^'^$target^'$' redont >/dev/null >[2=1]} {exit}
+if {grep '^'^$target^'$' redont >/dev/null >[2=1]} {
+	rm -f $target.redoing
+	exit
+}
+
 echo credo $indent^$target
 
 if {ftest -x $target^.do} {
@@ -68,6 +84,7 @@ if {ftest -x $target^.do} {
 		do = ./default.^$ext^.do $filext
 	} {
 		echo $target >> redont
+		rm -f $target.redoing
 		exit
 	}
 }
@@ -77,27 +94,10 @@ if {and {! ~ $#newdosum 0} {! ~ $olddosum $newdosum}} {
 }
 
 if {or {! ~ $olddepsum $newdepsum} {! ~ $olddosum $newdosum} {! ftest -e $target}} {
-	if {ftest -f $target.redoing} {
-		while {ftest -f $target.redoing} {
-			sleep 1
-			$target.redoing >[2]/dev/null
-		}
-		
-		# Another process may have satisfied all conditions to build
-		# while we were waiting, so restart to check again.
-		credo $target
-		exit
-	}
-	
-	touch $target.redoing
-	echo '#!/dis/sh' >> $target.redoing
-	echo 'if {! ftest -d /prog/'^${pid}^'} {rm -f '^$target^'.redoing}' >> $target.redoing
-	
 	if {ftest -f $target} {cp $target $target.reold; reold=1} {reold=0}
 	
 	$do
 	dostatus = $status
-	rm -f $target.redoing
 
 	if {and {~ $dostatus 'revert'} {~ $reold 1}} {
 		if {ftest -f $target} {cp $target $target.renew}
@@ -111,4 +111,5 @@ if {or {! ~ $olddepsum $newdepsum} {! ~ $olddosum $newdosum} {! ftest -e $target
 	}
 }
 
+rm -f $target.redoing
 exit

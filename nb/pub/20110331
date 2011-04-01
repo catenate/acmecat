@@ -8,7 +8,7 @@ http://plan9.bell-labs.com/7thEdMan/bswv7.html
 nb make override block rebuild redoer store compare sum
 /nb/pub/manuals/v7vol2a:/if it has not been modiﬁed since its generators were/
 
-/dis/redoer: Don't rebuild if a file’s current sum is different than a
+/dis/credoer: Don't rebuild if a file’s current sum is different than a
 sum which redo stored.  In ordinary practice, a derived file will not
 change between runs of redo.  If the derived file has changed, then it
 has been changed by hand, which redo should not undo.
@@ -23,6 +23,21 @@ in its sum file, set the checksum for the derived file to 0.
 
 
 nb taxi sitcom theme angela reverend jim clloyd mhenner
+
+
+nb git parable tprestonwerner snapshot branch name tag distribute offline merge rewrite history stage diff unique compress blob 
+Preston-Werner, T.  20090519.  The git parable.  Tom Preston-Werner.
+http://tom.preston-werner.com/2009/05/19/the-git-parable.html
+
+Imagine that you have a computer that has nothing on it but a text
+editor and a few file system commands.  Now imagine that you have
+decided to write a large software program on this system.  Because
+you’re a responsible software developer, you decide that you need to
+invent some sort of method for keeping track of versions of your
+software so that you can retrieve code that you previously changed or
+deleted.  What follows is a story about how you might design one such
+version control system (VCS) and the reasoning behind those design
+choices.
 
 
 nb doc

@@ -10,7 +10,7 @@ update
 du -a | grep '/nbindex$' | sed 's,^.*  ,/,' > /acmecat/nb/nbindexes
 pos git status
 pos git add .
-pos git commit -a -m 'Credo [sic] now respects manual changes to derived files.  Convert unix v7 manuals to text.'
+pos git commit -a -m 'Credoer waits at start to eval deps at its turn, no contention on own files.'
 $ git push -u origin master
 
 

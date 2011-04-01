@@ -1,6 +1,8 @@
 todate
 
 /n/C/Program␣Files/
+/n/C/Users/jcatena/Desktop
+/n/C/Users/jcatena/Downloads
 /n/C/cygwin/bin
 /n/C/cygwin/home/jcatena/bin
 /nb/nbindexes
@@ -11,25 +13,18 @@ todate
 jcatena@electric-cloud.com
 ls -tr /*/guide /lib/*/guide /nb/*/guide
 ls -tr dump | sed 's,^,Load ,'
-rm -r -f /n/C/Documents␣and␣Settings/jcatena/My␣Documents/nb/*; cp -r -x /nb/pub /nb/rim /n/C/Documents␣and␣Settings/jcatena/My␣Documents/nb
-rm -r -f /nb/pub/acmesacs/usr/jcatena/*; cp -r -x /usr/jcatena/* /nb/pub/acmesacs/usr/jcatena
+rm -r -f /nb/pub/acmesacs/jcatena; cp -r -x /usr/jcatena /nb/pub/acmesacs
+rm -rf /n/C/Users/jcatena/Documents/nb; cp -r -x /nb/ /n/C/Users/jcatena/Documents/
 |sort|uniq
 
 
-# restore
-cd /n/C/Documents␣and␣Settings/jcatena/My␣Documents/nb; cp -r -x pub rim /nb
-cd /nb/pub/acmesacs/dis; cp -x * /dis
-cd /nb/pub/acmesacs/lib; cp -r -x sed /lib
+cd /nb; cat 20110303.tar | lstar
+cd /nb; cat 20110303.tar | gettar
 
 
-/n/C/Documents␣and␣Settings/jcatena/My␣Documents/
-puttar nb > nb.tar
-cat nb.tar | lstar
+Wheezing air conditioner at gate works,
+nice and chilly, but occasionally sounds
+like TARDIS trying desperately to land.
 
-/nb
-fs=`{apply {
-	ls -l $1
-} `{du -a | sed 's,.*[	 ]+,,'} | sed 's,.*Mar 03 ,,;s,:,,' | sort -n | grep -v '^100' | grep -v 'pub/acmesacs' | grep -v 'rim$'| grep -v 'pub$'| grep -v 'procs$'| grep -v 'nbindex' |sort |uniq | sed 's,.* ,,'}
-puttar $fs > 20110303.tar
-cat 20110303.tar | lstar
-ls -l 20110303.tar
+post-sales software support
+New mail.in
